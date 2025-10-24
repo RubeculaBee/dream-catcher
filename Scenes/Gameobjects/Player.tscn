@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://dl5sm7g38ks6q"]
+[gd_scene load_steps=4 format=3 uid="uid://dl5sm7g38ks6q"]
+
+[ext_resource type="Script" uid="uid://onegw6lrlk87" path="res://Scenes/Gameobjects/player.gd" id="1_tyf51"]
+[ext_resource type="Texture2D" uid="uid://ddvjew2oy4q47" path="res://Resources/Images/robin.jpg" id="3_co3xh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e8g5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_co3xh")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_co3xh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Player" type="Node2D"]
+script = ExtResource("1_tyf51")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e8g5s")
+animation = &"walk"
