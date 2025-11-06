@@ -7,19 +7,17 @@ var look_direction: String
 @onready var sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
 
 const TILE_SIZE: int = 32 # in pixels
-const MOVE_SPEED: int = 4 # in tiles per second
+const MOVE_SPEED: float = 4 # in tiles per second
 
-func _process(delta: float) -> void:
-	input_direction = get_movement()
+func _process(_delta: float) -> void:
+	input_direction = get_input()
 	
-	if move_direction == Vector2.ZERO:
-		if try_move():
-			sprite.play(look_direction)
-	else:
-		smoothe_move(delta)
+	if move_direction == Vector2.ZERO and try_move():
+		sprite.play(look_direction)
+		tween_move()
 
 	
-func get_movement() -> Vector2:
+func get_input() -> Vector2:
 	var dir: Vector2
 	dir.x = Input.get_axis("left", "right")
 	dir.y = Input.get_axis("up", "down")
@@ -38,11 +36,8 @@ func try_move() -> bool:
 	
 	return false
 
-func smoothe_move(delta: float) -> void:
-	# round the position so that the player is always at an integer position
-	# because we are doing modulus later, so decimal position can mess things up
-	position += (move_direction * TILE_SIZE * MOVE_SPEED * delta).round()
-	
-	# if player is in the middle of the tile, stop moving
-	if ((position.x as int) % TILE_SIZE == 16) and ((position.y as int) % TILE_SIZE == 16):
-		move_direction = Vector2.ZERO
+# thank you AJ!
+func tween_move() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "position", position + move_direction *TILE_SIZE, 1/MOVE_SPEED)
+	tween.tween_callback(func(): move_direction = Vector2.ZERO)
