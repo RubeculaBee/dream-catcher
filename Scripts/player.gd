@@ -7,7 +7,7 @@ var look_direction: String
 @onready var sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
 
 const TILE_SIZE: int = 32 # in pixels
-const MOVE_SPEED: float = 4 # in tiles per second
+@export var MOVE_SPEED: float = 4 # in tiles per second
 
 func _process(_delta: float) -> void:
 	input_direction = get_input()
