@@ -19,21 +19,24 @@ signal tried_move(tile: Vector2i)	## Emitted when the user tries to take a step,
 func _process(_delta: float) -> void:
 	input_direction = get_input()
 	
+	# If not moving and trying to move
 	if move_direction == Vector2i.ZERO and try_move():
-		var next_tile: Vector2i = Vector2i(position) / 32 + move_direction
-		tried_move.emit(next_tile)
-		
+		# get the intended next tile (dividing by tile_size to get the tilemap coordinates)
+		var next_tile: Vector2i = Vector2i(position) / TILE_SIZE + move_direction
 		sprite.play(look_direction)
-		tween_move()
+		tried_move.emit(next_tile)
 
 func get_input() -> Vector2i:
 	var dir: Vector2
 	dir.x = Input.get_axis("left", "right")
 	dir.y = Input.get_axis("up", "down")
 
+	# Because we're working with discrete tiles, we convert the input to an integer vector
 	return Vector2i(dir)
 
 func try_move() -> bool:
+	# Prioritise vertical movement, then horizontal
+	# move_direction should only have a non-zero value in one axis at a time
 	if input_direction.y != 0:
 		move_direction.y = input_direction.y
 		look_direction = "up" if move_direction.y == -1 else "down"
@@ -46,7 +49,10 @@ func try_move() -> bool:
 	return false
 
 func _on_move_response(valid_move: bool) -> void:
-	print("response get: ", valid_move)
+	if valid_move:
+		tween_move()
+	else:
+		move_direction = Vector2.ZERO
 
 # thank you AJ!
 func tween_move() -> void:
