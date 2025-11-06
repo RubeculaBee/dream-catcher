@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://dec4dv3msi1x2"]
 
 [ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_iynly"]
-[ext_resource type="TileSet" uid="uid://fkg58vg3o8tp" path="res://Resources/Tilesets/entity-tileset.tres" id="2_rqgg6"]
+[ext_resource type="TileSet" uid="uid://dd2hojt5ngymo" path="res://Resources/Tilesets/entity-tileset.tres" id="2_rqgg6"]
 
 [node name="Test Room" type="Node2D"]
 texture_filter = 1
