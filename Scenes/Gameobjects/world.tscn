@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=4 uid="uid://cdb7odxnrglun"]
+
+[ext_resource type="Script" uid="uid://rexxi281wnvk" path="res://player.gd" id="1_cjsli"]
+[ext_resource type="Texture2D" uid="uid://dfecyinx7psmr" path="res://Resources/Images/Robin.jpg" id="2_kg00p"]
+[ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="3_0gj33"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aqk2v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kg00p")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAEAAAD//wAAAQABAAEAAAD+/wAAAQABAAEAAAD+/wEAAQABAAEAAAD//wEAAQABAAEAAAAAAAEAAQABAAEAAAABAAEAAQABAAEAAAABAAAAAQABAAEAAAD9/wAAAQAAAAAAAAD9/wEAAQABAAEAAAD+/wIAAQABAAEAAAD//wIAAQABAAEAAAAAAAIAAQABAAEAAAABAAIAAQABAAEAAAACAAIAAQABAAEAAAACAAEAAQABAAEAAAD9/wIAAQABAAEAAAD+/wMAAQABAAIAAAD//wMAAQABAAIAAAAAAAMAAQABAAIAAAABAAMAAQABAAIAAAACAAMAAQABAAEAAAD9/wMAAQABAAEAAAD9/wQAAQAAAAIAAAD+/wQAAQABAAEAAAD//wQAAQABAAEAAAAAAAQAAQABAAEAAAABAAQAAQABAAEAAAACAAQAAQACAAIAAAACAAAAAQACAAAAAAA=")
+tile_set = ExtResource("3_0gj33")
+metadata/_edit_lock_ = true
+
+[node name="Player" type="CharacterBody2D" parent="."]
+motion_mode = 1
+script = ExtResource("1_cjsli")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_aqk2v")
+animation = &"walk"
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddvjew2oy4q47"
-path="res://.godot/imported/robin.jpg-891930eb2eb0c2345b9e2ffcc31d143f.ctex"
+uid="uid://dfecyinx7psmr"
+path="res://.godot/imported/Robin.jpg-76cdc9439119def7515cea42d4a44853.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/robin.jpg"
-dest_files=["res://.godot/imported/robin.jpg-891930eb2eb0c2345b9e2ffcc31d143f.ctex"]
+source_file="res://Resources/Images/Robin.jpg"
+dest_files=["res://.godot/imported/Robin.jpg-76cdc9439119def7515cea42d4a44853.ctex"]
 
 [params]
 
