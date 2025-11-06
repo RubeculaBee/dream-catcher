@@ -1,13 +1,19 @@
 extends Node2D
 
-var input_direction: Vector2
-var move_direction: Vector2
-var look_direction: String
+# Variables
+var input_direction: Vector2	# The direction the user is inputting
+var move_direction: Vector2		# The direction the player character is actively moving
+var look_direction: String		# The direction the player character is facing
 
+# Constants
+const TILE_SIZE: int = 32 			# width/height of a tile in pixels
+@export var MOVE_SPEED: float = 4 	## How many tiles to move each second
+
+# Signals
+signal moved	## Emitted when the player character takes a step
+
+# Nodes
 @onready var sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
-
-const TILE_SIZE: int = 32 # in pixels
-@export var MOVE_SPEED: float = 4 # in tiles per second
 
 func _process(_delta: float) -> void:
 	input_direction = get_input()
@@ -38,6 +44,7 @@ func try_move() -> bool:
 
 # thank you AJ!
 func tween_move() -> void:
+	moved.emit();
 	var tween: Tween = create_tween()
 	tween.tween_property(self, "position", position + move_direction *TILE_SIZE, 1/MOVE_SPEED)
 	tween.tween_callback(func(): move_direction = Vector2.ZERO)
