@@ -5,29 +5,18 @@ signal player_move_response(response: bool) ## A signal designed to tell the pla
 
 # Nodes
 var terrain: TileMapLayer
+var player: Player
 
 func _ready() -> void:
-	var player: Player = getPlayer()
-	player.tried_move.connect(_on_player_tried_move)
-	player_move_response.connect(Callable(player, "_on_move_response"))
+	player = get_parent().find_child("Player")
+	player.tried_move.connect(_on_player_tried_move) # connect game_manager to player's signal
+	player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
 	
 	terrain = get_parent().find_child("Terrain Tile Map")
-	if terrain == null:
-		print("Terrain not found!")
-
-
-func getPlayer() -> Player:
-	var player: Player = get_parent().find_child("Player")
-	
-	if player == null:
-		print("No player found!")
-	else:
-		print("Found: ", player)
-	
-	return player
 
 func _on_player_tried_move(tile: Vector2i) -> void:
 	if terrain == null:
+		print("Terrain not found!")
 		return
 
 	var tile_data: TileData = terrain.get_cell_tile_data(tile)
