@@ -2,6 +2,7 @@ extends Node2D
 
 var input_direction: Vector2
 var move_direction: Vector2
+var look_direction: String
 
 @onready var sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
 
@@ -12,7 +13,8 @@ func _process(delta: float) -> void:
 	input_direction = get_movement()
 	
 	if move_direction == Vector2.ZERO:
-		try_move()
+		if try_move():
+			sprite.play(look_direction)
 	else:
 		smoothe_move(delta)
 
@@ -27,9 +29,11 @@ func get_movement() -> Vector2:
 func try_move() -> bool:
 	if input_direction.y != 0:
 		move_direction.y = input_direction.y
+		look_direction = "up" if move_direction.y == -1 else "down"
 		return true
 	elif input_direction.x != 0:
 		move_direction.x = input_direction.x
+		look_direction = "left" if move_direction.x == -1 else "right"
 		return true
 	
 	return false

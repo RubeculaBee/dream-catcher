@@ -12,7 +12,7 @@ animations = [{
 "texture": ExtResource("1_cfd56")
 }],
 "loop": true,
-"name": &"default",
+"name": &"down",
 "speed": 5.0
 }, {
 "frames": [{
