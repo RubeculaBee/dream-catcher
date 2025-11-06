@@ -9,4 +9,3 @@ script = ExtResource("1_tyf51")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_ei5lw")
-script = ExtResource("1_tyf51")

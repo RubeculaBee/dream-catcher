@@ -1,12 +1,20 @@
 extends Node2D
 
-@onready var sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
-const TILE_SIZE: int = 32
+var input_direction: Vector2
+var move_direction: Vector2
 
-func _process(_delta: float) -> void:
-	var move_direction: Vector2 = get_movement()
+@onready var sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
+
+const TILE_SIZE: int = 32 # in pixels
+const MOVE_SPEED: int = 4 # in tiles per second
+
+func _process(delta: float) -> void:
+	input_direction = get_movement()
 	
-	move(move_direction)
+	if move_direction == Vector2.ZERO:
+		try_move()
+	else:
+		smoothe_move(delta)
 
 	
 func get_movement() -> Vector2:
@@ -16,12 +24,21 @@ func get_movement() -> Vector2:
 
 	return dir.round()
 
-func move(move_dir: Vector2) -> bool:
-	if move_dir.y != 0:
-		position.y += move_dir.y * TILE_SIZE
+func try_move() -> bool:
+	if input_direction.y != 0:
+		move_direction.y = input_direction.y
 		return true
-	elif move_dir.x != 0:
-		position.x += move_dir.x * TILE_SIZE
+	elif input_direction.x != 0:
+		move_direction.x = input_direction.x
 		return true
 	
 	return false
+
+func smoothe_move(delta: float) -> void:
+	# round the position so that the player is always at an integer position
+	# because we are doing modulus later, so decimal position can mess things up
+	position += (move_direction * TILE_SIZE * MOVE_SPEED * delta).round()
+	
+	# if player is in the middle of the tile, stop moving
+	if ((position.x as int) % TILE_SIZE == 16) and ((position.y as int) % TILE_SIZE == 16):
+		move_direction = Vector2.ZERO
