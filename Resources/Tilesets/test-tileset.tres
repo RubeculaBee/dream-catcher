@@ -1,8 +1,95 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cryql3wbplkqj"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cryql3wbplkqj"]
 
+[ext_resource type="Texture2D" uid="uid://c0sgw0uou2ami" path="res://Resources/Images/Tileset Atlases/test-blocks.png" id="1_3crt4"]
 [ext_resource type="Texture2D" uid="uid://crir5c7jf4du8" path="res://Resources/Images/Tileset Atlases/test-tileset.png" id="1_nsjjv"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3crt4"]
+resource_name = "test block"
+texture = ExtResource("1_3crt4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 1
+0:0/0/terrains_peering_bit/right_side = 1
+0:0/0/terrains_peering_bit/bottom_side = 1
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 1
+1:0/0/terrains_peering_bit/right_side = 1
+1:0/0/terrains_peering_bit/bottom_side = 1
+1:0/0/terrains_peering_bit/left_side = 1
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 1
+2:0/0/terrains_peering_bit/bottom_side = 1
+2:0/0/terrains_peering_bit/left_side = 1
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 1
+3:0/0/terrains_peering_bit/bottom_side = 1
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 1
+0:1/0/terrains_peering_bit/right_side = 1
+0:1/0/terrains_peering_bit/bottom_side = 1
+0:1/0/terrains_peering_bit/top_side = 1
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 1
+1:1/0/terrains_peering_bit/right_side = 1
+1:1/0/terrains_peering_bit/bottom_side = 1
+1:1/0/terrains_peering_bit/left_side = 1
+1:1/0/terrains_peering_bit/top_side = 1
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 1
+2:1/0/terrains_peering_bit/bottom_side = 1
+2:1/0/terrains_peering_bit/left_side = 1
+2:1/0/terrains_peering_bit/top_side = 1
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 1
+3:1/0/terrains_peering_bit/bottom_side = 1
+3:1/0/terrains_peering_bit/top_side = 1
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 1
+0:2/0/terrains_peering_bit/right_side = 1
+0:2/0/terrains_peering_bit/top_side = 1
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 1
+1:2/0/terrains_peering_bit/right_side = 1
+1:2/0/terrains_peering_bit/left_side = 1
+1:2/0/terrains_peering_bit/top_side = 1
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 1
+2:2/0/terrains_peering_bit/left_side = 1
+2:2/0/terrains_peering_bit/top_side = 1
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 1
+3:2/0/terrains_peering_bit/top_side = 1
+0:3/0 = 0
+0:3/0/terrain_set = 0
+0:3/0/terrain = 1
+0:3/0/terrains_peering_bit/right_side = 1
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/terrain = 1
+1:3/0/terrains_peering_bit/right_side = 1
+1:3/0/terrains_peering_bit/left_side = 1
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/terrain = 1
+2:3/0/terrains_peering_bit/left_side = 1
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/terrain = 1
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nsjjv"]
+resource_name = "test ground"
 texture = ExtResource("1_nsjjv")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -105,8 +192,11 @@ texture_region_size = Vector2i(32, 32)
 [resource]
 tile_size = Vector2i(32, 32)
 terrain_set_0/mode = 2
-terrain_set_0/terrain_0/name = "Test"
+terrain_set_0/terrain_0/name = "Terrain"
 terrain_set_0/terrain_0/color = Color(0.6284944, 0.20667696, 0.38821256, 1)
+terrain_set_0/terrain_1/name = "Block"
+terrain_set_0/terrain_1/color = Color(0, 0, 0, 1)
 custom_data_layer_0/name = "walkable"
 custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_3crt4")
 sources/1 = SubResource("TileSetAtlasSource_nsjjv")
