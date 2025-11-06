@@ -11,5 +11,5 @@ tile_map_data = PackedByteArray("AAABAAEAAQAAAAAAAAABAAIAAQAAAAEAAAABAAMAAQAAAAI
 tile_set = ExtResource("1_iynly")
 
 [node name="Entity Tile Map" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAATAA0AAAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAASAA0AAAAAAAAAAgA=")
 tile_set = ExtResource("2_rqgg6")

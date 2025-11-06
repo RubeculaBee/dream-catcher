@@ -4,7 +4,7 @@
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_svkvl"]
 resource_name = "entities"
-scenes/1/scene = ExtResource("1_dgj8h")
+scenes/2/scene = ExtResource("1_dgj8h")
 
 [resource]
 tile_size = Vector2i(32, 32)
