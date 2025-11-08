@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://chyesgvfxjlxj" path="res://Scripts/player.gd" id="1_tyf51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyf51"]
-size = Vector2(32, 32)
+size = Vector2(30, 30)
 
 [node name="Player" type="Node2D"]
 texture_filter = 1
@@ -19,8 +19,8 @@ animation = &"down"
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="PlayerCollision" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_tyf51")
