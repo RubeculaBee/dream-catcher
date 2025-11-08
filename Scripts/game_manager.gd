@@ -6,6 +6,7 @@ signal player_move_response(response: bool) ## A signal designed to tell the pla
 # Nodes
 var terrain: TileMapLayer
 var player: Player
+var screen_transitions: Array
 
 func _ready() -> void:
 	player = get_parent().find_child("Player")
@@ -13,6 +14,9 @@ func _ready() -> void:
 	player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
 	
 	terrain = get_parent().find_child("Terrain Tile Map")
+
+	screen_transitions = get_parent().find_child("Screen Transitions").get_children()
+	print(screen_transitions)
 
 func _on_player_tried_move(tile: Vector2i) -> void:
 	if terrain == null:
