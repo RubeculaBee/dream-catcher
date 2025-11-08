@@ -2,6 +2,7 @@ extends Area2D
 class_name ScreenTransition
 
 @export var next_screen: PackedScene
+@export var id: int
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)

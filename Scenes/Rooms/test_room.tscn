@@ -23,11 +23,14 @@ scale = Vector2(1, 2)
 [node name="transition2" parent="Screen Transitions" instance=ExtResource("4_pevsa")]
 position = Vector2(-480, -32)
 scale = Vector2(1, 2)
+id = 1
 
 [node name="transition3" parent="Screen Transitions" instance=ExtResource("4_pevsa")]
 position = Vector2(288, -576)
 scale = Vector2(2, 1)
+id = 2
 
 [node name="transition4" parent="Screen Transitions" instance=ExtResource("4_pevsa")]
 position = Vector2(320, 480)
 scale = Vector2(2, 1)
+id = 3
