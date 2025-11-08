@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://dec4dv3msi1x2"]
 
 [ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_iynly"]
-[ext_resource type="PackedScene" uid="uid://dl5sm7g38ks6q" path="res://Scenes/Gameobjects/Player.tscn" id="3_ob37n"]
+[ext_resource type="PackedScene" uid="uid://dl5sm7g38ks6q" path="res://Scenes/Gameobjects/player.tscn" id="3_ob37n"]
 [ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="4_pevsa"]
 
 [node name="Test Room" type="Node2D"]
