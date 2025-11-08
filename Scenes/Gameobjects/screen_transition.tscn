@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bymouotca3psm"]
+
+[ext_resource type="Script" uid="uid://c0vi7kiwb86c0" path="res://Scripts/screen_transition.gd" id="1_04er1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e1r8"]
+size = Vector2(32, 32)
+
+[node name="Screen Transition" type="Area2D"]
+script = ExtResource("1_04er1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2e1r8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0, 0, 0, 0.6431373)
