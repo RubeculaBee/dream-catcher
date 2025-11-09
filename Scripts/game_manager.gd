@@ -31,3 +31,12 @@ func _on_player_tried_move(tile: Vector2i) -> void:
 
 func _on_transition(transition: ScreenTransition):
 	print("Entered:", transition.id)
+	var current_room: Node = get_node("Rooms").get_child(0)
+	var next_room: Node = transition.next_screen.instantiate()
+
+	player.reparent(next_room)
+	terrain = next_room.get_node("Terrain Tile Map")
+	screen_transitions = next_room.get_node("Screen Transitions").get_children()
+	
+	current_room.add_sibling.call_deferred(next_room)
+	current_room.queue_free()
