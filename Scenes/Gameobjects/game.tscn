@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://chhkgmfxnb0gr" path="res://Scenes/game_manager.tscn" id="1_tvgxv"]
 [ext_resource type="PackedScene" uid="uid://dec4dv3msi1x2" path="res://Scenes/Rooms/test_room.tscn" id="2_bilmg"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node"]
 
 [node name="Game Manager" parent="." instance=ExtResource("1_tvgxv")]
 
