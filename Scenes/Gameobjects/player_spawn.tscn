@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://slfd53otck1g"]
+
+[ext_resource type="Texture2D" uid="uid://bkpeyk2wksvpf" path="res://Resources/Images/player_spawn.png" id="1_c24g2"]
+
+[node name="Player Spawn" type="Node2D"]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.23529412)
+position = Vector2(16, 16)
+texture = ExtResource("1_c24g2")

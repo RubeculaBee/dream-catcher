@@ -7,14 +7,20 @@ signal player_move_response(response: bool) ## A signal designed to tell the pla
 var current_room: Node
 var terrain: TileMapLayer
 var player: Player
+var player_path: String = "res://Scenes/Gameobjects/player.tscn"
 var screen_transitions: Array
 
 func _ready() -> void:
 	current_room = get_node("Rooms").get_child(0)
+	var spawnpoint: Node2D = current_room.get_node("Player Spawn")
 
-	player = current_room.get_node("Player")
-	player.tried_move.connect(_on_player_tried_move) # connect game_manager to player's signal
-	player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
+	if spawnpoint != null:
+		player = load(player_path).instantiate(TYPE_OBJECT)
+		player.position = spawnpoint.position
+		current_room.add_child(player)
+
+		player.tried_move.connect(_on_player_tried_move) # connect game_manager to player's signal
+		player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
 
 	update_references()
 
