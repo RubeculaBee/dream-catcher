@@ -9,6 +9,7 @@ class_name ScreenTransition
 signal transition(transtion: ScreenTransition)
 
 func _ready() -> void:
+	await get_tree().create_timer(0.5).timeout
 	area_entered.connect(_on_area_entered)
 
 func _on_area_entered(area: Area2D) -> void:
