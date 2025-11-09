@@ -9,14 +9,14 @@ var player: Player
 var screen_transitions: Array
 
 func _ready() -> void:
-	player = get_parent().find_child("Player")
+	player = find_child("Player")
 	player.tried_move.connect(_on_player_tried_move) # connect game_manager to player's signal
 	player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
 	
-	terrain = get_parent().find_child("Terrain Tile Map")
+	terrain = find_child("Terrain Tile Map")
 	assert(terrain != null, "Terrain not found!")
 
-	screen_transitions = get_parent().find_child("Screen Transitions").get_children()
+	screen_transitions = find_child("Screen Transitions").get_children()
 	for i in screen_transitions.size():
 		for j in range(i+1, screen_transitions.size()):
 			assert(screen_transitions[i].id != screen_transitions[j].id, "Duplicate ID in screen transition triggers!")

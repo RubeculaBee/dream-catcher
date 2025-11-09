@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://3yevyyty3btf"]
 
-[ext_resource type="PackedScene" uid="uid://chhkgmfxnb0gr" path="res://Scenes/game_manager.tscn" id="1_tvgxv"]
+[ext_resource type="Script" uid="uid://dfu7jqgvdmna" path="res://Scripts/game_manager.gd" id="1_tvgxv"]
 [ext_resource type="PackedScene" uid="uid://dec4dv3msi1x2" path="res://Scenes/Rooms/test_room.tscn" id="2_bilmg"]
 
 [node name="Game" type="Node"]
+script = ExtResource("1_tvgxv")
 
-[node name="Game Manager" parent="." instance=ExtResource("1_tvgxv")]
+[node name="Rooms" type="Node" parent="."]
 
-[node name="Test Room" parent="." instance=ExtResource("2_bilmg")]
+[node name="Test Room" parent="Rooms" instance=ExtResource("2_bilmg")]
