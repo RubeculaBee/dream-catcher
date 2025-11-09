@@ -14,4 +14,5 @@ func _ready() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerCollision":
+		await (area.get_parent() as Player).stopped_move
 		transition.emit(self)

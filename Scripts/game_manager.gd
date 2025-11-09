@@ -43,3 +43,14 @@ func _on_transition(transition: ScreenTransition):
 
 	player.reparent(current_room)
 	update_references()
+
+	var entrance: ScreenTransition
+	for t: ScreenTransition in screen_transitions:
+		if t.id == transition.id:
+			entrance = t
+			break
+	
+	print(player.position)
+	print(entrance.position)
+	player.position = entrance.position
+	print(player.position)

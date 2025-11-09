@@ -12,7 +12,7 @@ tile_map_data = PackedByteArray("AAAMAAkAAQABAAEAAAALAAkAAQABAAEAAAAKAAkAAQABAAE
 tile_set = ExtResource("1_iynly")
 
 [node name="Player" parent="." instance=ExtResource("3_ob37n")]
-position = Vector2(992, -256)
+position = Vector2(1120, -224)
 
 [node name="Screen Transitions" type="Node" parent="."]
 
