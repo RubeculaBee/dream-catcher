@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://slfd53otck1g" path="res://Scenes/Gameobjects/player_spawn.tscn" id="2_u47vg"]
 [ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_yu45y"]
 
-[node name="Template" type="Node"]
+[node name="Test Corridor Center" type="Node"]
 
 [node name="Terrain Tile Map" type="TileMapLayer" parent="."]
 texture_filter = 1

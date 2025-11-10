@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_bp441"]
 [ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_dte8a"]
 
-[node name="Template" type="Node"]
+[node name="Test Corridor Down" type="Node"]
 
 [node name="Terrain Tile Map" type="TileMapLayer" parent="."]
 texture_filter = 1
