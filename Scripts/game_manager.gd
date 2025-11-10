@@ -55,8 +55,5 @@ func _on_transition(transition: ScreenTransition):
 		if t.id == transition.id:
 			entrance = t
 			break
-	
-	print(player.position)
-	print(entrance.position)
+
 	player.position = entrance.position
-	print(player.position)
