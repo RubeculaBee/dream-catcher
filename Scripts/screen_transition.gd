@@ -11,7 +11,7 @@ signal transition(transtion: ScreenTransition, offset: Vector2) ## Trigger a scr
 
 func _ready() -> void:
 	# wait before conencting the signal, such that the player doesnt trigger this as soon as the room loads
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.1).timeout
 	area_entered.connect(_on_area_entered)
 	next_screen = load("res://Scenes/Rooms/%s.tscn" % next_screen_name)
 
