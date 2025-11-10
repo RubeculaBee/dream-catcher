@@ -10,6 +10,9 @@ var next_screen: PackedScene 			#  The next screen that this transition should s
 signal transition(transtion: ScreenTransition, offset: Vector2) ## Trigger a screen transition with data about itself and where the player entered.
 
 func _ready() -> void:
+	# Remove Debug Box
+	get_node("ColorRect").free()
+
 	# wait before conencting the signal, such that the player doesnt trigger this as soon as the room loads
 	await get_tree().create_timer(0.1).timeout
 	area_entered.connect(_on_area_entered)
