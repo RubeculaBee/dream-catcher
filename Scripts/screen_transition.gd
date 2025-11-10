@@ -7,7 +7,7 @@ var next_screen: PackedScene 			#  The next screen that this transition should s
 @export var id: int						## This transition's ID (must be qunique!). After the transition, the player will be sent to the transition tile in the next room with the same id
 
 # Signal 
-signal transition(transtion: ScreenTransition) ## Trigger a screen transition with data about itself and where the player entered.
+signal transition(transtion: ScreenTransition, offset: Vector2) ## Trigger a screen transition with data about itself and where the player entered.
 
 func _ready() -> void:
 	# wait before conencting the signal, such that the player doesnt trigger this as soon as the room loads
@@ -19,4 +19,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerCollision":
 		#wait for the player to stop moving before triggering the screen transition
 		await (area.get_parent() as Player).stopped_move
-		transition.emit(self)
+		
+		# How far from the transitions orgin is the player
+		var offset: Vector2 = area.global_position - position
+		transition.emit(self, offset)

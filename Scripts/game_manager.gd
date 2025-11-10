@@ -42,7 +42,7 @@ func _on_player_tried_move(tile: Vector2i) -> void:
 
 	player_move_response.emit(valid_move)
 
-func _on_transition(transition: ScreenTransition):
+func _on_transition(transition: ScreenTransition, offset: Vector2):
 	current_room.queue_free()
 	current_room = transition.next_screen.instantiate()
 	get_node("Rooms").add_child.call_deferred(current_room)
@@ -55,5 +55,8 @@ func _on_transition(transition: ScreenTransition):
 		if t.id == transition.id:
 			entrance = t
 			break
-
-	player.position = entrance.position
+	
+	# Don't spawn the player off of the next rooms entrance
+	offset = offset.clamp(Vector2.ZERO, (entrance.scale - Vector2(1,1)) * 32)
+	player.position = entrance.position + offset
+	
