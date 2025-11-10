@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ch74vq4bc4rb8"]
+
+[node name="Template" type="Node"]
+
+[node name="Terrain Tile Map" type="TileMapLayer" parent="."]
+texture_filter = 1
+
+[node name="Screen Transitions" type="Node" parent="."]
