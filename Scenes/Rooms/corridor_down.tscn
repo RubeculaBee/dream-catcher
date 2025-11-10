@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=4 uid="uid://dptdayrfg34lq"]
+
+[ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_bp441"]
+[ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_dte8a"]
+
+[node name="Template" type="Node"]
+
+[node name="Terrain Tile Map" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD//wAAAQADAAEAAAD//wEAAQADAAEAAAD//wIAAQABAAEAAAD//wMAAAABAAMAAAD//wQAAQABAAEAAAD//wUAAQADAAEAAAD//wYAAQABAAEAAAD//wcAAAABAAMAAAD//wgAAQABAAEAAAD//wkAAQADAAIAAAD9/wMAAAAAAAMAAAD+/wMAAAABAAMAAAAAAAMAAAABAAMAAAABAAMAAAACAAMAAAD9/wcAAAAAAAMAAAD+/wcAAAABAAMAAAAAAAcAAAABAAMAAAABAAcAAAACAAMAAAABAAYAAQABAAAAAAAAAAYAAQABAAAAAAD+/wYAAQABAAAAAAD9/wYAAQABAAAAAAD+/wgAAQABAAIAAAAAAAgAAQABAAIAAAABAAgAAQABAAIAAAD9/wgAAQABAAIAAAD9/wIAAQABAAAAAAAAAAQAAQABAAIAAAABAAQAAQABAAIAAAD+/wQAAQABAAIAAAD9/wQAAQABAAIAAAD+/wIAAQABAAAAAAAAAAIAAQABAAAAAAABAAIAAQABAAAAAAD/////AQADAAEAAAD///7/AQADAAEAAAD///3/AQADAAAAAAACAAgAAQACAAIAAAACAAcAAQACAAEAAAACAAYAAQACAAAAAAD8/wgAAQAAAAIAAAD8/wcAAQAAAAEAAAD8/wYAAQAAAAAAAAACAAQAAQACAAIAAAACAAMAAQACAAEAAAACAAIAAQACAAAAAAD8/wQAAQAAAAIAAAD8/wMAAQAAAAEAAAD8/wIAAQAAAAAAAAA=")
+tile_set = ExtResource("1_bp441")
+
+[node name="Screen Transitions" type="Node" parent="."]
+
+[node name="transition" parent="Screen Transitions" instance=ExtResource("2_dte8a")]
+position = Vector2(-32, -96)
+next_screen_name = "corridor_center"
+id = 3
