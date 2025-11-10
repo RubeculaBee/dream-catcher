@@ -12,7 +12,7 @@ const TILE_SIZE: int = 32 			# width/height of a tile in pixels
 
 # Signals
 signal tried_move(tile: Vector2i)	## Emitted when the user tries to take a step, with the location of the tile they tried to move to
-signal stopped_move
+signal stopped_move					## Emitted when the player finishes taking a step
 
 # Nodes
 @onready var sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")

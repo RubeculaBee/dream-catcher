@@ -4,11 +4,11 @@ extends Node
 signal player_move_response(response: bool) ## A signal designed to tell the player whether it can move
 
 # Nodes
-var current_room: Node
-var terrain: TileMapLayer
-var player: Player
-var player_path: String = "res://Scenes/Gameobjects/player.tscn"
-var screen_transitions: Array
+var current_room: Node			# The current room the player is in
+var terrain: TileMapLayer		# The terrain in the current room
+var player: Player				# The player object
+var screen_transitions: Array	# An array of all the screen transitions in the current room
+var player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location of the player scene file
 
 func _ready() -> void:
 	current_room = get_node("Rooms").get_child(0)
