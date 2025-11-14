@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Dream Catcher"
+run/main_scene="uid://28vqp5eny63q"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://Resources/Images/icon.svg"
 
