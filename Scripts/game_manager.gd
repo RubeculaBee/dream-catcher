@@ -12,17 +12,20 @@ var player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location 
 
 func _ready() -> void:
 	current_room = get_node("Rooms").get_child(0)
+	
 	var spawnpoint: Node2D = current_room.get_node("Player Spawn")
-
 	if spawnpoint != null:
-		player = load(player_path).instantiate(TYPE_OBJECT)
-		player.position = spawnpoint.position
-		current_room.add_child(player)
-
-		player.tried_move.connect(_on_player_tried_move) # connect game_manager to player's signal
-		player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
+		spawn_player(spawnpoint.position)
 
 	update_references()
+
+func spawn_player(spawn_position: Vector2):
+	player = load(player_path).instantiate(TYPE_OBJECT)
+	player.position = spawn_position
+	current_room.add_child(player)
+
+	player.tried_move.connect(_on_player_tried_move) # connect game_manager to player's signal
+	player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
 
 func update_references() -> void:
 	terrain = current_room.get_node("Terrain Tile Map")
