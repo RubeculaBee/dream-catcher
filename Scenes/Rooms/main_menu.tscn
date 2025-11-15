@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://28vqp5eny63q"]
 
-[ext_resource type="Script" uid="uid://4o6pcx7rb6js" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Script" uid="uid://4o6pcx7rb6js" path="res://Scenes/Rooms/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://dkii4ifgevwcy" path="res://Resources/Images/Screenshot 2025-11-13 121808.png" id="1_28flt"]
 [ext_resource type="FontFile" uid="uid://3ino77dm4we3" path="res://Resources/Fonts/Creepster-Regular.ttf" id="2_48xlc"]
 
