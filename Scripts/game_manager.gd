@@ -7,22 +7,35 @@ signal player_move_response(response: bool) ## A signal designed to tell the pla
 var current_room: Node			# The current room the player is in
 var terrain: TileMapLayer		# The terrain in the current room
 var player: Player				# The player object
+var camera: Camera2D			# The camera that will follow the player
 var screen_transitions: Array	# An array of all the screen transitions in the current room
-var player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location of the player scene file
+
+# Contants
+const player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location of the player scene file
+const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the location of the camera scene file
 
 func _ready() -> void:
 	current_room = get_node("Rooms").get_child(0)
+	
 	var spawnpoint: Node2D = current_room.get_node("Player Spawn")
-
 	if spawnpoint != null:
-		player = load(player_path).instantiate(TYPE_OBJECT)
-		player.position = spawnpoint.position
-		current_room.add_child(player)
-
-		player.tried_move.connect(_on_player_tried_move) # connect game_manager to player's signal
-		player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
+		spawn_player(spawnpoint.position)
+		attach_camera()
 
 	update_references()
+
+func attach_camera():
+	camera = load(camera_path).instantiate(TYPE_OBJECT)
+	player.add_child(camera)
+
+
+func spawn_player(spawn_position: Vector2):
+	player = load(player_path).instantiate(TYPE_OBJECT)
+	player.position = spawn_position
+	current_room.add_child(player)
+
+	player.tried_move.connect(_on_player_tried_move) # connect game_manager to player's signal
+	player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
 
 func update_references() -> void:
 	terrain = current_room.get_node("Terrain Tile Map")
