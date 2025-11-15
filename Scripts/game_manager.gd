@@ -56,7 +56,7 @@ func _on_player_tried_move(tile: Vector2i) -> void:
 	player_move_response.emit(valid_move)
 
 func _on_transition(transition: ScreenTransition, offset: Vector2):
-	camera.swipe_transition()
+	camera.fade_transition()
 	await camera.screen_covered
 
 	current_room.queue_free()
