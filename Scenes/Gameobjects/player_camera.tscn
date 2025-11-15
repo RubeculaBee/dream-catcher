@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgh8qcd0r7xvq"]
+[gd_scene load_steps=2 format=3 uid="uid://bj11u81sqo828"]
 
 [ext_resource type="Script" uid="uid://cmknkrytbpbq3" path="res://Scripts/player_camera.gd" id="1_v1bqp"]
 
@@ -7,9 +7,8 @@ position_smoothing_enabled = true
 script = ExtResource("1_v1bqp")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -400.0
-offset_top = -300.0
-offset_right = 400.0
-offset_bottom = 300.0
+offset_left = -432.0
+offset_top = -332.0
+offset_right = 432.0
+offset_bottom = 332.0
 color = Color(0, 0, 0, 1)

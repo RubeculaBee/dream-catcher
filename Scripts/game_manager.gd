@@ -7,7 +7,7 @@ signal player_move_response(response: bool) ## A signal designed to tell the pla
 var current_room: Node			# The current room the player is in
 var terrain: TileMapLayer		# The terrain in the current room
 var player: Player				# The player object
-var camera: Camera2D			# The camera that will follow the player
+var camera: PlayerCamera		# The camera that will follow the player
 var screen_transitions: Array	# An array of all the screen transitions in the current room
 
 # Contants
@@ -56,6 +56,9 @@ func _on_player_tried_move(tile: Vector2i) -> void:
 	player_move_response.emit(valid_move)
 
 func _on_transition(transition: ScreenTransition, offset: Vector2):
+	camera.fade_transition()
+	await camera.screen_covered
+
 	current_room.queue_free()
 	current_room = transition.next_screen.instantiate()
 	get_node("Rooms").add_child.call_deferred(current_room)
