@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2imhhsw41kai"]
+
+[ext_resource type="Script" uid="uid://dxioyc5uf6gxb" path="res://Scripts/Enemy.gd" id="1_e3uxb"]
+[ext_resource type="Texture2D" uid="uid://btoee6sfgs2kx" path="res://Resources/Images/enemie-sprites/IMG_3915 (1).jpg" id="2_newjo"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_e3uxb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(11.999987, 12.000005)
+scale = Vector2(0.010169503, 0.008468593)
+texture = ExtResource("2_newjo")

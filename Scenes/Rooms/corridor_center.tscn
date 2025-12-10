@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://cgbjwy5nenq5j"]
+[gd_scene load_steps=6 format=4 uid="uid://cgbjwy5nenq5j"]
 
 [ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_k24ce"]
 [ext_resource type="PackedScene" uid="uid://slfd53otck1g" path="res://Scenes/Gameobjects/player_spawn.tscn" id="2_u47vg"]
 [ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_yu45y"]
+[ext_resource type="PackedScene" uid="uid://b6cukpw23djf7" path="res://Scenes/Gameobjects/Enemies.tscn" id="3_u8ic6"]
+[ext_resource type="PackedScene" uid="uid://b2imhhsw41kai" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_nwcu0"]
 
 [node name="Test Corridor Center" type="Node"]
 
@@ -35,5 +37,9 @@ position = Vector2(-32, 160)
 scale = Vector2(3.0000007, 1)
 next_screen_name = "corridor_down"
 id = 3
+
+[node name="Enemies" parent="." instance=ExtResource("3_u8ic6")]
+position = Vector2(-64, 0)
+enemy_scene = ExtResource("4_nwcu0")
 
 [node name="Player Spawn" parent="." instance=ExtResource("2_u47vg")]
