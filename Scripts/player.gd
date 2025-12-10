@@ -12,7 +12,6 @@ const TILE_SIZE: int = 32 			# width/height of a tile in pixels
 
 # Signals
 signal tried_move(tile: Vector2i)	## Emitted when the user tries to take a step, with the location of the tile they tried to move to
-signal stopped_move					## Emitted when the player finishes taking a step
 
 # Nodes
 @onready var sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
@@ -59,7 +58,4 @@ func _on_move_response(valid_move: bool) -> void:
 func tween_move() -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(self, "position", position + Vector2(move_direction) *TILE_SIZE, 1/MOVE_SPEED)
-	tween.tween_callback(func(): 
-		move_direction = Vector2.ZERO
-		stopped_move.emit()
-	)
+	tween.tween_callback(func(): move_direction = Vector2.ZERO)

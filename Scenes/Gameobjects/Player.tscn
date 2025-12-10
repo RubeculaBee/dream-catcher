@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl5sm7g38ks6q"]
+
+[ext_resource type="SpriteFrames" uid="uid://cs4sr2olxrhrj" path="res://Resources/SpriteFrames/muse-placeholder.tres" id="1_ei5lw"]
+[ext_resource type="Script" uid="uid://chyesgvfxjlxj" path="res://Scripts/player.gd" id="1_tyf51"]
+
+[node name="Player" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_tyf51")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 0)
+scale = Vector2(1, 2)
+sprite_frames = ExtResource("1_ei5lw")
+animation = &"down"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true

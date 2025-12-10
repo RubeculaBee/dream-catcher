@@ -4,75 +4,22 @@ extends Node
 signal player_move_response(response: bool) ## A signal designed to tell the player whether it can move
 
 # Nodes
-var current_room: Node			# The current room the player is in
-var terrain: TileMapLayer		# The terrain in the current room
-var player: Player				# The player object
-var camera: PlayerCamera		# The camera that will follow the player
-var screen_transitions: Array	# An array of all the screen transitions in the current room
-
-# Contants
-const player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location of the player scene file
-const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the location of the camera scene file
+var terrain: TileMapLayer
+var player: Player
 
 func _ready() -> void:
-	current_room = get_node("Rooms").get_child(0)
-	
-	var spawnpoint: Node2D = current_room.get_node("Player Spawn")
-	if spawnpoint != null:
-		spawn_player(spawnpoint.position)
-		attach_camera()
-
-	update_references()
-
-func attach_camera():
-	camera = load(camera_path).instantiate(TYPE_OBJECT)
-	player.add_child(camera)
-
-
-func spawn_player(spawn_position: Vector2):
-	player = load(player_path).instantiate(TYPE_OBJECT)
-	player.position = spawn_position
-	current_room.add_child(player)
-
+	player = get_parent().find_child("Player")
 	player.tried_move.connect(_on_player_tried_move) # connect game_manager to player's signal
 	player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
-
-func update_references() -> void:
-	terrain = current_room.get_node("Terrain Tile Map")
-	assert(terrain != null, "Terrain not found!")
-
-	screen_transitions = current_room.get_node("Screen Transitions").get_children()
-	for i in screen_transitions.size():
-		for j in range(i+1, screen_transitions.size()):
-			assert(screen_transitions[i].id != screen_transitions[j].id, "Duplicate ID in screen transition triggers!")
-		
-		screen_transitions[i].transition.connect(_on_transition)
-
+	
+	terrain = get_parent().find_child("Terrain Tile Map")
 
 func _on_player_tried_move(tile: Vector2i) -> void:
+	if terrain == null:
+		print("Terrain not found!")
+		return
+
 	var tile_data: TileData = terrain.get_cell_tile_data(tile)
 	var valid_move: bool = (tile_data != null) && (tile_data.get_custom_data("walkable"))
 
 	player_move_response.emit(valid_move)
-
-func _on_transition(transition: ScreenTransition, offset: Vector2):
-	camera.fade_transition()
-	await camera.screen_covered
-
-	current_room.queue_free()
-	current_room = transition.next_screen.instantiate()
-	get_node("Rooms").add_child.call_deferred(current_room)
-
-	player.reparent(current_room)
-	update_references()
-
-	var entrance: ScreenTransition
-	for t: ScreenTransition in screen_transitions:
-		if t.id == transition.id:
-			entrance = t
-			break
-	
-	# Don't spawn the player off of the next rooms entrance
-	offset = offset.clamp(Vector2.ZERO, (entrance.scale - Vector2(1,1)) * 32)
-	player.position = entrance.position + offset
-	

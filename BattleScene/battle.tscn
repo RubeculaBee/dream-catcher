@@ -1,9 +1,107 @@
-[gd_scene load_steps=10 format=3 uid="uid://6qul34qgl324"]
+[gd_scene load_steps=23 format=3 uid="uid://6qul34qgl324"]
 
 [ext_resource type="Script" uid="uid://bjac1mv0isf4j" path="res://Scripts/battle.gd" id="1_m1w6r"]
-[ext_resource type="Texture2D" uid="uid://bl7u6n7mae5tu" path="res://Resources/Images/Battle Scene Images/joke background .png" id="1_tk3fk"]
-[ext_resource type="Texture2D" uid="uid://d0on11jujq88f" path="res://Resources/Images/Battle Scene Images/testfella.png" id="2_m1w6r"]
-[ext_resource type="Texture2D" uid="uid://wdy0vv8vyt6v" path="res://Resources/Images/Battle Scene Images/evilfella.png" id="3_0tpb6"]
+[ext_resource type="Texture2D" uid="uid://bmpas437j6207" path="res://Resources/Images/Battle Scene Images/dream_catcher_battle_background_placeholder.png" id="2_0tpb6"]
+[ext_resource type="Texture2D" uid="uid://ncqibhr3qufs" path="res://Resources/Images/Battle Scene Images/TYPELAND.png" id="3_m1w6r"]
+[ext_resource type="Texture2D" uid="uid://bgftn7fsim7ig" path="res://Resources/Images/Battle Scene Images/TYPESKY.png" id="4_0tpb6"]
+[ext_resource type="Texture2D" uid="uid://dvopvamuu6u41" path="res://Resources/Images/Battle Scene Images/muse_placeholder_battle.png" id="5_eevwc"]
+[ext_resource type="Texture2D" uid="uid://cck0gpqbyagkg" path="res://Resources/Images/Battle Scene Images/enemy_trainer_placeholder_battle.png" id="6_3d018"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mphgp"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppjsg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdhrx"]
+bg_color = Color(0.3529412, 0.3529412, 0.3529412, 0.99215686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_184ww"]
+bg_color = Color(0.3529412, 0.3529412, 0.3529412, 0.99215686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk3fk"]
+bg_color = Color(0.62746686, 0.02709203, 0.2299197, 1)
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1w6r"]
+bg_color = Color(0.31847927, 0.70379114, 0.1653328, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33fou"]
+bg_color = Color(0.4052269, 0.8165884, 0.98231155, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spwlv"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rorwe"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_124ha"]
+bg_color = Color(1, 1, 1, 0.99215686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7m0st"]
+bg_color = Color(0.3529412, 0.3529412, 0.3529412, 0.99215686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pd44g"]
+bg_color = Color(0.5352087, 0.570329, 0.2538635, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udu8d"]
+draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tpb6"]
 bg_color = Color(0, 0, 0, 1)
@@ -19,12 +117,6 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk3fk"]
-bg_color = Color(0.62746686, 0.02709203, 0.2299197, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1w6r"]
-bg_color = Color(0.31847927, 0.70379114, 0.1653328, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eevwc"]
 bg_color = Color(0, 0, 0, 1)
@@ -44,15 +136,194 @@ grow_vertical = 2
 script = ExtResource("1_m1w6r")
 
 [node name="Background" type="TextureRect" parent="."]
-modulate = Color(0.14044744, 0.14044744, 0.14044744, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_tk3fk")
+texture = ExtResource("2_0tpb6")
 expand_mode = 1
+
+[node name="EnemyInfoBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.011111111
+anchor_right = 0.99640214
+anchor_bottom = 0.22361112
+offset_right = 0.6052246
+scale = Vector2(0.99808484, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemyInfoBar" type="HBoxContainer" parent="EnemyInfoBox"]
+layout_mode = 2
+
+[node name="EnemyLevel" type="Label" parent="EnemyInfoBox/EnemyInfoBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "Lv. 23"
+
+[node name="EnemyName" type="Label" parent="EnemyInfoBox/EnemyInfoBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Enemy Figment"
+horizontal_alignment = 1
+
+[node name="EnemyTeam" type="HBoxContainer" parent="EnemyInfoBox/EnemyInfoBar"]
+layout_mode = 2
+
+[node name="EnemyFigmentIcon1" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam"]
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mphgp")
+
+[node name="EnemyFigmentIcon2" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam"]
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ppjsg")
+
+[node name="EnemyFigmentIcon3" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam"]
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pdhrx")
+
+[node name="EnemyFigmentIcon4" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam"]
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_184ww")
+
+[node name="EnemyHealth" type="ProgressBar" parent="EnemyInfoBox"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
+value = 50.0
+show_percentage = false
+
+[node name="EnemyFigmentTypesBox" type="HBoxContainer" parent="EnemyInfoBox"]
+layout_mode = 2
+
+[node name="EnemyFigmentType1" type="Label" parent="EnemyInfoBox/EnemyFigmentTypesBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_33fou")
+text = "Sky"
+horizontal_alignment = 1
+
+[node name="EnemyFigmentType2" type="Label" parent="EnemyInfoBox/EnemyFigmentTypesBox"]
+layout_mode = 2
+
+[node name="PlayerInfoBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 279.0
+offset_bottom = 197.0
+
+[node name="PlayerInfoBar" type="HBoxContainer" parent="PlayerInfoBox"]
+layout_mode = 2
+
+[node name="PlayerLevel" type="Label" parent="PlayerInfoBox/PlayerInfoBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "Lv. 28"
+
+[node name="PlayerName" type="Label" parent="PlayerInfoBox/PlayerInfoBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Player Figment"
+horizontal_alignment = 1
+
+[node name="PlayerTeam" type="HBoxContainer" parent="PlayerInfoBox/PlayerInfoBar"]
+layout_mode = 2
+
+[node name="PlayerFigmentIcon1" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam"]
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_spwlv")
+
+[node name="PlayerFigmentIcon2" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam"]
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rorwe")
+
+[node name="PlayerFigmentIcon3" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam"]
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_124ha")
+
+[node name="PlayerFigmentIcon4" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam"]
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7m0st")
+
+[node name="PlayerHealth" type="ProgressBar" parent="PlayerInfoBox"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
+value = 83.0
+show_percentage = false
+
+[node name="EnemyFigmentTypesBox" type="HBoxContainer" parent="PlayerInfoBox"]
+layout_mode = 2
+
+[node name="EnemyFigmentType1" type="Label" parent="PlayerInfoBox/EnemyFigmentTypesBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pd44g")
+text = "Land"
+horizontal_alignment = 1
+
+[node name="EnemyFigmentType2" type="Label" parent="PlayerInfoBox/EnemyFigmentTypesBox"]
+layout_mode = 2
+
+[node name="PlayerCharacter" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08046875
+anchor_top = 0.45
+anchor_right = 0.13046876
+anchor_bottom = 0.725
+texture = ExtResource("5_eevwc")
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemyCharacter" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8859375
+anchor_top = 0.43888888
+anchor_right = 0.9359375
+anchor_bottom = 0.7138889
+texture = ExtResource("6_3d018")
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemyFigment" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65
+anchor_top = 0.49722221
+anchor_right = 0.75
+anchor_bottom = 0.675
+size_flags_horizontal = 4
+texture = ExtResource("4_0tpb6")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerFigment" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25703126
+anchor_top = 0.50277776
+anchor_right = 0.35703126
+anchor_bottom = 0.6805556
+offset_top = 3.0517578e-05
+offset_bottom = -3.0517578e-05
+size_flags_horizontal = 4
+texture = ExtResource("3_m1w6r")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="ActionPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -61,26 +332,29 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -116.0
-offset_top = -42.0
-offset_right = 118.0
+offset_left = -265.5
+offset_top = -155.0
+offset_right = 265.5
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_udu8d")
+metadata/_edit_use_anchors_ = true
 
 [node name="Actions" type="VBoxContainer" parent="ActionPanel"]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = -0.193
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -52.5
-offset_top = -2.9464998
-offset_right = 52.5
-offset_bottom = 0.94750214
+offset_left = -202.0
+offset_top = -115.0
+offset_right = 202.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="TopActions" type="HBoxContainer" parent="ActionPanel/Actions"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 2
 
@@ -97,6 +371,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
 
 [node name="BottomActions" type="HBoxContainer" parent="ActionPanel/Actions"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
 [node name="BottomLeftAction" type="Button" parent="ActionPanel/Actions/BottomActions"]
@@ -106,6 +381,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
 
 [node name="BottomMiddleAction" type="Button" parent="ActionPanel/Actions/BottomActions"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_3d018")
 text = "Test"
@@ -116,80 +393,16 @@ size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
 
-[node name="PlayerFigmentBox" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -29.0
-offset_right = 79.0
-offset_bottom = 29.0
-grow_vertical = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="PlayerFigmentBox"]
-custom_minimum_size = Vector2(0, 6)
-layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
-theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
-value = 50.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="PlayerFigmentBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 8
-text = "Your Figment"
-horizontal_alignment = 1
-
-[node name="PlayerFigment" type="TextureRect" parent="PlayerFigmentBox"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_m1w6r")
-stretch_mode = 4
-
-[node name="EnemyFigmentBox" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -105.0
-offset_top = -31.5
-offset_bottom = 31.5
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="ProgressBar2" type="ProgressBar" parent="EnemyFigmentBox"]
-custom_minimum_size = Vector2(0, 6)
-layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
-theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
-value = 50.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="EnemyFigmentBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 8
-text = "Enemy Figment"
-horizontal_alignment = 1
-
-[node name="Enemy Figment" type="TextureRect" parent="EnemyFigmentBox"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("3_0tpb6")
-stretch_mode = 5
-
 [node name="TextBox" type="Label" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -186.0
-offset_top = -53.0
-offset_right = 191.0
+offset_left = -232.25
+offset_top = -80.0
+offset_right = 232.25
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_eevwc")
