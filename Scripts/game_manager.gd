@@ -53,7 +53,7 @@ func update_references() -> void:
 		screen_transitions[i].transition.connect(_on_transition)
 		
 	#connect enemies in this room
-	enemies = current_room.get_node("Enemies")
+	enemies = current_room.find_child("Enemies")
 	if enemies != null:
 		for i in 1:
 			var enemy = enemies.spawn_enemy((spawnlocation()))
