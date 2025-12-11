@@ -2,12 +2,16 @@ extends Node
 
 # Signals
 signal player_move_response(response: bool) ## A signal designed to tell the player whether it can move
+signal enemy_move_response(response: bool) ## A signal designed to tell the enemy whether it can move
+
+const TILE_SIZE: int = 32 			# width/height of a tile in pixels
 
 # Nodes
 var current_room: Node			# The current room the player is in
 var terrain: TileMapLayer		# The terrain in the current room
 var player: Player				# The player object
 var camera: PlayerCamera		# The camera that will follow the player
+var enemies: Enemies
 var screen_transitions: Array	# An array of all the screen transitions in the current room
 
 # Contants
@@ -47,13 +51,41 @@ func update_references() -> void:
 			assert(screen_transitions[i].id != screen_transitions[j].id, "Duplicate ID in screen transition triggers!")
 		
 		screen_transitions[i].transition.connect(_on_transition)
+		
+	#connect enemies in this room
+	enemies = current_room.find_child("Enemies")
+	if enemies != null:
+		for i in 1:
+			var enemy = enemies.spawn_enemy((spawnlocation()))
+			player.stopped_move.connect(Callable(enemy, "on_player_moved")) # connect enemy to player's signal  
+			enemy.tried_move.connect(_on_enemy_tried_move) # connect game_manager to enemy's signal
+			enemy_move_response.connect(Callable(enemy, "_on_move_response")) # connect enemy to game_manager's signal
+
+func spawnlocation() -> Vector2:
+	return Vector2.ZERO
+
+func doGarrett(enemy: Enemy):
+	return
 
 
 func _on_player_tried_move(tile: Vector2i) -> void:
 	var tile_data: TileData = terrain.get_cell_tile_data(tile)
+	if enemies != null:
+		for enemy in enemies.get_children():
+			if tile == Vector2i(enemy.global_position/TILE_SIZE):
+				doGarrett(enemy)
 	var valid_move: bool = (tile_data != null) && (tile_data.get_custom_data("walkable"))
-
 	player_move_response.emit(valid_move)
+
+func _on_enemy_tried_move(tile: Vector2i, enemy: Enemy) -> void:
+	if tile == Vector2i(player.global_position/TILE_SIZE):
+		doGarrett(enemy)
+	var tile_data: TileData = terrain.get_cell_tile_data(tile)
+	var valid_move: bool = (tile_data != null) && (tile_data.get_custom_data("walkable"))
+	if valid_move:
+		enemy_move_response.emit(tile)
+	else: enemy_move_response.emit(Vector2i(999,999))
+
 
 func _on_transition(transition: ScreenTransition, offset: Vector2):
 	camera.fade_transition()
@@ -75,4 +107,3 @@ func _on_transition(transition: ScreenTransition, offset: Vector2):
 	# Don't spawn the player off of the next rooms entrance
 	offset = offset.clamp(Vector2.ZERO, (entrance.scale - Vector2(1,1)) * 32)
 	player.position = entrance.position + offset
-	
