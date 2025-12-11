@@ -64,7 +64,7 @@ func spawnlocation() -> Vector2:
 	return Vector2.ZERO
 
 func doGarrett(enemy: Enemy):
-	return
+	print(enemy)
 
 
 func _on_player_tried_move(tile: Vector2i) -> void:
