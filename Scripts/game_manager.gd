@@ -7,6 +7,7 @@ signal enemy_move_response(response: bool) ## A signal designed to tell the enem
 const TILE_SIZE: int = 32 			# width/height of a tile in pixels
 
 # Nodes
+var main_menu: MainMenu			# The main menu that loads whe nteh game starts
 var current_room: Node			# The current room the player is in
 var last_room: Node				# The last room that the player was in before a battle
 var terrain: TileMapLayer		# The terrain in the current room
@@ -15,13 +16,26 @@ var camera: PlayerCamera		# The camera that will follow the player
 var enemies: Enemies
 var screen_transitions: Array	# An array of all the screen transitions in the current room
 
+# Exports(?)
+@export var start_room: PackedScene ## the room that should be loaded when the game starts
+
 # Contants
 const player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location of the player scene file
 const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the location of the camera scene file
 const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The location of the battle scene
 
 func _ready() -> void:
-	current_room = get_node("Rooms").get_child(0)
+	main_menu = get_node("MenuContainer").get_child(0)
+
+	main_menu.start_pressed.connect(_on_mainMenu_startPressed)
+
+func _on_mainMenu_startPressed():
+	main_menu.queue_free()
+	load_overworld()
+
+func load_overworld():
+	current_room = start_room.instantiate()
+	get_node("Rooms").add_child(current_room)
 	
 	var spawnpoint: Node2D = current_room.get_node("Player Spawn")
 	if spawnpoint != null:
