@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cunxj8n5l2npb"]
+
+[ext_resource type="Texture2D" uid="uid://cx47okqyfy0ay" path="res://Resources/Images/chrom.jpeg" id="1_c1pfh"]
+[ext_resource type="Script" uid="uid://2parr655y4j5" path="res://Interactions/interact_example.gd" id="1_efwtq"]
+[ext_resource type="PackedScene" uid="uid://mx67iweabvr8" path="res://Interactions/interactible.tscn" id="2_efwtq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efwtq"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjigw"]
+radius = 44.102154
+
+[node name="Interact_Example" type="StaticBody2D"]
+script = ExtResource("1_efwtq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c1pfh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_efwtq")
+
+[node name="Interactable" parent="." instance=ExtResource("2_efwtq")]
+interact_name = "Press E to Talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_tjigw")
