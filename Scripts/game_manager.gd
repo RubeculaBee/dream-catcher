@@ -32,7 +32,6 @@ func attach_camera():
 	camera = load(camera_path).instantiate(TYPE_OBJECT)
 	player.add_child(camera)
 
-
 func spawn_player(spawn_position: Vector2):
 	player = load(player_path).instantiate(TYPE_OBJECT)
 	player.position = spawn_position
