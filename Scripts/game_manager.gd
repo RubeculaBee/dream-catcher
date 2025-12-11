@@ -74,6 +74,8 @@ func doGarrett(enemy: Enemy):
 	await camera.screen_covered
 	get_node("Rooms").remove_child(lastRoom)
 
+	camera.position = Vector2.ZERO
+
 	var battleScene: Control = load(battle_path).instantiate(TYPE_OBJECT)
 	get_node("BattleContainer").add_child(battleScene)
 
