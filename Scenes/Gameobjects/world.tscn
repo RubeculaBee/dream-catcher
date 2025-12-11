@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://cdb7odxnrglun"]
+[gd_scene load_steps=7 format=4 uid="uid://cdb7odxnrglun"]
 
 [ext_resource type="Script" uid="uid://rexxi281wnvk" path="res://player.gd" id="1_cjsli"]
 [ext_resource type="Texture2D" uid="uid://dfecyinx7psmr" path="res://Resources/Images/Robin.jpg" id="2_kg00p"]
 [ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="3_0gj33"]
+[ext_resource type="PackedScene" uid="uid://dn32jhinttnwo" path="res://Interactions/interacting_component.tscn" id="4_kg00p"]
+[ext_resource type="PackedScene" uid="uid://bww62ryakkg8x" path="res://Interactions/npc_example.tscn" id="5_0gj33"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aqk2v"]
 animations = [{
@@ -34,3 +36,8 @@ animation = &"walk"
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+
+[node name="InteractingComponent" parent="Player" instance=ExtResource("4_kg00p")]
+
+[node name="NPC_Example" parent="." instance=ExtResource("5_0gj33")]
+position = Vector2(4, 153)

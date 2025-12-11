@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bww62ryakkg8x"]
+
+[ext_resource type="Script" uid="uid://hheushakki8f" path="res://Interactions/npc_example.gd" id="1_c17ow"]
+[ext_resource type="Texture2D" uid="uid://dfecyinx7psmr" path="res://Resources/Images/Robin.jpg" id="1_uv30y"]
+[ext_resource type="PackedScene" uid="uid://mx67iweabvr8" path="res://Interactions/interactible.tscn" id="2_c17ow"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uv30y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uv30y")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c17ow"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_khw1g"]
+radius = 21.023796
+
+[node name="NPC_Example" type="StaticBody2D"]
+script = ExtResource("1_c17ow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uv30y")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c17ow")
+
+[node name="Interactable" parent="." instance=ExtResource("2_c17ow")]
+interact_name = "Talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_khw1g")
