@@ -1,5 +1,5 @@
 extends Control
-@onready var optionsMenu = preload("res://Scenes/Options_Menu.tscn")
+@onready var optionsMenu = preload("res://Scenes/Menus/Options_Menu.tscn")
 func _ready():
 	$AnimationPlayer.play("RESET")
 	
@@ -27,12 +27,12 @@ func _on_resume_pressed():
 
 func _on_main_pressed():
 	resume()
-	get_tree().change_scene_to_file("res://Scenes/Rooms/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
 
 
 func _on_options_pressed():
 	resume()
-	get_tree().change_scene_to_file("res://Scenes/Options_Menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/Options_Menu.tscn")
 	
 func _on_hotel_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Rooms/Hotel_lobby.tscn")
