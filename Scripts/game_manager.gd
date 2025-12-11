@@ -17,6 +17,7 @@ var screen_transitions: Array	# An array of all the screen transitions in the cu
 # Contants
 const player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location of the player scene file
 const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the location of the camera scene file
+const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The location of the battle scene
 
 func _ready() -> void:
 	current_room = get_node("Rooms").get_child(0)
@@ -63,9 +64,17 @@ func update_references() -> void:
 func spawnlocation() -> Vector2:
 	return Vector2.ZERO
 
-# also known as: enteBattle(enemy: Enemu)
+# also known as: enterBattle(enemy: Enemy)
 func doGarrett(enemy: Enemy):
 	print(enemy)
+	var lastRoom: Node = get_node("Rooms").get_child(0)
+	
+	camera.swipe_transition()
+	await camera.screen_covered
+	get_node("Rooms").remove_child(lastRoom)
+
+	var battleScene: Control = load(battle_path).instantiate(TYPE_OBJECT)
+	get_node("BattleContainer").add_child(battleScene)
 
 
 func _on_player_tried_move(tile: Vector2i) -> void:
