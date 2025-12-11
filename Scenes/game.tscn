@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://hsrv5bcni84s"]
+
+[ext_resource type="Script" uid="uid://dfu7jqgvdmna" path="res://Scripts/game_manager.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://cgbjwy5nenq5j" path="res://Scenes/Rooms/corridor_center.tscn" id="2_wrm1d"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_qxrlw")
+
+[node name="Rooms" type="Node" parent="."]
+
+[node name="Test Corridor Center" parent="Rooms" instance=ExtResource("2_wrm1d")]
+
+[node name="BattleContainer" type="Node" parent="."]

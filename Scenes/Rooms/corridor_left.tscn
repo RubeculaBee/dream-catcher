@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=4 uid="uid://bxivox8sqnxa4"]
+
+[ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_3o8tu"]
+[ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_736nj"]
+
+[node name="Test Corridor Left" type="Node"]
+
+[node name="Terrain Tile Map" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD/////AQABAAEAAAD//wAAAQABAAEAAAAAAAAAAQABAAEAAAAAAP//AQABAAEAAAAAAP7/AQABAAAAAAD///7/AQABAAAAAAD+//7/AQABAAAAAAD+////AAADAAAAAAD+/wAAAAADAAEAAAD+/wEAAAADAAIAAAD//wEAAQABAAEAAAAAAAEAAQABAAEAAAABAAEAAQABAAEAAAABAAAAAQABAAEAAAABAP//AQABAAEAAAABAP7/AQACAAAAAAACAP//AQABAAAAAAACAAAAAQABAAEAAAADAAAAAQABAAEAAAADAP//AQABAAAAAAAEAP//AQACAAAAAAAEAAAAAQACAAEAAAAEAAEAAQACAAIAAAADAAEAAQABAAIAAAACAAEAAQABAAIAAAABAAIAAQACAAIAAAAAAAIAAQABAAIAAAD//wIAAQABAAIAAAD+/wIAAQABAAIAAAD9/wIAAQABAAIAAAD8/wIAAQAAAAIAAAD9/wEAAQABAAEAAAD9/wAAAQABAAEAAAD9////AQABAAEAAAD9//7/AQABAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAEAAAD8/wAAAQAAAAEAAAD8/wEAAQAAAAEAAAA=")
+tile_set = ExtResource("1_3o8tu")
+
+[node name="Screen Transitions" type="Node" parent="."]
+
+[node name="transition" parent="Screen Transitions" instance=ExtResource("2_736nj")]
+position = Vector2(128, -32)
+scale = Vector2(1, 2.9999995)
+next_screen_name = "corridor_center"
+id = 1
