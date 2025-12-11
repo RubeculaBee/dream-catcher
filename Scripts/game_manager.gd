@@ -8,6 +8,7 @@ const TILE_SIZE: int = 32 			# width/height of a tile in pixels
 
 # Nodes
 var current_room: Node			# The current room the player is in
+var last_room: Node				# The last room that the player was in before a battle
 var terrain: TileMapLayer		# The terrain in the current room
 var player: Player				# The player object
 var camera: PlayerCamera		# The camera that will follow the player
@@ -68,17 +69,25 @@ func spawnlocation() -> Vector2:
 # also known as: enterBattle(enemy: Enemy)
 func doGarrett(enemy: Enemy):
 	print(enemy)
-	var lastRoom: Node = get_node("Rooms").get_child(0)
+	last_room = get_node("Rooms").get_child(0)
 
 	camera.swipe_transition()
 	await camera.screen_covered
-	get_node("Rooms").remove_child(lastRoom)
+	get_node("Rooms").remove_child(last_room)
 
 	camera.position = Vector2.ZERO
 
-	var battleScene: Control = load(battle_path).instantiate(TYPE_OBJECT)
+	var battleScene: BattleScene = load(battle_path).instantiate(TYPE_OBJECT)
+	battleScene.fleeConfirmed.connect(_on_battleScene_flee_confirmed)
 	get_node("BattleContainer").add_child(battleScene)
 
+func _on_battleScene_flee_confirmed():
+	var container: Node = get_node("BattleContainer")
+
+	camera.swipe_transition()
+	await camera.screen_covered
+	container.remove_child(container.get_child(0))
+	get_node("Rooms").add_child(last_room)
 
 func _on_player_tried_move(tile: Vector2i) -> void:
 	var tile_data: TileData = terrain.get_cell_tile_data(tile)

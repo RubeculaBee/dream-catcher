@@ -1,4 +1,5 @@
 extends Control
+class_name BattleScene
 
 # Variables
 var menuSelector = 0 # determines which menu is displayed in the battle
@@ -12,6 +13,7 @@ enum {STARTING_FIGMENT,BASE_MENU,FIGHT_MENU,SWITCH_MENU,INVENTORY_MENU,FLEE_MENU
 
 # Signals
 #signal textBoxClosed
+signal fleeConfirmed ## emit when the player presses the flee button in the flee menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -85,6 +87,8 @@ func _on_bottom_left_move_pressed() -> void:
 	elif (menuSelector == STARTING_FIGMENT):
 			menuSelector = BASE_MENU #sets the menu to the battle menu after figments have been selected
 			menuSwitchFunction(menuSelector)
+	elif (menuSelector == FLEE_MENU):
+		fleeConfirmed.emit();
 		
 func _on_bottom_right_move_pressed() -> void:
 	displayTextBox($ActionPanel/Actions/BottomActions/BottomRightAction.text + " selected")  ## fill in with moves pulled from figment object
