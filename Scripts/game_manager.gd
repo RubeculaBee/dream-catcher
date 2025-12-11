@@ -31,7 +31,8 @@ func _ready() -> void:
 
 func attach_camera():
 	camera = load(camera_path).instantiate(TYPE_OBJECT)
-	player.add_child(camera)
+	add_child(camera)
+	player.find_child("RemoteTransform2D").remote_path = camera.get_path()
 
 func spawn_player(spawn_position: Vector2):
 	player = load(player_path).instantiate(TYPE_OBJECT)
@@ -68,7 +69,7 @@ func spawnlocation() -> Vector2:
 func doGarrett(enemy: Enemy):
 	print(enemy)
 	var lastRoom: Node = get_node("Rooms").get_child(0)
-	
+
 	camera.swipe_transition()
 	await camera.screen_covered
 	get_node("Rooms").remove_child(lastRoom)
