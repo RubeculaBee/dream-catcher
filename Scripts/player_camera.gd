@@ -15,6 +15,9 @@ func _ready() -> void:
 	screen_uncovered.connect(_on_screen_uncovered)
 
 func fade_transition() -> void:
+	screen_cover.position = Vector2(-screen_cover.size.x/2, -screen_cover.size.y/2)
+	screen_cover.color.a = 0
+
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
 	
