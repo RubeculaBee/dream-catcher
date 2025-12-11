@@ -63,6 +63,7 @@ func update_references() -> void:
 func spawnlocation() -> Vector2:
 	return Vector2.ZERO
 
+# also known as: enteBattle(enemy: Enemu)
 func doGarrett(enemy: Enemy):
 	print(enemy)
 
