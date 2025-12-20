@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://cfdaxjegudhsb"]
+[gd_scene load_steps=5 format=4 uid="uid://cfdaxjegudhsb"]
 
 [ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_dt1ff"]
 [ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_5ib6j"]
+[ext_resource type="PackedScene" uid="uid://b6cukpw23djf7" path="res://Scenes/Gameobjects/Enemies.tscn" id="3_axatc"]
+[ext_resource type="PackedScene" uid="uid://b2imhhsw41kai" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_vgf1u"]
 
 [node name="Test Corridor Up" type="Node"]
 
@@ -16,3 +18,7 @@ tile_set = ExtResource("1_dt1ff")
 position = Vector2(-32, 0)
 scale = Vector2(2, 1)
 next_screen_name = "corridor_center"
+
+[node name="Enemies" parent="." instance=ExtResource("3_axatc")]
+position = Vector2(-128, -224)
+enemy_scene = ExtResource("4_vgf1u")

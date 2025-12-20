@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://hsrv5bcni84s"]
+[gd_scene load_steps=4 format=3 uid="uid://hsrv5bcni84s"]
 
 [ext_resource type="Script" uid="uid://dfu7jqgvdmna" path="res://Scripts/game_manager.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://28vqp5eny63q" path="res://Scenes/Rooms/main_menu.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://cgbjwy5nenq5j" path="res://Scenes/Rooms/corridor_center.tscn" id="2_wrm1d"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_qxrlw")
+start_room = ExtResource("2_wrm1d")
+
+[node name="MenuContainer" type="Node" parent="."]
+
+[node name="MainMenu" parent="MenuContainer" instance=ExtResource("2_3dryh")]
 
 [node name="Rooms" type="Node" parent="."]
 
-[node name="Template" parent="Rooms" instance=ExtResource("2_wrm1d")]
+[node name="BattleContainer" type="Node" parent="."]

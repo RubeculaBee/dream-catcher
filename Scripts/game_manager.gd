@@ -7,19 +7,39 @@ signal enemy_move_response(response: bool) ## A signal designed to tell the enem
 const TILE_SIZE: int = 32 			# width/height of a tile in pixels
 
 # Nodes
+var main_menu: MainMenu			# The main menu that loads whe nteh game starts
 var current_room: Node			# The current room the player is in
+var last_room: Node				# The last room that the player was in before a battle
 var terrain: TileMapLayer		# The terrain in the current room
 var player: Player				# The player object
 var camera: PlayerCamera		# The camera that will follow the player
 var enemies: Enemies
 var screen_transitions: Array	# An array of all the screen transitions in the current room
 
-# Contants
+# Other
+@export var start_room: PackedScene ## the room that should be loaded when the game starts
+
+var state
+enum {BATTLE, OVERWORLD}
+
+# Constants
 const player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location of the player scene file
 const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the location of the camera scene file
+const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The location of the battle scene
 
 func _ready() -> void:
-	current_room = get_node("Rooms").get_child(0)
+	main_menu = get_node("MenuContainer").get_child(0)
+
+	main_menu.start_pressed.connect(_on_mainMenu_startPressed)
+
+func _on_mainMenu_startPressed():
+	main_menu.queue_free()
+	load_overworld()
+
+func load_overworld():
+	state = OVERWORLD
+	current_room = start_room.instantiate()
+	get_node("Rooms").add_child(current_room)
 	
 	var spawnpoint: Node2D = current_room.get_node("Player Spawn")
 	if spawnpoint != null:
@@ -30,7 +50,8 @@ func _ready() -> void:
 
 func attach_camera():
 	camera = load(camera_path).instantiate(TYPE_OBJECT)
-	player.add_child(camera)
+	add_child(camera)
+	player.find_child("RemoteTransform2D").remote_path = camera.get_path()
 
 func spawn_player(spawn_position: Vector2):
 	player = load(player_path).instantiate(TYPE_OBJECT)
@@ -63,9 +84,33 @@ func update_references() -> void:
 func spawnlocation() -> Vector2:
 	return Vector2.ZERO
 
+# also known as: enterBattle(enemy: Enemy)
 func doGarrett(enemy: Enemy):
-	return
+	if state != OVERWORLD:
+		return
+	
+	state = BATTLE
+	print(enemy)
+	last_room = get_node("Rooms").get_child(0)
 
+	camera.swipe_transition()
+	await camera.screen_covered
+	get_node("Rooms").remove_child(last_room)
+
+	camera.position = Vector2.ZERO
+
+	var battleScene: BattleScene = load(battle_path).instantiate(TYPE_OBJECT)
+	battleScene.fleeConfirmed.connect(_on_battleScene_flee_confirmed)
+	get_node("BattleContainer").add_child(battleScene)
+
+func _on_battleScene_flee_confirmed():
+	state = OVERWORLD
+	var container: Node = get_node("BattleContainer")
+
+	camera.swipe_transition()
+	await camera.screen_covered
+	container.remove_child(container.get_child(0))
+	get_node("Rooms").add_child(last_room)
 
 func _on_player_tried_move(tile: Vector2i) -> void:
 	var tile_data: TileData = terrain.get_cell_tile_data(tile)
