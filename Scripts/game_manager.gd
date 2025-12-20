@@ -16,10 +16,13 @@ var camera: PlayerCamera		# The camera that will follow the player
 var enemies: Enemies
 var screen_transitions: Array	# An array of all the screen transitions in the current room
 
-# Exports(?)
+# Other
 @export var start_room: PackedScene ## the room that should be loaded when the game starts
 
-# Contants
+var state
+enum {BATTLE, OVERWORLD}
+
+# Constants
 const player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location of the player scene file
 const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the location of the camera scene file
 const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The location of the battle scene
@@ -34,6 +37,7 @@ func _on_mainMenu_startPressed():
 	load_overworld()
 
 func load_overworld():
+	state = OVERWORLD
 	current_room = start_room.instantiate()
 	get_node("Rooms").add_child(current_room)
 	
@@ -82,6 +86,10 @@ func spawnlocation() -> Vector2:
 
 # also known as: enterBattle(enemy: Enemy)
 func doGarrett(enemy: Enemy):
+	if state != OVERWORLD:
+		return
+	
+	state = BATTLE
 	print(enemy)
 	last_room = get_node("Rooms").get_child(0)
 
@@ -96,6 +104,7 @@ func doGarrett(enemy: Enemy):
 	get_node("BattleContainer").add_child(battleScene)
 
 func _on_battleScene_flee_confirmed():
+	state = OVERWORLD
 	var container: Node = get_node("BattleContainer")
 
 	camera.swipe_transition()
