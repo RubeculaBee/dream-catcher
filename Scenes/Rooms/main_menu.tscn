@@ -1,12 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://28vqp5eny63q"]
+[gd_scene format=3 uid="uid://28vqp5eny63q"]
 
 [ext_resource type="Script" uid="uid://4o6pcx7rb6js" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
-[ext_resource type="Texture2D" uid="uid://dkii4ifgevwcy" path="res://Resources/Images/Screenshot 2025-11-13 121808.png" id="1_28flt"]
-[ext_resource type="FontFile" uid="uid://3ino77dm4we3" path="res://Resources/Fonts/Creepster-Regular.ttf" id="2_48xlc"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_48xlc"]
-texture = ExtResource("1_28flt")
-modulate_color = Color(0.32899237, 0.4472676, 0.47405463, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
 bg_color = Color(0.58400303, 0.55947256, 0.8451648, 1)
@@ -37,7 +31,7 @@ shadow_offset = Vector2(0, 2)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=840243793]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,16 +42,15 @@ size_flags_horizontal = 4
 script = ExtResource("1_1ehe0")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=21330653]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_48xlc")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=218145344]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.28
@@ -70,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 24
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=436883764]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -87,7 +80,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
 text = "Start Game
 "
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1035577283]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -105,7 +98,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
 text = "Options
 "
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1451062207]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -121,21 +114,20 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
 text = "Exit"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=453367091]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -227.5
-offset_top = 74.0
-offset_right = 227.5
-offset_bottom = 169.0
+offset_left = -307.0
+offset_top = 73.0
+offset_right = 350.0
+offset_bottom = 191.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.906957, 0.49159575, 0.34475562, 1)
+theme_override_colors/font_color = Color(0.7989496, 0.47872555, 0.8466857, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("2_48xlc")
 theme_override_font_sizes/font_size = 80
 text = "DREAM CATCHER"
 horizontal_alignment = 3
