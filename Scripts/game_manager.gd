@@ -7,7 +7,7 @@ signal enemy_move_response(response: bool) ## A signal designed to tell the enem
 const TILE_SIZE: int = 32 			# width/height of a tile in pixels
 
 # Nodes
-var main_menu: MainMenu			# The main menu that loads whe nteh game starts
+var main_menu: MainMenu			# The main menu that loads when the game starts
 var current_room: Node			# The current room the player is in
 var last_room: Node				# The last room that the player was in before a battle
 var terrain: TileMapLayer		# The terrain in the current room

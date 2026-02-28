@@ -81,7 +81,7 @@ func _on_top_right_move_pressed() -> void:
 func _on_bottom_left_move_pressed() -> void:
 	displayTextBox($ActionPanel/Actions/BottomActions/BottomLeftAction.text + " selected")  ## fill in with moves pulled from figment object
 	if (menuSelector == BASE_MENU):
-		menuSelector = INVENTORY_MENU # sets the active menu to the 
+		menuSelector = INVENTORY_MENU # sets the active menu to the inventory menu
 		menuSwitchFunction(menuSelector)
 		$ActionPanel/Actions/BottomActions/BottomMiddleAction.show()
 	elif (menuSelector == STARTING_FIGMENT):
@@ -99,7 +99,7 @@ func _on_bottom_right_move_pressed() -> void:
 	elif (menuSelector == STARTING_FIGMENT):
 			menuSelector = BASE_MENU #sets the menu to the battle menu after figments have been selected
 			menuSwitchFunction(menuSelector)
-	elif (menuSelector == FLEE_MENU): #This brings back up the base menu if they are not elif's code does not work properly
+	elif (menuSelector == FLEE_MENU): #This brings back up the base menu. if they are not elif's code does not work properly
 		menuSelector = BASE_MENU
 		$ActionPanel/Actions/BottomActions/BottomMiddleAction.hide() 
 		$ActionPanel/Actions/TopActions.show()
