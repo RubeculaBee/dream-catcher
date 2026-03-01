@@ -9,6 +9,8 @@ var type1: Type
 var type2: Type
 var stats: Dictionary
 
+var hp: int
+
 func _init(blueprint: String) -> void:
 	var bp = blueprints[blueprint]
 
@@ -34,7 +36,11 @@ static var blueprints: Dictionary = {
 			"lucidity": Stat.new(2, 4, 2, 4),
 			"acuity": Stat.new(10, 20, 2, 4),
 			"creativity": Stat.new(10, 20, 4, 8)
-		}
+		},
+		[
+			Move.SkyAttack.new(),
+			Move.Heal.new()
+		]
 	),
 	"seaTest": Blueprint.new(
 		"TYPE_SEA",
@@ -47,7 +53,10 @@ static var blueprints: Dictionary = {
 			"lucidity": Stat.new(10, 20, 4, 8),
 			"acuity": Stat.new(2, 4, 2, 4),
 			"creativity": Stat.new(5, 10, 2, 4)
-		}
+		},
+		[
+			Move.SeaAttack.new()
+		]
 	),
 	"landTest": Blueprint.new(
 		"TYPE_LAND",
@@ -60,6 +69,9 @@ static var blueprints: Dictionary = {
 			"lucidity": Stat.new(5, 10, 2, 4),
 			"acuity": Stat.new(5, 10, 2, 4),
 			"creativity": Stat.new(5, 10, 2, 4)
-		}
+		},
+		[
+			Move.LandAttack.new()
+		]
 	),
 }
