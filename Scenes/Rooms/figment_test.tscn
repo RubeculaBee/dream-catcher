@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://bjm4i2715m7r1"]
 
+[ext_resource type="Script" uid="uid://d0ldxbtoqd2x1" path="res://Scripts/Figments/figmentTester.gd" id="1_l88po"]
+
 [node name="FigmentTest" type="Node" unique_id=77965084]
+script = ExtResource("1_l88po")
