@@ -1,4 +1,3 @@
-extends Node
 class_name Figment
 
 enum Type {NONE, LAND, SEA, SKY, MIND, BODY, LIGHT, DARK, SYNTH, FEAR}

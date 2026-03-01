@@ -1,4 +1,3 @@
-extends Node
 class_name Blueprint
 
 var speciesName: String
