@@ -1,58 +1,39 @@
-@abstract
 class_name Move
 
 var title: String
 var accuracy: float
 var type: Figment.Type
+var doEffect: Callable
 
-@abstract
-func doEffect(user: Figment, target: Figment)
+func _init(ti: String, ac: float, ty: Figment.Type, ef: Callable):
+	title = ti
+	accuracy = ac
+	type = ty
+	doEffect = ef
 
-class LandAttack:
-	extends Move
-
-	func _init() -> void:
-		title = "Land Attack"
-		accuracy = 1
-		type = Figment.Type.LAND
-
-	func doEffect(_user: Figment, target: Figment):
-		print("land attack!")
-		target.hp -= 20
-
-class SeaAttack:
-	extends Move
-
-	func _init() -> void:
-		title = "Sea Attack"
-		accuracy = 1
-		type = Figment.Type.SEA
-
-	func doEffect(_user: Figment, target: Figment):
-		print("sea attack!")
-		target.hp -= 25
-
-class SkyAttack:
-	extends Move
-
-	func _init() -> void:
-		title = "Sky Attack"
-		accuracy = 1
-		type = Figment.Type.SKY
-
-	func doEffect(_user: Figment, target: Figment):
-		print("sky attack!")
-		target.hp -= 10
-
-class Heal:
-	extends Move
-
-	func _init() -> void:
-		title = "Heal"
-		accuracy = 1
-		type = Figment.Type.LIGHT
-
-	func doEffect(user: Figment, _target: Figment):
-		print("so soothing")
-		user.hp += 15
-
+static var moveList: Dictionary[String, Move] = {
+	"landAttack": Move.new(
+		"Land Attack",
+		0.8,
+		Figment.Type.LAND,
+		func(_user: Figment, target: Figment): print("Land Attack!"); target.hp -= 25
+	),
+	"seaAttack": Move.new(
+		"Sea Attack",
+		0.95,
+		Figment.Type.SEA,
+		func(_user: Figment, target: Figment): print("Sea Attack!"); target.hp -= 15
+	),
+	"skyAttack": Move.new(
+		"Sky Attack",
+		1,
+		Figment.Type.SKY,
+		func(_user: Figment, target: Figment): print("Sky Attack!"); target.hp -= 10
+	),
+	"heal": Move.new(
+		"Heal",
+		1,
+		Figment.Type.LIGHT,
+		func(user: Figment, _target: Figment): print("so soothing..."); user.hp += 10
+	)
+}

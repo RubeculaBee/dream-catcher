@@ -1,4 +1,6 @@
 extends Node
 
+var figment: Figment
+
 func _ready():
-	Move.LandAttack.new().doEffect(null, null)
+	$land_button.pressed.connect()

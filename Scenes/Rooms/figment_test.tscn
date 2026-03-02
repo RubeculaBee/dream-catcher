@@ -4,3 +4,35 @@
 
 [node name="FigmentTest" type="Node" unique_id=77965084]
 script = ExtResource("1_l88po")
+
+[node name="Label" type="Label" parent="." unique_id=1330327018]
+offset_left = 192.0
+offset_top = 32.0
+offset_right = 568.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 36
+text = "Generate a figment!!!!"
+
+[node name="land_button" type="Button" parent="." unique_id=1527296811]
+offset_left = 32.0
+offset_top = 160.0
+offset_right = 96.0
+offset_bottom = 192.0
+text = "Land"
+
+[node name="sea_button" type="Button" parent="." unique_id=70760151]
+offset_left = 32.0
+offset_top = 192.0
+offset_right = 96.0
+offset_bottom = 224.0
+text = "Sea"
+
+[node name="sky_button" type="Button" parent="." unique_id=567756807]
+offset_left = 32.0
+offset_top = 224.0
+offset_right = 96.0
+offset_bottom = 256.0
+text = "Sky"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1575745974]
+position = Vector2(320, 160)
