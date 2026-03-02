@@ -8,6 +8,7 @@ var sprite: Texture2D
 var type1: Type
 var type2: Type
 var stats: Dictionary
+var moves: Array[Move]
 
 var hp: int
 
@@ -19,6 +20,7 @@ func _init(blueprint: String) -> void:
 	type1 = bp.type1
 	type2 = bp.type2
 	stats = bp.stats
+	moves = bp.moves
 
 	for stat in bp.stats.values():
 		stat.value = rng.randi_range(stat.minInit, stat.maxInit)
