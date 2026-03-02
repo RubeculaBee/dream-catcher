@@ -23,6 +23,8 @@ func _init(blueprint: String) -> void:
 	for stat in bp.stats.values():
 		stat.value = rng.randi_range(stat.minInit, stat.maxInit)
 		stat.growth = rng.randi_range(stat.minGrowth, stat.maxGrowth)
+	
+	hp = stats.coherence.value * 10
 
 static var blueprints: Dictionary = {
 	"skyTest": Blueprint.new(
@@ -38,8 +40,8 @@ static var blueprints: Dictionary = {
 			"creativity": Stat.new(10, 20, 4, 8)
 		},
 		[
-			Move.SkyAttack.new(),
-			Move.Heal.new()
+			Move.moveList.skyAttack,
+			Move.moveList.heal
 		]
 	),
 	"seaTest": Blueprint.new(
@@ -55,7 +57,7 @@ static var blueprints: Dictionary = {
 			"creativity": Stat.new(5, 10, 2, 4)
 		},
 		[
-			Move.SeaAttack.new()
+			Move.moveList.seaAttack
 		]
 	),
 	"landTest": Blueprint.new(
@@ -71,7 +73,7 @@ static var blueprints: Dictionary = {
 			"creativity": Stat.new(5, 10, 2, 4)
 		},
 		[
-			Move.LandAttack.new()
+			Move.moveList.landAttack
 		]
 	),
 }
