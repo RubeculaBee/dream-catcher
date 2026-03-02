@@ -28,7 +28,7 @@ func _init(blueprint: String) -> void:
 	
 	hp = stats.coherence.value * 10
 
-static var blueprints: Dictionary = {
+static var blueprints: Dictionary[String, Blueprint] = {
 	"skyTest": Blueprint.new(
 		"TYPE_SKY",
 		load("res://Resources/Images/Figment Sprites/TYPESKY.png"),
@@ -79,3 +79,22 @@ static var blueprints: Dictionary = {
 		]
 	),
 }
+
+class Blueprint:
+	var speciesName: String
+	var sprite: Texture2D
+
+	var type1: Type
+	var type2: Type
+
+	var stats: Dictionary[String, Stat]
+
+	var moves: Array[Move]
+
+	func _init(n: String, spr: Texture2D, t1: Type, t2: Type, st: Dictionary[String, Stat], mo: Array[Move]) -> void:
+		speciesName = n
+		sprite = spr
+		type1 = t1
+		type2 = t2
+		stats = st
+		moves = mo
