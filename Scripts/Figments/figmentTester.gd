@@ -7,9 +7,13 @@ func _ready():
 	$land_button.pressed.connect(_on_landButton_pressed)
 	$sea_button.pressed.connect(_on_seaButton_pressed)
 	$sky_button.pressed.connect(_on_skyButton_pressed)
+	$land_button2.pressed.connect(_on_landButton2_pressed)
+	$sea_button2.pressed.connect(_on_seaButton2_pressed)
+	$sky_button2.pressed.connect(_on_skyButton2_pressed)
 
+	figment = Figment.new("seaTest")
 	dummy = Figment.new("landTest")
-	dummy.hp = 1000
+	updateFigment()
 
 func _on_landButton_pressed():
 	print("creating land figment...")
@@ -24,6 +28,21 @@ func _on_seaButton_pressed():
 func _on_skyButton_pressed():
 	print("creating sky figment...")
 	figment = Figment.new("skyTest")
+	updateFigment()
+
+func _on_landButton2_pressed():
+	print("creating land figment...")
+	dummy = Figment.new("landTest")
+	updateFigment()
+
+func _on_seaButton2_pressed():
+	print("creating sea figment...")
+	dummy = Figment.new("seaTest")
+	updateFigment()
+
+func _on_skyButton2_pressed():
+	print("creating sky figment...")
+	dummy = Figment.new("skyTest")
 	updateFigment()
 
 func updateFigment():
@@ -55,7 +74,22 @@ func updateFigment():
 		else:
 			button.text = ""
 
-	$"Training Dummy/HP".text = "HP: %s" % dummy.hp
+	$"Training Dummy".texture = dummy.sprite
+	$"Training Dummy/Name".text = figment.speciesName
+	$"Training Dummy/Stats".text = "HP: %s
+	
+	Will: %s
+	Coherence: %s
+	Lucidity: %s
+	Acuity: %s
+	Creativity: %s" % [
+		dummy.hp,
+		dummy.stats.will.value,
+		dummy.stats.coherence.value,
+		dummy.stats.lucidity.value,
+		dummy.stats.acuity.value,
+		dummy.stats.creativity.value,
+	]
 
 func move(i: int):
 	if i < figment.moves.size():

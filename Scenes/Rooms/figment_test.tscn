@@ -35,6 +35,27 @@ offset_right = 128.0
 offset_bottom = 160.0
 text = "Sky"
 
+[node name="land_button2" type="Button" parent="." unique_id=1500816729]
+offset_left = 640.0
+offset_top = 57.0
+offset_right = 704.0
+offset_bottom = 89.0
+text = "Land"
+
+[node name="sea_button2" type="Button" parent="." unique_id=956299199]
+offset_left = 640.0
+offset_top = 89.0
+offset_right = 704.0
+offset_bottom = 121.0
+text = "Sea"
+
+[node name="sky_button2" type="Button" parent="." unique_id=1231376720]
+offset_left = 640.0
+offset_top = 121.0
+offset_right = 704.0
+offset_bottom = 153.0
+text = "Sky"
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1575745974]
 position = Vector2(128, 320)
 texture = ExtResource("2_04ak0")
@@ -94,14 +115,14 @@ offset_bottom = 160.0
 position = Vector2(608, 288)
 texture = ExtResource("2_04ak0")
 
-[node name="Label" type="Label" parent="Training Dummy" unique_id=1197377537]
+[node name="Name" type="Label" parent="Training Dummy" unique_id=1197377537]
 offset_left = -64.0
 offset_top = -96.0
 offset_right = 65.0
 offset_bottom = -73.0
 text = "Training Dummy"
 
-[node name="HP" type="Label" parent="Training Dummy" unique_id=1510532252]
+[node name="Stats" type="Label" parent="Training Dummy" unique_id=1510532252]
 offset_left = -32.0
 offset_top = 64.0
 offset_right = 8.0
