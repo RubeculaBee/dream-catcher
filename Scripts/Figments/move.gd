@@ -16,19 +16,19 @@ static var moveList: Dictionary[String, Move] = {
 		"Land Attack",
 		0.8,
 		Figment.Type.LAND,
-		func(user: Figment, target: Figment): print("Land Attack!"); target.hp -= (2.5 * user.stats.will.value)
+		func(user: Figment, target: Figment): print("Land Attack!"); target.takeDamage(user.stats.will.value, Figment.Type.LAND)
 	),
 	"seaAttack": Move.new(
 		"Sea Attack",
 		0.95,
 		Figment.Type.SEA,
-		func(user: Figment, target: Figment): print("Sea Attack!"); target.hp -= (1.5 * user.stats.will.value)
+		func(user: Figment, target: Figment): print("Sea Attack!"); target.takeDamage(user.stats.will.value, Figment.Type.SEA)
 	),
 	"skyAttack": Move.new(
 		"Sky Attack",
 		1,
 		Figment.Type.SKY,
-		func(user: Figment, target: Figment): print("Sky Attack!"); target.hp -= (1 * user.stats.will.value)
+		func(user: Figment, target: Figment): print("Sky Attack!"); target.takeDamage(user.stats.will.value, Figment.Type.SKY)
 	),
 	"heal": Move.new(
 		"Heal",
