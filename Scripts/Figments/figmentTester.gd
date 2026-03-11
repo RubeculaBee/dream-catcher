@@ -16,32 +16,26 @@ func _ready():
 	updateFigment()
 
 func _on_landButton_pressed():
-	print("creating land figment...")
 	figment = Figment.new("landTest")
 	updateFigment()
 
 func _on_seaButton_pressed():
-	print("creating sea figment...")
 	figment = Figment.new("seaTest")
 	updateFigment()
 
 func _on_skyButton_pressed():
-	print("creating sky figment...")
 	figment = Figment.new("skyTest")
 	updateFigment()
 
 func _on_landButton2_pressed():
-	print("creating land figment...")
 	dummy = Figment.new("landTest")
 	updateFigment()
 
 func _on_seaButton2_pressed():
-	print("creating sea figment...")
 	dummy = Figment.new("seaTest")
 	updateFigment()
 
 func _on_skyButton2_pressed():
-	print("creating sky figment...")
 	dummy = Figment.new("skyTest")
 	updateFigment()
 

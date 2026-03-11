@@ -2,7 +2,7 @@ class_name Stat
 
 var rng = RandomNumberGenerator.new()
 
-var value: int
+var value: float
 var minInit: int
 var maxInit: int
 

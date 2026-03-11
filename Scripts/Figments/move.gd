@@ -29,7 +29,7 @@ func bd(user: Figment, target: Figment):
 		return
 
 	const SCALAR = 0.5
-	var damage = self.power
+	var damage: float = self.power
 	var crit = rng.randf() < 0.04+(0.002*user.stats.creativity.value)
 
 	damage *= (user.stats.will.value/target.stats.lucidity.value)
@@ -42,8 +42,9 @@ func bd(user: Figment, target: Figment):
 		damage *= 1.5
 	damage *= SCALAR
 
+	damage = max(roundi(damage), 1)
 	print("%s did %s damage to %s!" % [user.speciesName, roundi(damage), target.speciesName])
-	target.hp -= roundi(damage)
+	target.hp -= damage as int
 
 
 static var typeChart: = [

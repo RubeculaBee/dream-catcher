@@ -13,6 +13,7 @@ var hp: int
 
 func _init(blueprint: String) -> void:
 	var bp = blueprints[blueprint]
+	print("creating a %s" % blueprint)
 
 	speciesName = bp.speciesName
 	sprite = bp.sprite
