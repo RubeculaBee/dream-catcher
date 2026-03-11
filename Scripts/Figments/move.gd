@@ -18,7 +18,7 @@ func _init(ti: String, ac: float, po: int, ty: Figment.Type, ef: Callable):
 	else: doEffect = ef
 
 static func basicDamage():
-	# this is a placeholder that seems unnecessary i promise it is ok i can explain
+	# this is a placeholder that seems unnecessary but i promise it is ok i can explain-
 	pass
 
 func bd(user: Figment, target: Figment):
@@ -28,7 +28,7 @@ func bd(user: Figment, target: Figment):
 		print("Missed!")
 		return
 
-	const SCALAR = 0.5
+	const SCALAR = 1
 	var damage: float = self.power
 	var crit = rng.randf() < 0.04+(0.002*user.stats.creativity.value)
 

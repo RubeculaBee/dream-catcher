@@ -12,15 +12,16 @@ var moves: Array[Move]
 var hp: int
 
 func _init(blueprint: String) -> void:
-	var bp = blueprints[blueprint]
+	var bp: Blueprint = blueprints[blueprint]
 	print("creating a %s" % blueprint)
 
 	speciesName = bp.speciesName
 	sprite = bp.sprite
 	type1 = bp.type1
 	type2 = bp.type2
-	stats = bp.stats
 	moves = bp.moves
+	for stat: String in bp.stats.keys():
+		self.stats[stat] = bp.stats[stat].copy()
 
 	for stat in bp.stats.values():
 		stat.value = rng.randi_range(stat.minInit, stat.maxInit)

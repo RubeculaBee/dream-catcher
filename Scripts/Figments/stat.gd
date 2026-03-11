@@ -17,3 +17,9 @@ func _init(minI: int, maxI: int, minG: int, maxG: int) -> void:
 	maxInit = maxI
 	minGrowth = minG
 	maxGrowth = maxG
+
+func copy() -> Stat: 
+	var stat = Stat.new(self.minInit, self.maxInit, self.minGrowth, self.maxGrowth)
+	stat.value = self.value
+	stat.growth = self.growth
+	return stat 
