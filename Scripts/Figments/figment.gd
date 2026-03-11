@@ -36,11 +36,11 @@ static var blueprints: Dictionary[String, Blueprint] = {
 		Type.SKY,
 		Type.NONE,
 		{
-			"will": Stat.new(2, 4, 2, 8),
+			"will": Stat.new(5, 10, 2, 4),
 			"coherence": Stat.new(5, 10, 2, 4),
-			"lucidity": Stat.new(2, 4, 2, 4),
-			"acuity": Stat.new(10, 20, 2, 4),
-			"creativity": Stat.new(10, 20, 4, 8)
+			"lucidity": Stat.new(5, 10, 2, 4),
+			"acuity": Stat.new(5, 10, 2, 4),
+			"creativity": Stat.new(5, 10, 2, 4)
 		},
 		[
 			Move.moveList.skyAttack,
@@ -53,10 +53,10 @@ static var blueprints: Dictionary[String, Blueprint] = {
 		Type.SEA,
 		Type.NONE,
 		{
-			"will": Stat.new(20, 25, 4, 8),
-			"coherence": Stat.new(10, 20, 2, 4),
-			"lucidity": Stat.new(10, 20, 4, 8),
-			"acuity": Stat.new(2, 4, 2, 4),
+			"will": Stat.new(5, 10, 2, 4),
+			"coherence": Stat.new(5, 10, 2, 4),
+			"lucidity": Stat.new(5, 10, 2, 4),
+			"acuity": Stat.new(5, 10, 2, 4),
 			"creativity": Stat.new(5, 10, 2, 4)
 		},
 		[

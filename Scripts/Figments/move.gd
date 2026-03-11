@@ -33,7 +33,10 @@ func bd(user: Figment, target: Figment):
 	var crit = rng.randf() < 0.04+(0.002*user.stats.creativity.value)
 
 	damage *= (user.stats.will.value/target.stats.lucidity.value)
-	damage *= typeChart[self.type][target.type1] * typeChart[self.type][target.type2]
+	var typeAdv = typeChart[self.type][target.type1] * typeChart[self.type][target.type2]
+	if typeAdv > 1: print("Super Effective!")
+	if typeAdv < 1: print("Not Very Effective!")
+	damage *= typeAdv
 	if crit:
 		print("Critical Hit!")
 		damage *= 1.5
@@ -59,21 +62,21 @@ static var typeChart: = [
 static var moveList: Dictionary[String, Move] = {
 	"landAttack": Move.new(
 		"Land Attack",
-		0.8,
+		0.65,
 		15,
 		Figment.Type.LAND,
 		basicDamage
 	),
 	"seaAttack": Move.new(
 		"Sea Attack",
-		0.95,
+		0.70,
 		10,
 		Figment.Type.SEA,
 		basicDamage
 	),
 	"skyAttack": Move.new(
 		"Sky Attack",
-		1,
+		0.75,
 		5,
 		Figment.Type.SKY,
 		basicDamage
