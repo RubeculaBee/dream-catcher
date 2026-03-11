@@ -27,22 +27,7 @@ func _init(blueprint: String) -> void:
 	
 	hp = stats.coherence.value * 10
 
-func takeDamage(power: int, attackingType: Type):
-	self.hp -= power * typeChart[attackingType][self.type1] * typeChart[attackingType][self.type2]
-
 enum Type {NONE, LAND, SEA, SKY, MIND, BODY, LIGHT, DARK, SYNTH, FEAR}
-static var typeChart: = [
-	[  1,   1,   1,   1,   1,   1,   1,   1,   1, 0.75],
-	[  1,   1,   2, 0.5,   1,   1,   2,   1, 0.5, 0.75],
-	[  1, 0.5,   1,   2,   2,   1,   1, 0.5,   1, 0.75],
-	[  1,   2, 0.5,   1,   1, 0.5,   1,   1,   1, 0.75],
-	[  1,   1,   1,   2,   2, 0.5,   2, 0.5,   2, 0.75],
-	[  1,   2, 0.5, 0.5, 0.5,   1, 0.5,   1,   1, 0.75],
-	[  1, 0.5,   1,   2,   2,   1, 0.5,   2,   2, 0.75],
-	[  1, 0.5,   1, 0.5,   2, 0.5,   2,   2,   1, 0.75],
-	[  1,   2,   1,   1, 0.5,   2,   1,   1, 0.5, 0.75],
-	[  1, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1]
-]
 
 static var blueprints: Dictionary[String, Blueprint] = {
 	"skyTest": Blueprint.new(
