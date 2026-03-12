@@ -23,7 +23,7 @@ func _init(blueprint: String) -> void:
 	for stat: String in bp.stats.keys():
 		self.stats[stat] = bp.stats[stat].copy()
 
-	for stat in self.stats.values():
+	for stat: Stat in self.stats.values():
 		stat.value = rng.randi_range(stat.minInit, stat.maxInit)
 		stat.growth = rng.randi_range(stat.minGrowth, stat.maxGrowth)
 	
