@@ -14,6 +14,7 @@ func _ready():
 	figment = Figment.new("seaTest")
 	dummy = Figment.new("landTest")
 	updateFigment()
+	updateDummy()
 
 func _on_landButton_pressed():
 	figment = Figment.new("landTest")
@@ -29,15 +30,15 @@ func _on_skyButton_pressed():
 
 func _on_landButton2_pressed():
 	dummy = Figment.new("landTest")
-	updateFigment()
+	updateDummy()
 
 func _on_seaButton2_pressed():
 	dummy = Figment.new("seaTest")
-	updateFigment()
+	updateDummy()
 
 func _on_skyButton2_pressed():
 	dummy = Figment.new("skyTest")
-	updateFigment()
+	updateDummy()
 
 func updateFigment():
 	$Sprite2D.texture = figment.sprite
@@ -68,6 +69,7 @@ func updateFigment():
 		else:
 			button.text = ""
 
+func updateDummy():
 	$"Training Dummy".texture = dummy.sprite
 	$"Training Dummy/Name".text = figment.speciesName
 	$"Training Dummy/Stats".text = "HP: %s
@@ -89,3 +91,4 @@ func move(i: int):
 	if i < figment.moves.size():
 		figment.moves[i].doEffect.call(figment, dummy)
 		updateFigment()
+		updateDummy()
