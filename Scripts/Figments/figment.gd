@@ -62,7 +62,8 @@ static var blueprints: Dictionary[String, Blueprint] = {
 			"creativity": Stat.new(5, 10, 2, 4)
 		},
 		[
-			Move.moveList.seaAttack
+			Move.moveList.seaAttack,
+			Move.moveList.dragonRage
 		]
 	),
 	"landTest": Blueprint.new(

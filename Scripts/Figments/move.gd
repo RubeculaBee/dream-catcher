@@ -28,7 +28,6 @@ func bd(user: Figment, target: Figment):
 		print("Missed!")
 		return
 
-	const SCALAR = 1
 	var damage: float = self.power
 	var crit = rng.randf() < 0.04+(0.002*user.stats.creativity.value)
 
@@ -40,7 +39,8 @@ func bd(user: Figment, target: Figment):
 	if crit:
 		print("Critical Hit!")
 		damage *= 1.5
-	damage *= SCALAR
+	damage *= (0.8 + randf()*0.4)
+
 
 	damage = max(roundi(damage), 1)
 	print("%s did %s damage to %s!" % [user.speciesName, roundi(damage), target.speciesName])
@@ -88,5 +88,12 @@ static var moveList: Dictionary[String, Move] = {
 		0,
 		Figment.Type.LIGHT,
 		func(user: Figment, _target: Figment): print("so soothing..."); user.hp += 10
+	),
+	"dragonRage": Move.new(
+		"Dragon Rage",
+		0.6,
+		40,
+		Figment.Type.DARK,
+		func(_user: Figment, target: Figment): if randf() < 0.6: target.hp -= 40
 	)
 }

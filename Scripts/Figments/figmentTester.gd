@@ -71,7 +71,7 @@ func updateFigment():
 
 func updateDummy():
 	$"Training Dummy".texture = dummy.sprite
-	$"Training Dummy/Name".text = figment.speciesName
+	$"Training Dummy/Name".text = dummy.speciesName
 	$"Training Dummy/Stats".text = "HP: %s
 	
 	Will: %s
