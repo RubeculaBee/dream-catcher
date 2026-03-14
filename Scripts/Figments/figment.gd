@@ -12,7 +12,7 @@ var moves: Array[Move]
 var hp: int
 var level: int
 
-func _init(blueprint: String) -> void:
+func _init(blueprint: String, startLvl: int) -> void:
 	var bp: Blueprint = blueprints[blueprint]
 	print("creating a %s" % blueprint)
 
@@ -30,6 +30,10 @@ func _init(blueprint: String) -> void:
 	
 	hp = stats.coherence.value * 10
 	level = 0
+
+	for i in range(min(startLvl*5 + randi_range(0,4), 100)):
+		while !self.levelUp(self.stats.keys()[randi_range(0,4)]):
+			pass
 
 func levelUp(statName: String) -> bool:
 	if !self.stats[statName].increase():

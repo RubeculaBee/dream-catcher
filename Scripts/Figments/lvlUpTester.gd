@@ -3,15 +3,26 @@ extends Node
 var figment: Figment
 var lShards: int
 var indicators: Array[Array]
+var startLevel: int
 
 func _ready() -> void:
-	figment = Figment.new("seaTest")
+	startLevel = 0
 	lShards = 10
 
 	setupLvlIndicator()
+	setupLevelSelector()
+	newFigment("seaTest")
 	connectSignals()
-	updateLevels()
-	updateFigment()
+
+func setupLevelSelector():
+	var selector = $Figment/Regenerate/MenuButton
+	for i in range(21):
+		selector.get_popup().add_item("%s" % i)
+	selector.get_popup().index_pressed.connect(changeLevel)
+
+func changeLevel(index: int):
+	$Figment/Regenerate/MenuButton.text = "Start Level: %s" % index
+	startLevel = index
 
 func updateFigment():
 	$Figment.texture = figment.sprite
@@ -19,6 +30,10 @@ func updateFigment():
 	for row: Array[ColorRect] in indicators:
 		for ind: ColorRect in row:
 			ind.color = Color.GRAY
+	
+	for i in range(5):
+		for j in range(figment.stats.values()[i].level):
+			indicators[i][j].color = Color.YELLOW
 
 
 func updateLevels():
@@ -45,7 +60,7 @@ func connectSignals():
 	$Figment/Regenerate/Sky.pressed.connect(newFigment.bind("skyTest"))
 
 func newFigment(bp: String):
-	figment = Figment.new(bp)
+	figment = Figment.new(bp, startLevel)
 	updateLevels()
 	updateFigment()
 
@@ -68,6 +83,5 @@ func setupLvlIndicator():
 		for i in range(20):
 			indicators[j].append(ColorRect.new())
 			indicators[j][i].size = Vector2(16,16)
-			indicators[j][i].color = Color.GRAY
 			indicators[j][i].position = Vector2(272+20*i,240+62*j)
 			add_child(indicators[j][i])

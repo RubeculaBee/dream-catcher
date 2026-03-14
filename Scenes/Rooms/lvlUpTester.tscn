@@ -52,6 +52,13 @@ offset_right = 143.0
 offset_bottom = 63.0
 text = "Sky"
 
+[node name="MenuButton" type="MenuButton" parent="Figment/Regenerate" unique_id=699772187]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 95.0
+offset_bottom = 95.0
+text = "Start Level: 0"
+
 [node name="Level" type="Label" parent="." unique_id=1823456014]
 offset_left = 384.0
 offset_top = 160.0
