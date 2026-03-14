@@ -10,6 +10,7 @@ var stats: Dictionary
 var moves: Array[Move]
 
 var hp: int
+var level: int
 
 func _init(blueprint: String) -> void:
 	var bp: Blueprint = blueprints[blueprint]
@@ -28,6 +29,19 @@ func _init(blueprint: String) -> void:
 		stat.growth = rng.randi_range(stat.minGrowth, stat.maxGrowth)
 	
 	hp = stats.coherence.value * 10
+	level = 0
+
+func levelUp(statName: String) -> bool:
+	if !self.stats[statName].increase():
+		return false
+	
+	var avg: float = 0
+	for stat: Stat in self.stats.values():
+		avg += stat.level
+	avg /= 5
+
+	self.level = floori(avg)
+	return true
 
 enum Type {NONE, LAND, SEA, SKY, MIND, BODY, LIGHT, DARK, SYNTH, FEAR}
 

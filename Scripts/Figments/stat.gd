@@ -23,3 +23,10 @@ func copy() -> Stat:
 	stat.value = self.value
 	stat.growth = self.growth
 	return stat 
+
+func increase() -> bool:
+	if level >= 20:
+		return false
+	level+=1
+	value+=growth
+	return true
