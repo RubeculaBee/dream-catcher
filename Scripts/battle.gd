@@ -1,5 +1,9 @@
 extends Control
 class_name BattleScene
+# to do
+# change all the calls for Text box and Action Panel code
+# they should instead be variables that hold the address, its quicker that way
+# that way It doesn't have to trace the address, every single time 
 
 # Variables
 var menuSelector = 0 # determines which menu is displayed in the battle

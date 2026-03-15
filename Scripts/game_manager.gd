@@ -27,6 +27,10 @@ const player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The locatio
 const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the location of the camera scene file
 const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The location of the battle scene
 
+#Nodes
+@onready var TESTInventory : ColorRect = $CanvasLayer/TestImageeeee # testing, to be deleted later (probably) -Garrett
+@onready var MuseInventoryPic : TextureRect = $CanvasLayer/MuseImage
+
 func _ready() -> void:
 	main_menu = get_node("MenuContainer").get_child(0)
 
@@ -151,3 +155,16 @@ func _on_transition(transition: ScreenTransition, offset: Vector2):
 	# Don't spawn the player off of the next rooms entrance
 	offset = offset.clamp(Vector2.ZERO, (entrance.scale - Vector2(1,1)) * 32)
 	player.position = entrance.position + offset
+
+# start of Garrett's work on inventory--------
+# TODO gotta add bool check for when you can and can't open the inventory
+func _input(_event) -> void:
+	if(Input.is_action_just_pressed("inventory")):
+		if (TESTInventory.visible == true ):
+			MuseInventoryPic.hide()
+			TESTInventory.hide()
+		else :
+			MuseInventoryPic.show()
+			TESTInventory.show()
+		
+# end of Garrett's work on inventory ------------
