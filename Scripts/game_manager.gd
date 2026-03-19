@@ -135,6 +135,7 @@ func _on_transition(transition: ScreenTransition, offset: Vector2):
 	camera.fade_transition()
 	await camera.screen_covered
 
+	## todo: stop deloading room
 	current_room.queue_free()
 	current_room = transition.next_screen.instantiate()
 	get_node("Rooms").add_child.call_deferred(current_room)
