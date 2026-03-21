@@ -29,7 +29,6 @@ const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The locatio
 
 func _ready() -> void:
 	main_menu = get_node("MenuContainer").get_child(0)
-
 	main_menu.start_pressed.connect(_on_mainMenu_startPressed)
 
 func _on_mainMenu_startPressed():
