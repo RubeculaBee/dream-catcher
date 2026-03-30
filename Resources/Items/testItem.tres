@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="itemData" load_steps=3 format=3 uid="uid://cuc3fgmdntja0"]
+
+[ext_resource type="Script" uid="uid://dcafr71cqsmme" path="res://Scenes/InventorySystem/InventoryScripts/itemData.gd" id="1_edeli"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s8mmw"]
+load_path = "res://.godot/imported/TYPESEA.png-631c38c294afd4abce9a1faa187c66e1.ctex"
+
+[resource]
+script = ExtResource("1_edeli")
+description = "test description"
+stackable = true
+itemTexture = SubResource("CompressedTexture2D_s8mmw")
+metadata/_custom_type_script = "uid://dcafr71cqsmme"

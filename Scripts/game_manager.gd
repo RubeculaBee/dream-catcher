@@ -28,8 +28,8 @@ const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the 
 const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The location of the battle scene
 
 #Nodes
-@onready var TESTInventory : ColorRect = $CanvasLayer/TestImageeeee # testing, to be deleted later (probably) -Garrett
-@onready var MuseInventoryPic : TextureRect = $CanvasLayer/MuseImage
+@onready var TESTInventory : ColorRect = $InventoryLayer/TestImage # testing, to be deleted later (probably) -Garrett
+@onready var MuseInventoryPic : TextureRect = $InventoryLayer/MuseImage
 
 func _ready() -> void:
 	main_menu = get_node("MenuContainer").get_child(0)

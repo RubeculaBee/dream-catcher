@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://hsrv5bcni84s"]
+[gd_scene load_steps=6 format=3 uid="uid://hsrv5bcni84s"]
 
 [ext_resource type="Script" uid="uid://dfu7jqgvdmna" path="res://Scripts/game_manager.gd" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://28vqp5eny63q" path="res://Scenes/Rooms/main_menu.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://cgbjwy5nenq5j" path="res://Scenes/Rooms/corridor_center.tscn" id="2_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://0ljaecgwgb5r" path="res://Resources/Images/Inventory-Images/muse_dream_pose_.png" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://cdjdtg2a0vdau" path="res://Scenes/InventorySystem/InventoryScenes/inventory.tscn" id="5_wowpa"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_qxrlw")
@@ -17,9 +18,9 @@ start_room = ExtResource("2_wrm1d")
 
 [node name="BattleContainer" type="Node" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="InventoryLayer" type="CanvasLayer" parent="."]
 
-[node name="TestImage" type="ColorRect" parent="CanvasLayer"]
+[node name="TestImage" type="ColorRect" parent="InventoryLayer"]
 anchors_preset = -1
 anchor_left = 0.1
 anchor_top = 0.1
@@ -28,7 +29,7 @@ anchor_bottom = 0.75
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="MuseImage" type="TextureRect" parent="CanvasLayer"]
+[node name="MuseImage" type="TextureRect" parent="InventoryLayer"]
 anchors_preset = -1
 anchor_left = 0.044000003
 anchor_top = 0.76100004
@@ -40,3 +41,15 @@ offset_right = 3.271988
 offset_bottom = 4.0
 texture = ExtResource("4_3dryh")
 expand_mode = 1
+
+[node name="InventoryInterface" type="Control" parent="InventoryLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PlayerInventory" parent="InventoryLayer/InventoryInterface" instance=ExtResource("5_wowpa")]
+layout_mode = 0

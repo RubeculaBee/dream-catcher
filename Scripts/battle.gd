@@ -69,8 +69,8 @@ func _on_top_left_move_pressed() -> void:
 		menuSwitchFunction(menuSelector)
 		$ActionPanel/Actions/BottomActions/BottomMiddleAction.show()
 	elif (menuSelector == STARTING_FIGMENT):
-			menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
-			menuSwitchFunction(menuSelector)
+		menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
+		menuSwitchFunction(menuSelector)
 
 func _on_top_right_move_pressed() -> void:
 	displayTextBox($ActionPanel/Actions/TopActions/TopRightAction.text + " selected")  ## fill in with moves pulled from figment object
@@ -79,8 +79,8 @@ func _on_top_right_move_pressed() -> void:
 		menuSwitchFunction(menuSelector)
 		$ActionPanel/Actions/BottomActions/BottomMiddleAction.show()
 	elif (menuSelector == STARTING_FIGMENT):
-			menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
-			menuSwitchFunction(menuSelector)
+		menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
+		menuSwitchFunction(menuSelector)
 		
 func _on_bottom_left_move_pressed() -> void:
 	displayTextBox($ActionPanel/Actions/BottomActions/BottomLeftAction.text + " selected")  ## fill in with moves pulled from figment object
@@ -89,8 +89,8 @@ func _on_bottom_left_move_pressed() -> void:
 		menuSwitchFunction(menuSelector)
 		$ActionPanel/Actions/BottomActions/BottomMiddleAction.show()
 	elif (menuSelector == STARTING_FIGMENT):
-			menuSelector = BASE_MENU #sets the menu to the battle menu after figments have been selected
-			menuSwitchFunction(menuSelector)
+		menuSelector = BASE_MENU #sets the menu to the battle menu after figments have been selected
+		menuSwitchFunction(menuSelector)
 	elif (menuSelector == FLEE_MENU):
 		fleeConfirmed.emit();
 		
@@ -101,8 +101,8 @@ func _on_bottom_right_move_pressed() -> void:
 		menuSwitchFunction(menuSelector)
 		$ActionPanel/Actions/TopActions.hide() 
 	elif (menuSelector == STARTING_FIGMENT):
-			menuSelector = BASE_MENU #sets the menu to the battle menu after figments have been selected
-			menuSwitchFunction(menuSelector)
+		menuSelector = BASE_MENU #sets the menu to the battle menu after figments have been selected
+		menuSwitchFunction(menuSelector)
 	elif (menuSelector == FLEE_MENU): #This brings back up the base menu. if they are not elif's code does not work properly
 		menuSelector = BASE_MENU
 		$ActionPanel/Actions/BottomActions/BottomMiddleAction.hide() 

@@ -395,6 +395,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
 
 [node name="TextBox" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
