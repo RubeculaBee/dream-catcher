@@ -25,9 +25,9 @@ tile_set = ExtResource("3_2pdqd")
 
 [node name="Screen Transitions" type="Node" parent="." unique_id=102562321]
 
-[node name="Enemies" parent="." unique_id=603702026 instance=ExtResource("3_oe3ab")]
+[node name="Player Spawn" parent="." unique_id=953416237 instance=ExtResource("2_kvv88")]
+position = Vector2(352, 352)
+
+[node name="Enemies" parent="." unique_id=1418216216 instance=ExtResource("3_oe3ab")]
 position = Vector2(224, 224)
 enemy_scene = ExtResource("4_244xt")
-
-[node name="Player Spawn" parent="." unique_id=135482496 instance=ExtResource("2_kvv88")]
-position = Vector2(384, 352)

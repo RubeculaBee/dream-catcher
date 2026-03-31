@@ -1,5 +1,7 @@
 extends Node2D 
-class_name Enemy 
+class_name Enemy
+
+@warning_ignore_start("INTEGER_DIVISION")
 
 var TILE_SIZE: int = 32 
 var MOVE_SPEED: float = 4 
