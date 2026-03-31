@@ -1,6 +1,8 @@
 extends Node2D
 class_name Player
 
+@warning_ignore_start("INTEGER_DIVISION")
+
 # Variables
 var input_direction: Vector2i	# The direction the user is inputting
 var move_direction: Vector2i	# The direction the player character is actively moving

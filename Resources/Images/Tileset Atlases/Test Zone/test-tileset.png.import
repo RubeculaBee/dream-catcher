@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ly3lfqi2r2t"
-path="res://.godot/imported/muse-placeholder-right.png-00e9f0a0af5ddf4ebacaeb342ac028ae.ctex"
+uid="uid://crir5c7jf4du8"
+path="res://.godot/imported/test-tileset.png-bc8fa0071f308661803f4f0950a5ee9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/muse-placeholder/muse-placeholder-right.png"
-dest_files=["res://.godot/imported/muse-placeholder-right.png-00e9f0a0af5ddf4ebacaeb342ac028ae.ctex"]
+source_file="res://Resources/Images/Tileset Atlases/Test Zone/test-tileset.png"
+dest_files=["res://.godot/imported/test-tileset.png-bc8fa0071f308661803f4f0950a5ee9b.ctex"]
 
 [params]
 

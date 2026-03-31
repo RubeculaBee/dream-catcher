@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwen2bs3uxhba"
-path="res://.godot/imported/muse-placeholder-left.png-8a052e1342339050f551813a22d22ba8.ctex"
+uid="uid://csting1lvgk1p"
+path="res://.godot/imported/muse-placeholder-up.png-924334b2777b395cc0236daa7f7fcec4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/muse-placeholder/muse-placeholder-left.png"
-dest_files=["res://.godot/imported/muse-placeholder-left.png-8a052e1342339050f551813a22d22ba8.ctex"]
+source_file="res://Resources/Images/characters/muse-placeholder/muse-placeholder-up.png"
+dest_files=["res://.godot/imported/muse-placeholder-up.png-924334b2777b395cc0236daa7f7fcec4.ctex"]
 
 [params]
 
