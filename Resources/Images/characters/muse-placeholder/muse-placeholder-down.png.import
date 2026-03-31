@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ipbc1hl6k8jd"
-path="res://.godot/imported/FreePixel.png-cd5069c7ca905cc5ba7388a0653114d0.ctex"
+uid="uid://xmbpuxkv23lr"
+path="res://.godot/imported/muse-placeholder-down.png-74a8144a7a8663669d92f254199c42b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/FreePixel.png"
-dest_files=["res://.godot/imported/FreePixel.png-cd5069c7ca905cc5ba7388a0653114d0.ctex"]
+source_file="res://Resources/Images/characters/muse-placeholder/muse-placeholder-down.png"
+dest_files=["res://.godot/imported/muse-placeholder-down.png-74a8144a7a8663669d92f254199c42b0.ctex"]
 
 [params]
 

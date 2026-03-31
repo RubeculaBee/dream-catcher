@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xmbpuxkv23lr"
-path="res://.godot/imported/muse-placeholder-down.png-55a5cf534cf2212da9ed6cf442faf37a.ctex"
+uid="uid://bkpeyk2wksvpf"
+path="res://.godot/imported/player_spawn.png-79045095f00f74b68e79906267b20171.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/muse-placeholder/muse-placeholder-down.png"
-dest_files=["res://.godot/imported/muse-placeholder-down.png-55a5cf534cf2212da9ed6cf442faf37a.ctex"]
+source_file="res://Resources/Images/DebugObjects/player_spawn.png"
+dest_files=["res://.godot/imported/player_spawn.png-79045095f00f74b68e79906267b20171.ctex"]
 
 [params]
 

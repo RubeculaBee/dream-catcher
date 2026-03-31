@@ -1,9 +1,9 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cs4sr2olxrhrj"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cs4sr2olxrhrj"]
 
-[ext_resource type="Texture2D" uid="uid://xmbpuxkv23lr" path="res://Resources/Images/muse-placeholder/muse-placeholder-down.png" id="1_cfd56"]
-[ext_resource type="Texture2D" uid="uid://dwen2bs3uxhba" path="res://Resources/Images/muse-placeholder/muse-placeholder-left.png" id="2_ro4qj"]
-[ext_resource type="Texture2D" uid="uid://b6ly3lfqi2r2t" path="res://Resources/Images/muse-placeholder/muse-placeholder-right.png" id="3_7b1v3"]
-[ext_resource type="Texture2D" uid="uid://csting1lvgk1p" path="res://Resources/Images/muse-placeholder/muse-placeholder-up.png" id="4_m2qtw"]
+[ext_resource type="Texture2D" uid="uid://xmbpuxkv23lr" path="res://Resources/Images/characters/muse-placeholder/muse-placeholder-down.png" id="1_cfd56"]
+[ext_resource type="Texture2D" uid="uid://dwen2bs3uxhba" path="res://Resources/Images/characters/muse-placeholder/muse-placeholder-left.png" id="2_ro4qj"]
+[ext_resource type="Texture2D" uid="uid://b6ly3lfqi2r2t" path="res://Resources/Images/characters/muse-placeholder/muse-placeholder-right.png" id="3_7b1v3"]
+[ext_resource type="Texture2D" uid="uid://csting1lvgk1p" path="res://Resources/Images/characters/muse-placeholder/muse-placeholder-up.png" id="4_m2qtw"]
 
 [resource]
 animations = [{

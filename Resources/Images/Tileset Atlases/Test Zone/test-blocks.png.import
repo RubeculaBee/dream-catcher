@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://twy3dl85vptx"
-path="res://.godot/imported/wood.png-c09a48dfae53a4671730abf29710a174.ctex"
+uid="uid://c0sgw0uou2ami"
+path="res://.godot/imported/test-blocks.png-81df88e99055ac80f38f75c28921f966.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Tilesets/wood.png"
-dest_files=["res://.godot/imported/wood.png-c09a48dfae53a4671730abf29710a174.ctex"]
+source_file="res://Resources/Images/Tileset Atlases/Test Zone/test-blocks.png"
+dest_files=["res://.godot/imported/test-blocks.png-81df88e99055ac80f38f75c28921f966.ctex"]
 
 [params]
 

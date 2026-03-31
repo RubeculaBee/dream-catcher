@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0sgw0uou2ami"
-path="res://.godot/imported/test-blocks.png-354d90f5d2a8e7da42e73e78972a613c.ctex"
+uid="uid://jbnxn0pyj1ck"
+path="res://.godot/imported/muse_forward.png-583d39ba19f08bf3af294f7e23a2c182.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/Tileset Atlases/test-blocks.png"
-dest_files=["res://.godot/imported/test-blocks.png-354d90f5d2a8e7da42e73e78972a613c.ctex"]
+source_file="res://Resources/Images/characters/muse/muse_forward.png"
+dest_files=["res://.godot/imported/muse_forward.png-583d39ba19f08bf3af294f7e23a2c182.ctex"]
 
 [params]
 

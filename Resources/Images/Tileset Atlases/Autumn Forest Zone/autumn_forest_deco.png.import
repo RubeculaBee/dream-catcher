@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkpeyk2wksvpf"
-path="res://.godot/imported/player_spawn.png-85af1e93d08f120cebca0637bbe0be07.ctex"
+uid="uid://dygo4kt8m77pe"
+path="res://.godot/imported/autumn_forest_deco.png-b07de114e4b3625e77e225c8d9d95a9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/player_spawn.png"
-dest_files=["res://.godot/imported/player_spawn.png-85af1e93d08f120cebca0637bbe0be07.ctex"]
+source_file="res://Resources/Images/Tileset Atlases/Autumn Forest Zone/autumn_forest_deco.png"
+dest_files=["res://.godot/imported/autumn_forest_deco.png-b07de114e4b3625e77e225c8d9d95a9d.ctex"]
 
 [params]
 
