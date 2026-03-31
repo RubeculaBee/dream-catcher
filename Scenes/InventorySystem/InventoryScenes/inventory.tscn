@@ -16,4 +16,4 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
-columns = 10
+columns = 8
