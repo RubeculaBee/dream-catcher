@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://do6cj3ku64cdb" path="res://Scenes/Gameobjects/player_spawn.tscn" id="2_kvv88"]
 [ext_resource type="TileSet" uid="uid://bdioln3jvyyua" path="res://Resources/Tilesets/hitbox.tres" id="3_2pdqd"]
 [ext_resource type="PackedScene" uid="uid://bksduw2518ken" path="res://Scenes/Gameobjects/Enemies.tscn" id="3_oe3ab"]
-[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_244xt"]
+[ext_resource type="PackedScene" uid="uid://b2imhhsw41kai" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_244xt"]
 
 [node name="Center Field" type="Node" unique_id=947513137]
 
