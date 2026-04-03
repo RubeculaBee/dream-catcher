@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bro5u6q2ff5uw"]
+
+[ext_resource type="TileSet" uid="uid://bwk202hfn1p63" path="res://Resources/Tilesets/autumn_forest_tileset.tres" id="1_7oxjj"]
+[ext_resource type="TileSet" uid="uid://bya5ymvp6aias" path="res://Resources/Tilesets/autumn_forest_deco.tres" id="2_e1pqw"]
+[ext_resource type="TileSet" uid="uid://bdioln3jvyyua" path="res://Resources/Tilesets/hitbox.tres" id="3_agi4e"]
+
+[node name="Test Room" type="Node" unique_id=947513137]
+
+[node name="Terrain Tile Map" type="TileMapLayer" parent="." unique_id=85036437]
+texture_filter = 1
+tile_set = ExtResource("1_7oxjj")
+
+[node name="Deco Tile Map" type="TileMapLayer" parent="." unique_id=700212247]
+texture_filter = 1
+tile_set = ExtResource("2_e1pqw")
+
+[node name="Hitbox Tile Map" type="TileMapLayer" parent="." unique_id=160440828]
+visible = false
+tile_set = ExtResource("3_agi4e")
+
+[node name="Screen Transitions" type="Node" parent="." unique_id=102562321]
