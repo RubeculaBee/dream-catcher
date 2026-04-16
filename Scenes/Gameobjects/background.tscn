@@ -19,7 +19,7 @@ offset_left = -430.0
 offset_top = -325.0
 offset_right = 427.0
 offset_bottom = 337.0
-color = Color(0.65774363, 0.7119654, 0.940435, 1)
+color = Color(0.8862745, 0.63529414, 0.4509804, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=879134951]
 material = SubResource("ShaderMaterial_qp21c")
