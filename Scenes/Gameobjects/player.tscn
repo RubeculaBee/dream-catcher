@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6tk7qbbanyy2"]
 
 [ext_resource type="SpriteFrames" uid="uid://cs4sr2olxrhrj" path="res://Resources/SpriteFrames/muse-overworld.tres" id="1_ei5lw"]
-[ext_resource type="Script" uid="uid://chyesgvfxjlxj" path="res://Scripts/player.gd" id="1_tyf51"]
+[ext_resource type="Script" uid="uid://chyesgvfxjlxj" path="res://Scripts/Player/player.gd" id="1_tyf51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyf51"]
 size = Vector2(30, 30)
@@ -12,7 +12,7 @@ texture_filter = 1
 script = ExtResource("1_tyf51")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1594891550]
-position = Vector2(16, -12)
+position = Vector2(15, -12)
 sprite_frames = ExtResource("1_ei5lw")
 animation = &"down_walk"
 

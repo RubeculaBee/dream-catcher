@@ -1,8 +1,8 @@
-[gd_scene load_steps=0 format=3 uid="uid://ch74vq4bc4rb8"]
+[gd_scene format=3 uid="uid://drj6h2hgccjjq"]
 
-[node name="Template" type="Node"]
+[node name="Template" type="Node" unique_id=1615208201]
 
-[node name="Terrain Tile Map" type="TileMapLayer" parent="."]
+[node name="Terrain Tile Map" type="TileMapLayer" parent="." unique_id=1825512206]
 texture_filter = 1
 
-[node name="Screen Transitions" type="Node" parent="."]
+[node name="Screen Transitions" type="Node" parent="." unique_id=287045987]
