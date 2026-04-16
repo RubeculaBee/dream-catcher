@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jbnxn0pyj1ck"
-path="res://.godot/imported/muse_forward.png-583d39ba19f08bf3af294f7e23a2c182.ctex"
+uid="uid://bvdluoq0862ls"
+path="res://.godot/imported/muse_front_standing.png-340e747b63cb262eaf9971fc40ba81ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/characters/muse/muse_forward.png"
-dest_files=["res://.godot/imported/muse_forward.png-583d39ba19f08bf3af294f7e23a2c182.ctex"]
+source_file="res://Resources/Images/characters/muse/muse_front_standing.png"
+dest_files=["res://.godot/imported/muse_front_standing.png-340e747b63cb262eaf9971fc40ba81ec.ctex"]
 
 [params]
 

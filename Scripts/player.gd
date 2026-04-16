@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 	if move_direction == Vector2i.ZERO and try_move():
 		# get the intended next tile (dividing by tile_size to get the tilemap coordinates)
 		var next_tile: Vector2i = Vector2i(position) / TILE_SIZE + move_direction
-		sprite.play(look_direction)
+		sprite.play("%s_walk" % look_direction)
 		tried_move.emit(next_tile)
 
 func get_input() -> Vector2i:
@@ -64,4 +64,6 @@ func tween_move() -> void:
 	tween.tween_callback(func(): 
 		move_direction = Vector2.ZERO
 		stopped_move.emit()
+		if get_input() == Vector2i.ZERO:
+			sprite.play("%s_still" % look_direction)
 	)
