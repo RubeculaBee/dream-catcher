@@ -1,19 +1,25 @@
-[gd_scene load_steps=3 format=4 uid="uid://bxivox8sqnxa4"]
+[gd_scene format=4 uid="uid://bxivox8sqnxa4"]
 
 [ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_3o8tu"]
-[ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_736nj"]
+[ext_resource type="TileSet" uid="uid://bdioln3jvyyua" path="res://Resources/Tilesets/hitbox.tres" id="1_id0rc"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_736nj"]
 
-[node name="Test Corridor Left" type="Node"]
+[node name="Test Corridor Left" type="Node" unique_id=760897865]
 
-[node name="Terrain Tile Map" type="TileMapLayer" parent="."]
+[node name="Terrain Tile Map" type="TileMapLayer" parent="." unique_id=1256529870]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD/////AQABAAEAAAD//wAAAQABAAEAAAAAAAAAAQABAAEAAAAAAP//AQABAAEAAAAAAP7/AQABAAAAAAD///7/AQABAAAAAAD+//7/AQABAAAAAAD+////AAADAAAAAAD+/wAAAAADAAEAAAD+/wEAAAADAAIAAAD//wEAAQABAAEAAAAAAAEAAQABAAEAAAABAAEAAQABAAEAAAABAAAAAQABAAEAAAABAP//AQABAAEAAAABAP7/AQACAAAAAAACAP//AQABAAAAAAACAAAAAQABAAEAAAADAAAAAQABAAEAAAADAP//AQABAAAAAAAEAP//AQACAAAAAAAEAAAAAQACAAEAAAAEAAEAAQACAAIAAAADAAEAAQABAAIAAAACAAEAAQABAAIAAAABAAIAAQACAAIAAAAAAAIAAQABAAIAAAD//wIAAQABAAIAAAD+/wIAAQABAAIAAAD9/wIAAQABAAIAAAD8/wIAAQAAAAIAAAD9/wEAAQABAAEAAAD9/wAAAQABAAEAAAD9////AQABAAEAAAD9//7/AQABAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAEAAAD8/wAAAQAAAAEAAAD8/wEAAQAAAAEAAAA=")
 tile_set = ExtResource("1_3o8tu")
 
-[node name="Screen Transitions" type="Node" parent="."]
+[node name="Hitbox Tile Map" type="TileMapLayer" parent="." unique_id=511125046]
+visible = false
+tile_map_data = PackedByteArray("AAD7//7/AQAAAAAAAAD7//3/AQAAAAAAAAD8//3/AQAAAAAAAAD9//3/AQAAAAAAAAD+//3/AQAAAAAAAAD///3/AQAAAAAAAAAAAP3/AQAAAAAAAAABAP3/AQAAAAAAAAACAP3/AQAAAAAAAAACAP7/AQAAAAAAAAADAP7/AQAAAAAAAAAEAP7/AQAAAAAAAAAFAP7/AQAAAAAAAAAFAP//AQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAADAAIAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAABAAMAAQAAAAAAAAAAAAMAAQAAAAAAAAD//wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD8/wMAAQAAAAAAAAD7/wMAAQAAAAAAAAD7/wIAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wAAAQAAAAAAAAD7////AQAAAAAAAAA=")
+tile_set = ExtResource("1_id0rc")
 
-[node name="transition" parent="Screen Transitions" instance=ExtResource("2_736nj")]
+[node name="Screen Transitions" type="Node" parent="." unique_id=2072842995]
+
+[node name="transition" parent="Screen Transitions" unique_id=462072440 instance=ExtResource("2_736nj")]
 position = Vector2(128, -32)
 scale = Vector2(1, 2.9999995)
-next_screen_name = "corridor_center"
+next_screen_name = "Test/corridor_center"
 id = 1

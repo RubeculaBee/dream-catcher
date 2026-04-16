@@ -1,24 +1,30 @@
-[gd_scene load_steps=5 format=4 uid="uid://cfdaxjegudhsb"]
+[gd_scene format=4 uid="uid://cfdaxjegudhsb"]
 
 [ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_dt1ff"]
-[ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_5ib6j"]
-[ext_resource type="PackedScene" uid="uid://b6cukpw23djf7" path="res://Scenes/Gameobjects/Enemies.tscn" id="3_axatc"]
-[ext_resource type="PackedScene" uid="uid://b2imhhsw41kai" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_vgf1u"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_5ib6j"]
+[ext_resource type="TileSet" uid="uid://bdioln3jvyyua" path="res://Resources/Tilesets/hitbox.tres" id="2_bpf4k"]
+[ext_resource type="PackedScene" uid="uid://bksduw2518ken" path="res://Scenes/Gameobjects/Enemies.tscn" id="3_axatc"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_vgf1u"]
 
-[node name="Test Corridor Up" type="Node"]
+[node name="Test Corridor Up" type="Node" unique_id=209487879]
 
-[node name="Terrain Tile Map" type="TileMapLayer" parent="."]
+[node name="Terrain Tile Map" type="TileMapLayer" parent="." unique_id=1426997614]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD//wAAAQAAAAIAAAAAAAAAAQACAAIAAAAAAP//AQACAAEAAAD/////AQAAAAEAAAD///7/AQAAAAEAAAD///3/AQABAAEAAAD///z/AQABAAEAAAAAAPz/AQABAAEAAAAAAP3/AQABAAEAAAAAAP7/AQACAAEAAAD+//3/AQABAAIAAAD+//z/AQABAAAAAAD9//3/AQABAAIAAAD9//z/AQABAAAAAAD8//3/AQABAAIAAAD8//z/AQABAAEAAAD8//v/AQACAAEAAAD8//r/AQACAAEAAAD8//n/AQABAAEAAAD8//j/AQABAAEAAAD8//f/AQACAAEAAAABAPz/AQABAAAAAAACAPz/AQABAAAAAAADAPz/AQABAAEAAAADAPv/AQAAAAEAAAADAPr/AQAAAAEAAAADAPn/AQABAAEAAAADAPj/AQABAAEAAAADAPf/AQAAAAEAAAADAPb/AQAAAAEAAAADAPX/AQABAAEAAAACAPX/AQABAAIAAAABAPX/AQABAAIAAAAAAPX/AQABAAEAAAD///X/AQABAAEAAAD+//X/AQABAAIAAAD9//X/AQABAAIAAAD8//X/AQABAAEAAAD8//b/AQACAAEAAAABAP3/AQABAAIAAAACAP3/AQABAAIAAAADAP3/AQABAAIAAAAEAP3/AQACAAIAAAAEAPz/AQACAAEAAAAEAPv/AQACAAEAAAAEAPr/AQACAAEAAAAEAPn/AQACAAEAAAAEAPj/AQACAAEAAAAEAPf/AQACAAEAAAAEAPb/AQACAAEAAAAEAPX/AQACAAEAAAAEAPT/AQACAAAAAAADAPT/AQABAAAAAAACAPT/AQABAAAAAAABAPT/AQABAAAAAAAAAPT/AQABAAAAAAD///T/AQABAAAAAAD+//T/AQABAAAAAAD9//T/AQABAAAAAAD8//T/AQABAAAAAAD7//T/AQAAAAAAAAD7//X/AQAAAAEAAAD7//b/AQAAAAEAAAD7//f/AQAAAAEAAAD7//j/AQAAAAEAAAD7//n/AQAAAAEAAAD7//z/AQAAAAEAAAD7//3/AQAAAAIAAAD7//v/AQAAAAEAAAD7//r/AQAAAAEAAAD///n/AAABAAEAAAD///j/AAABAAEAAAAAAPj/AAABAAEAAAAAAPn/AAABAAEAAAD+//n/AAAAAAIAAAAAAPr/AAACAAIAAAABAPj/AAACAAAAAAD///f/AAAAAAAAAAD+//j/AAAAAAAAAAD///r/AAAAAAIAAAABAPn/AAACAAIAAAAAAPf/AAACAAAAAAD///v/AQAAAAEAAAD///b/AQAAAAEAAAAAAPb/AQACAAEAAAAAAPv/AQACAAEAAAD9//n/AQABAAIAAAACAPn/AQABAAIAAAACAPj/AQABAAAAAAD9//j/AQABAAAAAAA=")
 tile_set = ExtResource("1_dt1ff")
 
-[node name="Screen Transitions" type="Node" parent="."]
+[node name="Hitbox Tile Map" type="TileMapLayer" parent="." unique_id=1858890757]
+visible = false
+tile_map_data = PackedByteArray("AAD+/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAABAP//AQAAAAAAAAABAP7/AQAAAAAAAAACAP7/AQAAAAAAAAADAP7/AQAAAAAAAAAEAP7/AQAAAAAAAAAFAP3/AQAAAAAAAAAFAPz/AQAAAAAAAAAFAPv/AQAAAAAAAAAFAP7/AQAAAAAAAAAFAPr/AQAAAAAAAAAFAPn/AQAAAAAAAAAFAPj/AQAAAAAAAAAFAPf/AQAAAAAAAAAFAPb/AQAAAAAAAAAFAPX/AQAAAAAAAAAFAPT/AQAAAAAAAAAFAPP/AQAAAAAAAAAEAPP/AQAAAAAAAAADAPP/AQAAAAAAAAACAPP/AQAAAAAAAAABAPP/AQAAAAAAAAAAAPP/AQAAAAAAAAD///P/AQAAAAAAAAD+//P/AQAAAAAAAAD9//P/AQAAAAAAAAD8//P/AQAAAAAAAAD7//P/AQAAAAAAAAD6//P/AQAAAAAAAAD6//T/AQAAAAAAAAD6//X/AQAAAAAAAAD6//b/AQAAAAAAAAD6//f/AQAAAAAAAAD6//j/AQAAAAAAAAD6//n/AQAAAAAAAAD6//r/AQAAAAAAAAD6//v/AQAAAAAAAAD6//z/AQAAAAAAAAD6//3/AQAAAAAAAAD6//7/AQAAAAAAAAD7//7/AQAAAAAAAAD8//7/AQAAAAAAAAD9//7/AQAAAAAAAAD+//7/AQAAAAAAAAD+////AQAAAAAAAAD9//v/AQAAAAAAAAD+//v/AQAAAAAAAAD+//r/AQAAAAAAAAD9//r/AQAAAAAAAAD+//n/AQAAAAAAAAD+//j/AQAAAAAAAAD+//f/AQAAAAAAAAD9//f/AQAAAAAAAAD9//b/AQAAAAAAAAD+//b/AQAAAAAAAAD///f/AQAAAAAAAAAAAPf/AQAAAAAAAAABAPf/AQAAAAAAAAABAPb/AQAAAAAAAAACAPb/AQAAAAAAAAACAPf/AQAAAAAAAAABAPj/AQAAAAAAAAABAPn/AQAAAAAAAAABAPr/AQAAAAAAAAACAPr/AQAAAAAAAAACAPv/AQAAAAAAAAABAPv/AQAAAAAAAAAAAPr/AQAAAAAAAAD///r/AQAAAAAAAAA=")
+tile_set = ExtResource("2_bpf4k")
 
-[node name="transition" parent="Screen Transitions" instance=ExtResource("2_5ib6j")]
+[node name="Screen Transitions" type="Node" parent="." unique_id=506994077]
+
+[node name="transition" parent="Screen Transitions" unique_id=2111172470 instance=ExtResource("2_5ib6j")]
 position = Vector2(-32, 0)
 scale = Vector2(2, 1)
-next_screen_name = "corridor_center"
+next_screen_name = "Test/corridor_center"
 
-[node name="Enemies" parent="." instance=ExtResource("3_axatc")]
+[node name="Enemies" parent="." unique_id=807451098 instance=ExtResource("3_axatc")]
 position = Vector2(-128, -224)
 enemy_scene = ExtResource("4_vgf1u")

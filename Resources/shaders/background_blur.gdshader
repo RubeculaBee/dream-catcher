@@ -1,6 +1,8 @@
 shader_type canvas_item;
 render_mode blend_mix;
 
+// Thank you to u/golddotasksquestions on reddit for this shader 🙏
+
 uniform float radius = 4.0;
 uniform int steps = 32;
 uniform float vertex_expand = 1.0;

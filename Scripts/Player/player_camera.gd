@@ -42,7 +42,9 @@ func swipe_transition() -> void:
 	tween.tween_callback(screen_uncovered.emit)
 
 func _on_screen_covered():
-	position_smoothing_enabled = false
+	# position_smoothing_enabled = false
+	pass
 
 func _on_screen_uncovered():
-	position_smoothing_enabled = true
+	# position_smoothing_enabled = true
+	pass

@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://bdioln3jvyyua" path="res://Resources/Tilesets/hitbox.tres" id="3_2pdqd"]
 [ext_resource type="PackedScene" uid="uid://bksduw2518ken" path="res://Scenes/Gameobjects/Enemies.tscn" id="3_oe3ab"]
 [ext_resource type="PackedScene" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_244xt"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/screen_transition.tscn" id="4_hem1d"]
 
 [node name="Center Field" type="Node" unique_id=947513137]
 
@@ -25,6 +26,11 @@ tile_map_data = PackedByteArray("AAACAA4AAQAAAAAAAAADAA4AAQAAAAAAAAAEAA4AAQAAAAA
 tile_set = ExtResource("3_2pdqd")
 
 [node name="Screen Transitions" type="Node" parent="." unique_id=102562321]
+
+[node name="transition" parent="Screen Transitions" unique_id=1836592408 instance=ExtResource("4_hem1d")]
+position = Vector2(32, 256)
+scale = Vector2(1, 3)
+next_screen_name = "Test/corridor_down"
 
 [node name="Player Spawn" parent="." unique_id=953416237 instance=ExtResource("2_kvv88")]
 position = Vector2(352, 352)

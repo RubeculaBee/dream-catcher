@@ -1,19 +1,25 @@
-[gd_scene load_steps=3 format=4 uid="uid://eflrivuydbpk"]
+[gd_scene format=4 uid="uid://eflrivuydbpk"]
 
 [ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_jtt3l"]
-[ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_pw6y8"]
+[ext_resource type="TileSet" uid="uid://bdioln3jvyyua" path="res://Resources/Tilesets/hitbox.tres" id="2_njbe8"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_pw6y8"]
 
-[node name="Test Corridor Right" type="Node"]
+[node name="Test Corridor Right" type="Node" unique_id=1851633703]
 
-[node name="Terrain Tile Map" type="TileMapLayer" parent="."]
+[node name="Terrain Tile Map" type="TileMapLayer" parent="." unique_id=1599812566]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD/////AQAAAAAAAAD//wAAAQAAAAEAAAD//wEAAQAAAAIAAAAAAAEAAQABAAIAAAAAAAAAAQABAAEAAAABAAAAAQABAAEAAAABAP//AQABAAAAAAAAAP//AQABAAAAAAABAAEAAQABAAIAAAACAAEAAQABAAIAAAADAAEAAQABAAIAAAACAP//AQABAAAAAAACAAAAAQABAAEAAAADAAAAAQABAAEAAAAEAAAAAQABAAEAAAAEAP//AQABAAAAAAADAP//AQABAAAAAAAEAAEAAQABAAIAAAAFAAEAAQABAAIAAAAFAAAAAQABAAEAAAAFAP//AQABAAAAAAAGAP//AQABAAAAAAAGAAAAAAADAAMAAAAGAAEAAQABAAIAAAAHAAEAAQACAAIAAAAHAAAAAQACAAEAAAAHAP//AQACAAAAAAA=")
 tile_set = ExtResource("1_jtt3l")
 
-[node name="Screen Transitions" type="Node" parent="."]
+[node name="Hitbox Tile Map" type="TileMapLayer" parent="." unique_id=1894388024]
+visible = false
+tile_map_data = PackedByteArray("AAD+/wIAAQAAAAAAAAD+/wEAAQAAAAAAAAD+/wAAAQAAAAAAAAD+////AQAAAAAAAAD+//7/AQAAAAAAAAD///7/AQAAAAAAAAAAAP7/AQAAAAAAAAABAP7/AQAAAAAAAAACAP7/AQAAAAAAAAADAP7/AQAAAAAAAAAEAP7/AQAAAAAAAAAFAP7/AQAAAAAAAAAGAP7/AQAAAAAAAAAHAP7/AQAAAAAAAAAIAP7/AQAAAAAAAAAIAP//AQAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAADAAIAAQAAAAAAAAACAAIAAQAAAAAAAAABAAIAAQAAAAAAAAAAAAIAAQAAAAAAAAD//wIAAQAAAAAAAAA=")
+tile_set = ExtResource("2_njbe8")
 
-[node name="transition" parent="Screen Transitions" instance=ExtResource("2_pw6y8")]
+[node name="Screen Transitions" type="Node" parent="." unique_id=98880573]
+
+[node name="transition" parent="Screen Transitions" unique_id=459690355 instance=ExtResource("2_pw6y8")]
 position = Vector2(-32, -32)
 scale = Vector2(1, 3)
-next_screen_name = "corridor_center"
+next_screen_name = "Test/corridor_center"
 id = 2
