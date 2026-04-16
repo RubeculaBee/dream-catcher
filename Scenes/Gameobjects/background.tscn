@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ba8mjmtgptcng"]
+
+[ext_resource type="Script" uid="uid://dbq3y2cpvotgo" path="res://Scripts/Objects/background.gd" id="1_cbb12"]
+[ext_resource type="Shader" uid="uid://mfkqfwn818ge" path="res://Resources/shaders/background_blur.gdshader" id="1_qp21c"]
+[ext_resource type="Texture2D" uid="uid://co3vvhuxyxm3c" path="res://Resources/Images/Backgrounds/autumn_forest_bg.png" id="2_10f5r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qp21c"]
+shader = ExtResource("1_qp21c")
+shader_parameter/radius = 5.0
+shader_parameter/steps = 32
+shader_parameter/vertex_expand = 1.0
+
+[node name="Background" type="Node2D" unique_id=758946642]
+z_index = -4
+texture_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1217457594]
+offset_left = -430.0
+offset_top = -325.0
+offset_right = 427.0
+offset_bottom = 337.0
+color = Color(0.65774363, 0.7119654, 0.940435, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=879134951]
+material = SubResource("ShaderMaterial_qp21c")
+position = Vector2(0, 5)
+texture = ExtResource("2_10f5r")
+script = ExtResource("1_cbb12")

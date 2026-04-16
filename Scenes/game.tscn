@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dinbb7dsmxxe"]
 
-[ext_resource type="Script" uid="uid://dfu7jqgvdmna" path="res://Scripts/Menus/game_manager.gd" id="1_qxrlw"]
+[ext_resource type="Script" uid="uid://dfu7jqgvdmna" path="res://Scripts/game_manager.gd" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://28vqp5eny63q" path="res://Scenes/Rooms/Menus/main_menu.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bic4bxho2w3jl" path="res://Scenes/Rooms/Autumn Forest Zone/center_field.tscn" id="2_wrm1d"]
 
