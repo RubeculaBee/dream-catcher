@@ -15,7 +15,7 @@ func copy(distance: int, flip: bool):
 	add_sibling.call_deferred(dupe)
 
 func _process(delta: float) -> void:
-	position.x -= 128 * delta
+	position.x -= 32 * delta
 	if position.x < -799:
 		copy(1599, self.flip_h)
 		queue_free()

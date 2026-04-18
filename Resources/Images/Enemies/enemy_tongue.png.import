@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btoee6sfgs2kx"
-path="res://.godot/imported/IMG_3915 (1).jpg-e5f1b0b85a9960e6a3dc2f2bb04a115d.ctex"
+uid="uid://b00hli82nylkm"
+path="res://.godot/imported/enemy_tongue.png-9e0d446dc9f5e96a1aa089530fe44281.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/Enemies/IMG_3915 (1).jpg"
-dest_files=["res://.godot/imported/IMG_3915 (1).jpg-e5f1b0b85a9960e6a3dc2f2bb04a115d.ctex"]
+source_file="res://Resources/Images/Enemies/enemy_tongue.png"
+dest_files=["res://.godot/imported/enemy_tongue.png-9e0d446dc9f5e96a1aa089530fe44281.ctex"]
 
 [params]
 

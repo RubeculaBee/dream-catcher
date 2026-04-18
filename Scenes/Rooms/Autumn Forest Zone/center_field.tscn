@@ -38,3 +38,8 @@ position = Vector2(352, 352)
 [node name="Enemies" parent="." unique_id=1418216216 instance=ExtResource("3_oe3ab")]
 position = Vector2(224, 224)
 enemy_scene = ExtResource("4_244xt")
+figment_list = Array[String](["skyTest", "seaTest", "landTest"])
+figment_lvl = {
+"from": 1,
+"to": 5
+}

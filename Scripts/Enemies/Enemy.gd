@@ -11,6 +11,8 @@ var alias: String
 var spawn: Vector2i
 var last_tile: Vector2i
 
+var figment: Figment
+
 signal tried_move(tile: Vector2i) # Emitted when the enemy tries to take a step, with the location of the tile they tried to move to # This runs every time the Enemy successfully moves 
 
 func _ready() -> void:
