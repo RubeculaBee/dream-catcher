@@ -26,6 +26,7 @@ enum {BATTLE, OVERWORLD}
 const player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location of the player scene file
 const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the location of the camera scene file
 const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The location of the battle scene
+const background_path: String = "res://Scenes/Gameobjects/background.tscn"
 
 func _ready() -> void:
 	main_menu = get_node("MenuContainer").get_child(0)
@@ -51,6 +52,7 @@ func load_overworld():
 func attach_camera():
 	camera = load(camera_path).instantiate(TYPE_OBJECT)
 	add_child(camera)
+	camera.add_child(load(background_path).instantiate(TYPE_OBJECT))
 	player.find_child("RemoteTransform2D").remote_path = camera.get_path()
 
 func spawn_player(spawn_position: Vector2):

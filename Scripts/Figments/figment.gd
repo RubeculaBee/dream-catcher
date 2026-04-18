@@ -6,6 +6,7 @@ var speciesName: String
 var sprite: Texture2D
 var type1: Type
 var type2: Type
+var shape: Texture2D
 var stats: Dictionary
 var moves: Array[Move]
 
@@ -20,6 +21,9 @@ func _init(blueprint: String, startLvl: int) -> void:
 	sprite = bp.sprite
 	type1 = bp.type1
 	type2 = bp.type2
+
+	shape = load("res://Resources/Images/Enemies/enemy_%s.png" % Shape.find_key(bp.shape).to_lower())
+
 	moves = bp.moves
 	for stat: String in bp.stats.keys():
 		self.stats[stat] = bp.stats[stat].copy()
@@ -48,6 +52,19 @@ func levelUp(statName: String) -> bool:
 	return true
 
 enum Type {NONE, LAND, SEA, SKY, MIND, BODY, LIGHT, DARK, SYNTH, FEAR}
+static var typeColours = {
+	Type.NONE: Color.WHITE,
+	Type.LAND: Color.GREEN,
+	Type.SEA: Color.BLUE,
+	Type.SKY: Color.LIGHT_BLUE,
+	Type.MIND: Color.PURPLE,
+	Type.BODY: Color.RED,
+	Type.LIGHT: Color.YELLOW,
+	Type.DARK: Color.DARK_GRAY,
+	Type.SYNTH: Color.LIGHT_GRAY,
+	Type.FEAR: Color.BLACK,
+}
+enum Shape {BAT, CRAB, EYE, TONGUE}
 
 static var blueprints: Dictionary[String, Blueprint] = {
 	"skyTest": Blueprint.new(
@@ -55,6 +72,7 @@ static var blueprints: Dictionary[String, Blueprint] = {
 		load("res://Resources/Images/Figment Sprites/TYPESKY.png"),
 		Type.SKY,
 		Type.NONE,
+		Shape.BAT,
 		{
 			"will": Stat.new(5, 10, 2, 4),
 			"coherence": Stat.new(5, 10, 2, 4),
@@ -72,6 +90,7 @@ static var blueprints: Dictionary[String, Blueprint] = {
 		load("res://Resources/Images/Figment Sprites/TYPESEA.png"),
 		Type.SEA,
 		Type.NONE,
+		Shape.CRAB,
 		{
 			"will": Stat.new(5, 10, 2, 4),
 			"coherence": Stat.new(5, 10, 2, 4),
@@ -89,6 +108,7 @@ static var blueprints: Dictionary[String, Blueprint] = {
 		load("res://Resources/Images/Figment Sprites/TYPELAND.png"),
 		Type.LAND,
 		Type.NONE,
+		Shape.TONGUE,
 		{
 			"will": Stat.new(5, 10, 2, 4),
 			"coherence": Stat.new(5, 10, 2, 4),
@@ -105,6 +125,7 @@ static var blueprints: Dictionary[String, Blueprint] = {
 class Blueprint:
 	var speciesName: String
 	var sprite: Texture2D
+	var shape: Shape
 
 	var type1: Type
 	var type2: Type
@@ -113,10 +134,11 @@ class Blueprint:
 
 	var moves: Array[Move]
 
-	func _init(n: String, spr: Texture2D, t1: Type, t2: Type, st: Dictionary[String, Stat], mo: Array[Move]) -> void:
+	func _init(n: String, spr: Texture2D, t1: Type, t2: Type, sh: Shape, st: Dictionary[String, Stat], mo: Array[Move]) -> void:
 		speciesName = n
 		sprite = spr
 		type1 = t1
 		type2 = t2
+		shape = sh
 		stats = st
 		moves = mo
