@@ -27,6 +27,10 @@ const player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The locatio
 const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the location of the camera scene file
 const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The location of the battle scene
 
+# Pause Menu
+func pauseMenu():
+	pass
+	
 func _ready() -> void:
 	main_menu = get_node("MenuContainer").get_child(0)
 
