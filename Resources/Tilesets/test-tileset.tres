@@ -1,7 +1,7 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cryql3wbplkqj"]
+[gd_resource type="TileSet" format=3 uid="uid://cryql3wbplkqj"]
 
-[ext_resource type="Texture2D" uid="uid://c0sgw0uou2ami" path="res://Resources/Images/Tileset Atlases/test-blocks.png" id="1_3crt4"]
-[ext_resource type="Texture2D" uid="uid://crir5c7jf4du8" path="res://Resources/Images/Tileset Atlases/test-tileset.png" id="1_nsjjv"]
+[ext_resource type="Texture2D" uid="uid://c0sgw0uou2ami" path="res://Resources/Images/Tileset Atlases/Test Zone/test-blocks.png" id="1_3crt4"]
+[ext_resource type="Texture2D" uid="uid://crir5c7jf4du8" path="res://Resources/Images/Tileset Atlases/Test Zone/test-tileset.png" id="1_nsjjv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3crt4"]
 resource_name = "test block"

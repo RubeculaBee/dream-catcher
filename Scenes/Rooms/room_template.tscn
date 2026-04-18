@@ -1,8 +1,13 @@
-[gd_scene load_steps=0 format=3 uid="uid://ch74vq4bc4rb8"]
+[gd_scene format=3 uid="uid://drj6h2hgccjjq"]
 
-[node name="Template" type="Node"]
+[ext_resource type="TileSet" uid="uid://bdioln3jvyyua" path="res://Resources/Tilesets/hitbox.tres" id="1_u5b8d"]
 
-[node name="Terrain Tile Map" type="TileMapLayer" parent="."]
+[node name="Template" type="Node" unique_id=1615208201]
+
+[node name="Terrain Tile Map" type="TileMapLayer" parent="." unique_id=1825512206]
 texture_filter = 1
 
-[node name="Screen Transitions" type="Node" parent="."]
+[node name="Hitbox Tile Map" type="TileMapLayer" parent="." unique_id=941686453]
+tile_set = ExtResource("1_u5b8d")
+
+[node name="Screen Transitions" type="Node" parent="." unique_id=287045987]

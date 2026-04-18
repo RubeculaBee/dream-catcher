@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bjm4i2715m7r1"]
+
+[ext_resource type="Script" uid="uid://d0ldxbtoqd2x1" path="res://Scripts/Figments/figmentTester.gd" id="1_l88po"]
+[ext_resource type="Texture2D" uid="uid://d0w4l1smiqjxy" path="res://Resources/Images/icon.svg" id="2_04ak0"]
+
+[node name="FigmentTest" type="Node" unique_id=77965084]
+script = ExtResource("1_l88po")
+
+[node name="Label" type="Label" parent="." unique_id=1330327018]
+offset_left = 192.0
+offset_top = 32.0
+offset_right = 568.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 36
+text = "Generate a figment!!!!"
+
+[node name="land_button" type="Button" parent="." unique_id=1527296811]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 96.0
+text = "Land"
+
+[node name="sea_button" type="Button" parent="." unique_id=70760151]
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 128.0
+offset_bottom = 128.0
+text = "Sea"
+
+[node name="sky_button" type="Button" parent="." unique_id=567756807]
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 128.0
+offset_bottom = 160.0
+text = "Sky"
+
+[node name="land_button2" type="Button" parent="." unique_id=1500816729]
+offset_left = 640.0
+offset_top = 57.0
+offset_right = 704.0
+offset_bottom = 89.0
+text = "Land"
+
+[node name="sea_button2" type="Button" parent="." unique_id=956299199]
+offset_left = 640.0
+offset_top = 89.0
+offset_right = 704.0
+offset_bottom = 121.0
+text = "Sea"
+
+[node name="sky_button2" type="Button" parent="." unique_id=1231376720]
+offset_left = 640.0
+offset_top = 121.0
+offset_right = 704.0
+offset_bottom = 153.0
+text = "Sky"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1575745974]
+position = Vector2(128, 320)
+texture = ExtResource("2_04ak0")
+
+[node name="Name" type="Label" parent="Sprite2D" unique_id=1140554780]
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 15.0
+offset_bottom = -73.0
+text = "Name"
+
+[node name="Stats" type="Label" parent="Sprite2D" unique_id=495572956]
+offset_left = -64.0
+offset_top = 64.0
+offset_right = 24.0
+offset_bottom = 243.0
+text = "HP: 
+
+Will:
+Coherence:
+Lucidity:
+Acuity:
+Creativity"
+
+[node name="Moves" type="Label" parent="Sprite2D" unique_id=1008380236]
+offset_left = 96.0
+offset_top = -96.0
+offset_right = 151.0
+offset_bottom = -73.0
+text = "Moves:"
+
+[node name="Move1" type="Button" parent="Sprite2D/Moves" unique_id=331531172]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Move2" type="Button" parent="Sprite2D/Moves" unique_id=754763902]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 64.0
+offset_bottom = 96.0
+
+[node name="Move3" type="Button" parent="Sprite2D/Moves" unique_id=1057413030]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 64.0
+offset_bottom = 128.0
+
+[node name="Move4" type="Button" parent="Sprite2D/Moves" unique_id=865089721]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 64.0
+offset_bottom = 160.0
+
+[node name="Training Dummy" type="Sprite2D" parent="." unique_id=191415803]
+position = Vector2(608, 288)
+texture = ExtResource("2_04ak0")
+
+[node name="Name" type="Label" parent="Training Dummy" unique_id=1197377537]
+offset_left = -64.0
+offset_top = -96.0
+offset_right = 65.0
+offset_bottom = -73.0
+text = "Training Dummy"
+
+[node name="Stats" type="Label" parent="Training Dummy" unique_id=1510532252]
+offset_left = -32.0
+offset_top = 64.0
+offset_right = 8.0
+offset_bottom = 87.0
+text = "HP: "
