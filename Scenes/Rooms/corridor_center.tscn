@@ -40,8 +40,9 @@ next_screen_name = "corridor_down"
 id = 3
 
 [node name="Enemies" parent="." instance=ExtResource("3_u8ic6")]
-position = Vector2(-64, 0)
 enemy_scene = ExtResource("4_nwcu0")
+numEnemies = 2
+spawnpoints = [Vector2i(-2, 0), Vector2i(3, -1)]
 
 [node name="Player Spawn" parent="." instance=ExtResource("2_u47vg")]
 

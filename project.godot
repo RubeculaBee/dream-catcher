@@ -13,7 +13,7 @@ config_version=5
 config/name="Dream Catcher"
 run/main_scene="uid://hsrv5bcni84s"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://Resources/Images/icon.svg"
+config/icon="res://Resources/Images/muse-placeholder/icon.svg"
 
 [display]
 
