@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://6tk7qbbanyy2"]
+[gd_scene load_steps=5 format=3 uid="uid://dlq43ddhy23hu"]
 
 [ext_resource type="SpriteFrames" uid="uid://cs4sr2olxrhrj" path="res://Resources/SpriteFrames/muse-overworld.tres" id="1_ei5lw"]
-[ext_resource type="Script" uid="uid://chyesgvfxjlxj" path="res://Scripts/Player/player.gd" id="1_tyf51"]
+[ext_resource type="Script" uid="uid://chyesgvfxjlxj" path="res://Scripts/player.gd" id="1_tyf51"]
+[ext_resource type="Script" uid="uid://do75w0nviflvp" path="res://Scripts/InteractionManager.gd" id="3_tjlwm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyf51"]
 size = Vector2(30, 30)
@@ -22,4 +23,7 @@ animation = &"down_walk"
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_tyf51")
 
+[node name="InteractionManager" type="Node" parent="."]
+script = ExtResource("3_tjlwm")
+metadata/_custom_type_script = "uid://do75w0nviflvp"
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="." unique_id=105964127]

@@ -30,7 +30,6 @@ const background_path: String = "res://Scenes/Gameobjects/background.tscn"
 
 func _ready() -> void:
 	main_menu = get_node("MenuContainer").get_child(0)
-
 	main_menu.start_pressed.connect(_on_mainMenu_startPressed)
 
 func _on_mainMenu_startPressed():
@@ -77,14 +76,12 @@ func update_references() -> void:
 	#connect enemies in this room
 	enemies = current_room.find_child("Enemies")
 	if enemies != null:
-		for i in 1:
-			var enemy = enemies.spawn_enemy((spawnlocation()))
+		for i in enemies.numEnemies:
+			var enemy = enemies.spawn_enemy()
 			player.stopped_move.connect(Callable(enemy, "on_player_moved")) # connect enemy to player's signal  
 			enemy.tried_move.connect(_on_enemy_tried_move) # connect game_manager to enemy's signal
 			enemy_move_response.connect(Callable(enemy, "_on_move_response")) # connect enemy to game_manager's signal
 
-func spawnlocation() -> Vector2:
-	return Vector2.ZERO
 
 # also known as: enterBattle(enemy: Enemy)
 func doGarrett(enemy: Enemy):
