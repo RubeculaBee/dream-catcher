@@ -10,7 +10,7 @@ const TILE_SIZE: int = 32 			# width/height of a tile in pixels
 var main_menu: MainMenu			# The main menu that loads whe nteh game starts
 var current_room: Node			# The current room the player is in
 var last_room: Node				# The last room that the player was in before a battle
-var terrain: TileMapLayer		# The terrain in the current room
+var hitboxMap: TileMapLayer		# The hitbox tilemap in the current room
 var player: Player				# The player object
 var camera: PlayerCamera		# The camera that will follow the player
 var enemies: Enemies
@@ -26,6 +26,7 @@ enum {BATTLE, OVERWORLD}
 const player_path: String = "res://Scenes/Gameobjects/player.tscn"	# The location of the player scene file
 const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the location of the camera scene file
 const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The location of the battle scene
+const background_path: String = "res://Scenes/Gameobjects/background.tscn"
 
 func _ready() -> void:
 	main_menu = get_node("MenuContainer").get_child(0)
@@ -50,6 +51,7 @@ func load_overworld():
 func attach_camera():
 	camera = load(camera_path).instantiate(TYPE_OBJECT)
 	add_child(camera)
+	camera.add_child(load(background_path).instantiate(TYPE_OBJECT))
 	player.find_child("RemoteTransform2D").remote_path = camera.get_path()
 
 func spawn_player(spawn_position: Vector2):
@@ -61,8 +63,8 @@ func spawn_player(spawn_position: Vector2):
 	player_move_response.connect(Callable(player, "_on_move_response")) # connect player to game_manager's signal
 
 func update_references() -> void:
-	terrain = current_room.get_node("Terrain Tile Map")
-	assert(terrain != null, "Terrain not found!")
+	hitboxMap = current_room.get_node("Hitbox Tile Map")
+	assert(hitboxMap != null, "Hitbox not found!")
 
 	screen_transitions = current_room.get_node("Screen Transitions").get_children()
 	for i in screen_transitions.size():
@@ -110,19 +112,19 @@ func _on_battleScene_flee_confirmed():
 	get_node("Rooms").add_child(last_room)
 
 func _on_player_tried_move(tile: Vector2i) -> void:
-	var tile_data: TileData = terrain.get_cell_tile_data(tile)
+	var tile_data: TileData = hitboxMap.get_cell_tile_data(tile)
 	if enemies != null:
 		for enemy in enemies.get_children():
 			if tile == Vector2i(enemy.global_position/TILE_SIZE):
 				doGarrett(enemy)
-	var valid_move: bool = (tile_data != null) && (tile_data.get_custom_data("walkable"))
+	var valid_move: bool = tile_data == null
 	player_move_response.emit(valid_move)
 
 func _on_enemy_tried_move(tile: Vector2i, enemy: Enemy) -> void:
 	if tile == Vector2i(player.global_position/TILE_SIZE):
 		doGarrett(enemy)
-	var tile_data: TileData = terrain.get_cell_tile_data(tile)
-	var valid_move: bool = (tile_data != null) && (tile_data.get_custom_data("walkable"))
+	var tile_data: TileData = hitboxMap.get_cell_tile_data(tile)
+	var valid_move: bool = tile_data == null
 	if valid_move:
 		enemy_move_response.emit(tile)
 	else: enemy_move_response.emit(Vector2i(999,999))
@@ -132,6 +134,7 @@ func _on_transition(transition: ScreenTransition, offset: Vector2):
 	camera.fade_transition()
 	await camera.screen_covered
 
+	## todo: stop deloading room
 	current_room.queue_free()
 	current_room = transition.next_screen.instantiate()
 	get_node("Rooms").add_child.call_deferred(current_room)

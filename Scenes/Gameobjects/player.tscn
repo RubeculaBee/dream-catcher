@@ -1,31 +1,29 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlq43ddhy23hu"]
 
-[ext_resource type="SpriteFrames" uid="uid://cs4sr2olxrhrj" path="res://Resources/SpriteFrames/muse-placeholder.tres" id="1_ei5lw"]
+[ext_resource type="SpriteFrames" uid="uid://cs4sr2olxrhrj" path="res://Resources/SpriteFrames/muse-overworld.tres" id="1_ei5lw"]
 [ext_resource type="Script" uid="uid://chyesgvfxjlxj" path="res://Scripts/player.gd" id="1_tyf51"]
 [ext_resource type="Script" uid="uid://do75w0nviflvp" path="res://Scripts/InteractionManager.gd" id="3_tjlwm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyf51"]
 size = Vector2(30, 30)
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" unique_id=1066303769]
 z_index = 1
 texture_filter = 1
 script = ExtResource("1_tyf51")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(16, 0)
-scale = Vector2(1, 2)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1594891550]
+position = Vector2(15, -8)
 sprite_frames = ExtResource("1_ei5lw")
-animation = &"down"
+animation = &"down_walk"
 
-[node name="PlayerCollision" type="Area2D" parent="."]
+[node name="PlayerCollision" type="Area2D" parent="." unique_id=1974810352]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision" unique_id=306708030]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_tyf51")
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
 [node name="InteractionManager" type="Node" parent="."]
 script = ExtResource("3_tjlwm")
 metadata/_custom_type_script = "uid://do75w0nviflvp"
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="." unique_id=105964127]
