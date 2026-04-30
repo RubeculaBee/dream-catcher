@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://6tk7qbbanyy2"]
+[gd_scene load_steps=4 format=3 uid="uid://6tk7qbbanyy2"]
 
 [ext_resource type="SpriteFrames" uid="uid://cs4sr2olxrhrj" path="res://Resources/SpriteFrames/muse-overworld.tres" id="1_ei5lw"]
 [ext_resource type="Script" uid="uid://chyesgvfxjlxj" path="res://Scripts/Player/player.gd" id="1_tyf51"]
@@ -6,20 +6,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyf51"]
 size = Vector2(30, 30)
 
-[node name="Player" type="Node2D" unique_id=1066303769]
+[node name="Player" type="Node2D"]
 z_index = 1
 texture_filter = 1
 script = ExtResource("1_tyf51")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1594891550]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(15, -8)
 sprite_frames = ExtResource("1_ei5lw")
 animation = &"down_walk"
 
-[node name="PlayerCollision" type="Area2D" parent="." unique_id=1974810352]
+[node name="PlayerCollision" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision" unique_id=306708030]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_tyf51")
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="." unique_id=105964127]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

@@ -1,7 +1,7 @@
 extends PanelContainer
 
 const slotRef = preload("res://Scenes/InventorySystem/InventoryScenes/slotItem.tscn")
-@onready var itemGrid: GridContainer = $"MarginContainer/ItemGrid"
+@onready var itemGrid: GridContainer = $MarginContainer/HBoxContainer/VBoxContainer/ItemGrid
 
 
 func _ready() -> void:

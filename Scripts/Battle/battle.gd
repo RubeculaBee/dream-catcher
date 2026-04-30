@@ -1,6 +1,6 @@
 extends Control
 class_name BattleScene
-# to do
+# todo
 # change all the calls for Text box and Action Panel code
 # they should instead be variables that hold the address, its quicker that way
 # that way It doesn't have to trace the address, every single time 
@@ -33,6 +33,8 @@ func _input(_event) -> void:
 	if(Input.is_action_just_released("make_battle_text_box_disapear") ): # idk how to add check yet to make sure textbox is visible
 		$TextBox.hide()
 		$ActionPanel.show()
+	elif (Input.is_action_just_pressed("test")):
+		_on_top_left_move_pressed()
 			
 # this function controls what text will appear on the buttons depending on what number was fed into it
 func menuSwitchFunction(menuNum):

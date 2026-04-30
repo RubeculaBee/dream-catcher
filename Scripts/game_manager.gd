@@ -29,7 +29,6 @@ const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The locatio
 const background_path: String = "res://Scenes/Gameobjects/background.tscn"
 
 #Nodes
-@onready var TESTInventory : ColorRect = $InventoryLayer/TestImage # testing, to be deleted later (probably) -Garrett
 @onready var MuseInventoryPic : TextureRect = $InventoryLayer/MuseImage
 @onready var PlayerInventory = $InventoryLayer/InventoryInterface/PlayerInventory
 
@@ -165,13 +164,11 @@ func _on_transition(transition: ScreenTransition, offset: Vector2):
 # TODO gotta add bool check for when you can and can't open the inventory
 func _input(_event) -> void:
 	if(Input.is_action_just_pressed("inventory")):
-		if (TESTInventory.visible == true ):
+		if (MuseInventoryPic.visible == true ):
 			MuseInventoryPic.hide()
-			TESTInventory.hide()
-			#PlayerInventory.hide()
+			PlayerInventory.hide()
 		else :
 			MuseInventoryPic.show()
-			TESTInventory.show()
-			#PlayerInventory.show()
+			PlayerInventory.show()
 		
 # end of Garrett's work on inventory ------------
