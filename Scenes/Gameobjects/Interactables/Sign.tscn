@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfgayba6ex6o7"]
+
+[ext_resource type="Script" uid="uid://wqd3cplihinw" path="res://Scripts/Interactables/Sign.gd" id="1_4t2sp"]
+[ext_resource type="Texture2D" uid="uid://cn5m3misfq0gn" path="res://Resources/Images/Interactive Objects/Signoff.png" id="1_5j3hn"]
+[ext_resource type="Texture2D" uid="uid://don7ao3bkvnwr" path="res://Resources/Images/Interactive Objects/Signon.png" id="2_4t2sp"]
+
+[node name="Sign" type="Node2D"]
+script = ExtResource("1_4t2sp")
+
+[node name="SpriteModeOne" type="Sprite2D" parent="."]
+scale = Vector2(0.064, 0.064)
+texture = ExtResource("1_5j3hn")
+centered = false
+
+[node name="SpriteModeTwo" type="Sprite2D" parent="."]
+scale = Vector2(0.064, 0.064)
+texture = ExtResource("2_4t2sp")
+centered = false

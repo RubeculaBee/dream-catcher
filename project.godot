@@ -15,7 +15,6 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Dream Catcher"
-run/main_scene="uid://dinbb7dsmxxe"
 config/features=PackedStringArray("4.6", "Mobile")
 
 [display]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://6qul34qgl324"]
 
-[ext_resource type="Script" uid="uid://bjac1mv0isf4j" path="res://Scripts/battle.gd" id="1_m1w6r"]
+[ext_resource type="Script" path="res://Scripts/battle.gd" id="1_m1w6r"]
 [ext_resource type="Texture2D" uid="uid://bmpas437j6207" path="res://Resources/Images/Battle Scene Images/dream_catcher_battle_background_placeholder.png" id="2_0tpb6"]
 [ext_resource type="Texture2D" uid="uid://ncqibhr3qufs" path="res://Resources/Images/Battle Scene Images/TYPELAND.png" id="3_m1w6r"]
 [ext_resource type="Texture2D" uid="uid://bgftn7fsim7ig" path="res://Resources/Images/Battle Scene Images/TYPESKY.png" id="4_0tpb6"]
