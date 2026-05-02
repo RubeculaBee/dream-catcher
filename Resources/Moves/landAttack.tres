@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://c035cy7fto5ha"]
+
+[ext_resource type="Script" uid="uid://36q70j53266t" path="res://Resources/Moves/Effects/eff-basicDamage.gd" id="1_fkmw4"]
+[ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="2_kppk7"]
+
+[resource]
+script = ExtResource("2_kppk7")
+title = "Land Attack"
+accuracy = 0.65
+power = 15
+type = 1
+effectScript = ExtResource("1_fkmw4")
+metadata/_custom_type_script = "uid://bhwqpk7334ipn"

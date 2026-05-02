@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://0daembq1qmwf"]
+
+[ext_resource type="Script" uid="uid://cutv4lf77m0ac" path="res://Resources/Moves/Effects/eff-heal.gd" id="1_3afgc"]
+[ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="2_pxvf1"]
+
+[resource]
+script = ExtResource("2_pxvf1")
+title = "Heal"
+accuracy = 1.0
+power = 10
+type = 6
+effectScript = ExtResource("1_3afgc")
+metadata/_custom_type_script = "uid://bhwqpk7334ipn"
