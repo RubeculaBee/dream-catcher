@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="FigmentBlueprint" format=3 uid="uid://xapjbnd5g5wl"]
+
+[ext_resource type="Script" uid="uid://s6uxxwxoy1j1" path="res://Scripts/Figments/stat.gd" id="1_mrtom"]
+[ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="1_prk3l"]
+[ext_resource type="Resource" uid="uid://bfomka6l4h51w" path="res://Resources/Moves/seaAttack.tres" id="2_prk3l"]
+[ext_resource type="Resource" uid="uid://cqkuva8bxndit" path="res://Resources/Moves/dragonRage.tres" id="3_mrtom"]
+[ext_resource type="Script" uid="uid://csm2jp1h77xtp" path="res://Resources/Figment Blueprints/fig_bp.gd" id="4_ohfpr"]
+[ext_resource type="Texture2D" uid="uid://bap1lakmn12h1" path="res://Resources/Images/Enemies/enemy_crab.png" id="5_8x2dm"]
+[ext_resource type="Texture2D" uid="uid://r86tegmtvpy5" path="res://Resources/Images/Figment Sprites/TYPESEA.png" id="6_ohfpr"]
+
+[sub_resource type="Resource" id="Resource_8x2dm"]
+script = ExtResource("1_mrtom")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_ohfpr"]
+script = ExtResource("1_mrtom")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_4ggds"]
+script = ExtResource("1_mrtom")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_7j72q"]
+script = ExtResource("1_mrtom")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_ilmog"]
+script = ExtResource("1_mrtom")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[resource]
+script = ExtResource("4_ohfpr")
+speciesName = "TYPE_SKY"
+sprite = ExtResource("6_ohfpr")
+shape = ExtResource("5_8x2dm")
+type1 = 2
+moves = Array[ExtResource("1_prk3l")]([ExtResource("2_prk3l"), ExtResource("3_mrtom")])
+will = SubResource("Resource_ilmog")
+coherence = SubResource("Resource_ohfpr")
+lucidity = SubResource("Resource_7j72q")
+acuity = SubResource("Resource_8x2dm")
+creativity = SubResource("Resource_4ggds")
+metadata/_custom_type_script = "uid://csm2jp1h77xtp"

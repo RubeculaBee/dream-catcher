@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_5ib6j"]
 [ext_resource type="TileSet" uid="uid://bdioln3jvyyua" path="res://Resources/Tilesets/hitbox.tres" id="2_bpf4k"]
 [ext_resource type="PackedScene" uid="uid://bksduw2518ken" path="res://Scenes/Gameobjects/Enemies.tscn" id="3_axatc"]
-[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_vgf1u"]
+[ext_resource type="PackedScene" uid="uid://dcsr3ht84onef" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_vgf1u"]
+[ext_resource type="Script" uid="uid://csm2jp1h77xtp" path="res://Resources/Figment Blueprints/fig_bp.gd" id="6_1yg8q"]
+[ext_resource type="Resource" uid="uid://cvkvqwdo5qpn6" path="res://Resources/Figment Blueprints/landTest.tres" id="7_w4efp"]
 
 [node name="Test Corridor Up" type="Node" unique_id=209487879]
 
@@ -28,3 +30,6 @@ next_screen_name = "Test/corridor_center"
 [node name="Enemies" parent="." unique_id=807451098 instance=ExtResource("3_axatc")]
 position = Vector2(-128, -224)
 enemy_scene = ExtResource("4_vgf1u")
+numEnemies = 1
+spawnpoints = Array[Vector2i]([Vector2i(0, 0), Vector2i(7, 0), Vector2i(3, 4)])
+figment_list = Array[ExtResource("6_1yg8q")]([ExtResource("7_w4efp")])

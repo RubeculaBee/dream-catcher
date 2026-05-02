@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjm4i2715m7r1"]
 
 [ext_resource type="Script" uid="uid://d0ldxbtoqd2x1" path="res://Scripts/Figments/figmentTester.gd" id="1_l88po"]
-[ext_resource type="Texture2D" uid="uid://d0w4l1smiqjxy" path="res://Resources/Images/icon.svg" id="2_04ak0"]
+[ext_resource type="Texture2D" uid="uid://d0w4l1smiqjxy" path="res://Resources/Images/characters/muse-placeholder/icon.svg" id="2_04ak0"]
 
 [node name="FigmentTest" type="Node" unique_id=77965084]
 script = ExtResource("1_l88po")
