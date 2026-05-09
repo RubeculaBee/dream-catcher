@@ -21,6 +21,7 @@ layout_mode = 2
 [node name="testInfoBox" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 150)
 layout_mode = 2
+mouse_filter = 1
 color = Color(0.74250543, 0.4909286, 0.19631016, 1)
 
 [node name="ItemGrid" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -32,4 +33,5 @@ columns = 8
 [node name="TestFigArea" type="ColorRect" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(225, 100)
 layout_mode = 2
+mouse_filter = 1
 color = Color(0.91191244, 0.040076744, 0.48657995, 1)

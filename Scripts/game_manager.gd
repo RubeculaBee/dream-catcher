@@ -15,6 +15,10 @@ var player: Player				# The player object
 var camera: PlayerCamera		# The camera that will follow the player
 var enemies: Enemies
 var screen_transitions: Array	# An array of all the screen transitions in the current room
+	# Inventory Nodes
+@onready var museInventoryPic : TextureRect = $InventoryLayer/MuseImage
+@onready var inventoryInterface = $InventoryLayer/InventoryInterface
+@onready var playerInventory = $InventoryLayer/InventoryInterface/PlayerInventory
 
 # Other
 @export var start_room: PackedScene ## the room that should be loaded when the game starts
@@ -28,14 +32,11 @@ const camera_path: String = "res://Scenes/Gameobjects/player_camera.tscn" # the 
 const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The location of the battle scene
 const background_path: String = "res://Scenes/Gameobjects/background.tscn"
 
-#Nodes
-@onready var MuseInventoryPic : TextureRect = $InventoryLayer/MuseImage
-@onready var PlayerInventory = $InventoryLayer/InventoryInterface/PlayerInventory
 
 
 func _ready() -> void:
 	main_menu = get_node("MenuContainer").get_child(0)
-
+	
 	main_menu.start_pressed.connect(_on_mainMenu_startPressed)
 
 func _on_mainMenu_startPressed():
@@ -51,6 +52,7 @@ func load_overworld():
 	if spawnpoint != null:
 		spawn_player(spawnpoint.position)
 		attach_camera()
+		inventoryInterface.setPlayerInventory(player.playerInventory) #loads in player inv
 
 	update_references()
 
@@ -164,11 +166,11 @@ func _on_transition(transition: ScreenTransition, offset: Vector2):
 # TODO gotta add bool check for when you can and can't open the inventory
 func _input(_event) -> void:
 	if(Input.is_action_just_pressed("inventory")):
-		if (MuseInventoryPic.visible == true ):
-			MuseInventoryPic.hide()
-			PlayerInventory.hide()
+		if (museInventoryPic.visible == true ):
+			museInventoryPic.hide()
+			playerInventory.hide()
 		else :
-			MuseInventoryPic.show()
-			PlayerInventory.show()
+			museInventoryPic.show()
+			playerInventory.show()
 		
 # end of Garrett's work on inventory ------------

@@ -33,6 +33,7 @@ func _input(_event) -> void:
 	if(Input.is_action_just_released("make_battle_text_box_disapear") ): # idk how to add check yet to make sure textbox is visible
 		$TextBox.hide()
 		$ActionPanel.show()
+	# test code for pressing 1-4 instead of manually pressing buttons with mouse
 	elif (Input.is_action_just_pressed("test")):
 		_on_top_left_move_pressed()
 			
