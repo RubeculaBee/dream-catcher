@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://d1up0pixprywi" path="res://Scenes/InventorySystem/InventoryScripts/inventoryInterface.gd" id="5_i6g32"]
 [ext_resource type="PackedScene" uid="uid://cdjdtg2a0vdau" path="res://Scenes/InventorySystem/InventoryScenes/inventory.tscn" id="5_wowpa"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" unique_id=994674660]
 script = ExtResource("1_qxrlw")
 start_room = ExtResource("2_wrm1d")
 
@@ -17,7 +17,7 @@ start_room = ExtResource("2_wrm1d")
 
 [node name="MenuContainer" type="Node" parent="."]
 
-[node name="MainMenu" parent="MenuContainer" instance=ExtResource("2_3dryh")]
+[node name="BattleContainer" type="Node" parent="." unique_id=833031359]
 
 [node name="InventoryLayer" type="CanvasLayer" parent="."]
 
@@ -54,3 +54,7 @@ offset_top = 170.0
 offset_right = 548.0
 offset_bottom = 332.0
 metadata/_edit_use_anchors_ = true
+
+[node name="MenuContainer" type="Node" parent="." unique_id=777485002]
+
+[node name="MainMenu" parent="MenuContainer" unique_id=153532735 instance=ExtResource("2_3dryh")]

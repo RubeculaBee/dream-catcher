@@ -10,19 +10,18 @@ shader_parameter/radius = 5.0
 shader_parameter/steps = 32
 shader_parameter/vertex_expand = 1.0
 
-[node name="Background" type="Node2D"]
+[node name="Background" type="Node2D" unique_id=758946642]
 z_index = -4
 texture_filter = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1217457594]
 offset_left = -430.0
 offset_top = -325.0
 offset_right = 427.0
 offset_bottom = 337.0
-mouse_filter = 2
 color = Color(0.8862745, 0.63529414, 0.4509804, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=879134951]
 material = SubResource("ShaderMaterial_qp21c")
 position = Vector2(0, 5)
 texture = ExtResource("2_10f5r")

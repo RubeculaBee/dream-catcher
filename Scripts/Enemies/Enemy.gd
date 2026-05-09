@@ -28,7 +28,7 @@ func move_random_steps():
 	move_direction = dirs[randi_range(0, 3)]
 	
 	# Choose how many tiles to move 
-	var steps = randi_range(1,1) 
+	var steps = randi_range(1,2) 
 	
 	# Move one tile at a time (with walkability check) 
 	for i in range(steps):
