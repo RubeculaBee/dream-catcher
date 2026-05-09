@@ -10,7 +10,7 @@ var TILE_SIZE: int = 32
 @export var spawnpoints : Array[Vector2i]
 var spawnpointsNow : Array[Vector2i]
 
-@export var figment_list: Array[String]
+@export var figment_list: Array[FigmentBlueprint]
 @export var figment_lvl = {
 	"from": 0,
 	"to": 0
@@ -31,7 +31,7 @@ func spawn_enemy() -> Node2D:
 
 	enemy.figment = Figment.new(figment_list[randi_range(0,figment_list.size()-1)], randi_range(figment_lvl.from,figment_lvl.to))
 	enemy.get_node("Sprite2D").texture = enemy.figment.shape
-	enemy.get_node("Sprite2D").self_modulate = Figment.typeColours[enemy.figment.type1]
+	enemy.get_node("Sprite2D").self_modulate = FigmentBlueprint.typeColours[enemy.figment.type1]
 	
 	enemy.position = Vector2(spawnpoints[spawn] * TILE_SIZE)
 	spawnpoints.remove_at(spawn)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://6qul34qgl324"]
+[gd_scene format=3 uid="uid://6qul34qgl324"]
 
 [ext_resource type="Script" uid="uid://bjac1mv0isf4j" path="res://Scripts/Battle/battle.gd" id="1_m1w6r"]
 [ext_resource type="Texture2D" uid="uid://bmpas437j6207" path="res://Resources/Images/Battle Scene Images/dream_catcher_battle_background_placeholder.png" id="2_0tpb6"]
@@ -126,7 +126,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
 
-[node name="Battle" type="Control"]
+[node name="Battle" type="Control" unique_id=977921894]
 layout_mode = 3
 anchor_left = -0.5
 anchor_top = -0.5
@@ -137,7 +137,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_m1w6r")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1924554701]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -147,7 +147,7 @@ grow_vertical = 2
 texture = ExtResource("2_0tpb6")
 expand_mode = 1
 
-[node name="EnemyInfoBox" type="VBoxContainer" parent="."]
+[node name="EnemyInfoBox" type="VBoxContainer" parent="." unique_id=1657139023]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.605
@@ -158,44 +158,44 @@ offset_right = 0.6052246
 scale = Vector2(0.99808484, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="EnemyInfoBar" type="HBoxContainer" parent="EnemyInfoBox"]
+[node name="EnemyInfoBar" type="HBoxContainer" parent="EnemyInfoBox" unique_id=2114245829]
 layout_mode = 2
 
-[node name="EnemyLevel" type="Label" parent="EnemyInfoBox/EnemyInfoBar"]
+[node name="EnemyLevel" type="Label" parent="EnemyInfoBox/EnemyInfoBar" unique_id=1093383339]
 layout_mode = 2
 theme_override_font_sizes/font_size = 19
 text = "Lv. 23"
 
-[node name="EnemyName" type="Label" parent="EnemyInfoBox/EnemyInfoBar"]
+[node name="EnemyName" type="Label" parent="EnemyInfoBox/EnemyInfoBar" unique_id=571056856]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Enemy Figment"
 horizontal_alignment = 1
 
-[node name="EnemyTeam" type="HBoxContainer" parent="EnemyInfoBox/EnemyInfoBar"]
+[node name="EnemyTeam" type="HBoxContainer" parent="EnemyInfoBox/EnemyInfoBar" unique_id=754795128]
 layout_mode = 2
 
-[node name="EnemyFigmentIcon1" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam"]
+[node name="EnemyFigmentIcon1" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam" unique_id=760018894]
 custom_minimum_size = Vector2(27, 27)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mphgp")
 
-[node name="EnemyFigmentIcon2" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam"]
+[node name="EnemyFigmentIcon2" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam" unique_id=251183443]
 custom_minimum_size = Vector2(27, 27)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ppjsg")
 
-[node name="EnemyFigmentIcon3" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam"]
+[node name="EnemyFigmentIcon3" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam" unique_id=1298198887]
 custom_minimum_size = Vector2(27, 27)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pdhrx")
 
-[node name="EnemyFigmentIcon4" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam"]
+[node name="EnemyFigmentIcon4" type="Panel" parent="EnemyInfoBox/EnemyInfoBar/EnemyTeam" unique_id=2029337902]
 custom_minimum_size = Vector2(27, 27)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_184ww")
 
-[node name="EnemyHealth" type="ProgressBar" parent="EnemyInfoBox"]
+[node name="EnemyHealth" type="ProgressBar" parent="EnemyInfoBox" unique_id=501223758]
 custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
@@ -203,10 +203,10 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
 value = 50.0
 show_percentage = false
 
-[node name="EnemyFigmentTypesBox" type="HBoxContainer" parent="EnemyInfoBox"]
+[node name="EnemyFigmentTypesBox" type="HBoxContainer" parent="EnemyInfoBox" unique_id=1627762775]
 layout_mode = 2
 
-[node name="EnemyFigmentType1" type="Label" parent="EnemyInfoBox/EnemyFigmentTypesBox"]
+[node name="EnemyFigmentType1" type="Label" parent="EnemyInfoBox/EnemyFigmentTypesBox" unique_id=1846804188]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -214,52 +214,52 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_33fou")
 text = "Sky"
 horizontal_alignment = 1
 
-[node name="EnemyFigmentType2" type="Label" parent="EnemyInfoBox/EnemyFigmentTypesBox"]
+[node name="EnemyFigmentType2" type="Label" parent="EnemyInfoBox/EnemyFigmentTypesBox" unique_id=135630682]
 layout_mode = 2
 
-[node name="PlayerInfoBox" type="VBoxContainer" parent="."]
+[node name="PlayerInfoBox" type="VBoxContainer" parent="." unique_id=167858225]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 197.0
 
-[node name="PlayerInfoBar" type="HBoxContainer" parent="PlayerInfoBox"]
+[node name="PlayerInfoBar" type="HBoxContainer" parent="PlayerInfoBox" unique_id=500513742]
 layout_mode = 2
 
-[node name="PlayerLevel" type="Label" parent="PlayerInfoBox/PlayerInfoBar"]
+[node name="PlayerLevel" type="Label" parent="PlayerInfoBox/PlayerInfoBar" unique_id=506379183]
 layout_mode = 2
 theme_override_font_sizes/font_size = 19
 text = "Lv. 28"
 
-[node name="PlayerName" type="Label" parent="PlayerInfoBox/PlayerInfoBar"]
+[node name="PlayerName" type="Label" parent="PlayerInfoBox/PlayerInfoBar" unique_id=2123492563]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Player Figment"
 horizontal_alignment = 1
 
-[node name="PlayerTeam" type="HBoxContainer" parent="PlayerInfoBox/PlayerInfoBar"]
+[node name="PlayerTeam" type="HBoxContainer" parent="PlayerInfoBox/PlayerInfoBar" unique_id=1309609791]
 layout_mode = 2
 
-[node name="PlayerFigmentIcon1" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam"]
+[node name="PlayerFigmentIcon1" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam" unique_id=1201933016]
 custom_minimum_size = Vector2(27, 27)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_spwlv")
 
-[node name="PlayerFigmentIcon2" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam"]
+[node name="PlayerFigmentIcon2" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam" unique_id=1049041583]
 custom_minimum_size = Vector2(27, 27)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rorwe")
 
-[node name="PlayerFigmentIcon3" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam"]
+[node name="PlayerFigmentIcon3" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam" unique_id=2083343799]
 custom_minimum_size = Vector2(27, 27)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_124ha")
 
-[node name="PlayerFigmentIcon4" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam"]
+[node name="PlayerFigmentIcon4" type="Panel" parent="PlayerInfoBox/PlayerInfoBar/PlayerTeam" unique_id=216546041]
 custom_minimum_size = Vector2(27, 27)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7m0st")
 
-[node name="PlayerHealth" type="ProgressBar" parent="PlayerInfoBox"]
+[node name="PlayerHealth" type="ProgressBar" parent="PlayerInfoBox" unique_id=1530445936]
 custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
@@ -267,10 +267,10 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
 value = 83.0
 show_percentage = false
 
-[node name="EnemyFigmentTypesBox" type="HBoxContainer" parent="PlayerInfoBox"]
+[node name="EnemyFigmentTypesBox" type="HBoxContainer" parent="PlayerInfoBox" unique_id=642177816]
 layout_mode = 2
 
-[node name="EnemyFigmentType1" type="Label" parent="PlayerInfoBox/EnemyFigmentTypesBox"]
+[node name="EnemyFigmentType1" type="Label" parent="PlayerInfoBox/EnemyFigmentTypesBox" unique_id=2033582993]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -278,10 +278,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_pd44g")
 text = "Land"
 horizontal_alignment = 1
 
-[node name="EnemyFigmentType2" type="Label" parent="PlayerInfoBox/EnemyFigmentTypesBox"]
+[node name="EnemyFigmentType2" type="Label" parent="PlayerInfoBox/EnemyFigmentTypesBox" unique_id=624735512]
 layout_mode = 2
 
-[node name="PlayerCharacter" type="TextureRect" parent="."]
+[node name="PlayerCharacter" type="TextureRect" parent="." unique_id=740448935]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.08046875
@@ -291,7 +291,7 @@ anchor_bottom = 0.725
 texture = ExtResource("5_eevwc")
 metadata/_edit_use_anchors_ = true
 
-[node name="EnemyCharacter" type="TextureRect" parent="."]
+[node name="EnemyCharacter" type="TextureRect" parent="." unique_id=1160450481]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8859375
@@ -301,7 +301,7 @@ anchor_bottom = 0.7138889
 texture = ExtResource("6_3d018")
 metadata/_edit_use_anchors_ = true
 
-[node name="EnemyFigment" type="TextureRect" parent="."]
+[node name="EnemyFigment" type="TextureRect" parent="." unique_id=564122776]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.65
@@ -313,7 +313,7 @@ texture = ExtResource("4_0tpb6")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="PlayerFigment" type="TextureRect" parent="."]
+[node name="PlayerFigment" type="TextureRect" parent="." unique_id=847016478]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25703126
@@ -327,7 +327,7 @@ texture = ExtResource("3_m1w6r")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="ActionPanel" type="Panel" parent="."]
+[node name="ActionPanel" type="Panel" parent="." unique_id=1625176312]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -343,7 +343,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_udu8d")
 metadata/_edit_use_anchors_ = true
 
-[node name="Actions" type="VBoxContainer" parent="ActionPanel"]
+[node name="Actions" type="VBoxContainer" parent="ActionPanel" unique_id=1768196954]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -357,43 +357,43 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="TopActions" type="HBoxContainer" parent="ActionPanel/Actions"]
+[node name="TopActions" type="HBoxContainer" parent="ActionPanel/Actions" unique_id=1220006789]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 2
 mouse_filter = 2
 
-[node name="TopLeftAction" type="Button" parent="ActionPanel/Actions/TopActions"]
+[node name="TopLeftAction" type="Button" parent="ActionPanel/Actions/TopActions" unique_id=1479924414]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
 
-[node name="TopRightAction" type="Button" parent="ActionPanel/Actions/TopActions"]
+[node name="TopRightAction" type="Button" parent="ActionPanel/Actions/TopActions" unique_id=2089562151]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
 
-[node name="BottomActions" type="HBoxContainer" parent="ActionPanel/Actions"]
+[node name="BottomActions" type="HBoxContainer" parent="ActionPanel/Actions" unique_id=1526292917]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="BottomLeftAction" type="Button" parent="ActionPanel/Actions/BottomActions"]
+[node name="BottomLeftAction" type="Button" parent="ActionPanel/Actions/BottomActions" unique_id=191164206]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
 
-[node name="BottomMiddleAction" type="Button" parent="ActionPanel/Actions/BottomActions"]
+[node name="BottomMiddleAction" type="Button" parent="ActionPanel/Actions/BottomActions" unique_id=266286153]
 clip_contents = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_3d018")
 text = "Test"
 
-[node name="BottomRightAction" type="Button" parent="ActionPanel/Actions/BottomActions"]
+[node name="BottomRightAction" type="Button" parent="ActionPanel/Actions/BottomActions" unique_id=1079275199]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")

@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="FigmentBlueprint" format=3 uid="uid://btisfjpk4sy63"]
+
+[ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="1_ent8t"]
+[ext_resource type="Resource" uid="uid://c2u73inw5ent5" path="res://Resources/Moves/skyAttack.tres" id="2_73nha"]
+[ext_resource type="Resource" uid="uid://0daembq1qmwf" path="res://Resources/Moves/heal.tres" id="3_rxs52"]
+[ext_resource type="Script" uid="uid://csm2jp1h77xtp" path="res://Resources/Figment Blueprints/fig_bp.gd" id="4_54ydq"]
+[ext_resource type="Texture2D" uid="uid://cbb0u13swyvhh" path="res://Resources/Images/Enemies/enemy_bat.png" id="5_pwy05"]
+[ext_resource type="Texture2D" uid="uid://n8f6st3s7101" path="res://Resources/Images/Figment Sprites/TYPESKY.png" id="6_u43c6"]
+[ext_resource type="Script" uid="uid://s6uxxwxoy1j1" path="res://Scripts/Figments/stat.gd" id="7_i2vbn"]
+
+[sub_resource type="Resource" id="Resource_i2vbn"]
+script = ExtResource("7_i2vbn")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_urjf1"]
+script = ExtResource("7_i2vbn")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_0m1qn"]
+script = ExtResource("7_i2vbn")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_swy4y"]
+script = ExtResource("7_i2vbn")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_b50kr"]
+script = ExtResource("7_i2vbn")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[resource]
+script = ExtResource("4_54ydq")
+speciesName = "TYPE_SKY"
+sprite = ExtResource("6_u43c6")
+shape = ExtResource("5_pwy05")
+type1 = 3
+moves = Array[ExtResource("1_ent8t")]([ExtResource("2_73nha"), ExtResource("3_rxs52")])
+will = SubResource("Resource_b50kr")
+coherence = SubResource("Resource_urjf1")
+lucidity = SubResource("Resource_swy4y")
+acuity = SubResource("Resource_i2vbn")
+creativity = SubResource("Resource_0m1qn")
+metadata/_custom_type_script = "uid://csm2jp1h77xtp"

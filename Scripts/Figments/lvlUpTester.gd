@@ -40,10 +40,10 @@ func updateLevels():
 	$Level.text = "Level: %s" % figment.level
 	$LShards.text = "LShards: %s" % lShards
 	for button: Button in $Stats.get_children():
-		button.get_child(0).text = "lvl: %s" % figment.stats[button.text.to_lower()].level
+		button.get_child(0).text = "lvl: %s" % figment.stats[button.text].level
 		button.get_child(1).text = "value: %s\ngrowth: %s" %[
-			figment.stats[button.text.to_lower()].value,
-			figment.stats[button.text.to_lower()].growth
+			figment.stats[button.text].value,
+			figment.stats[button.text].growth
 		]
 
 
@@ -60,7 +60,7 @@ func connectSignals():
 	$Figment/Regenerate/Sky.pressed.connect(newFigment.bind("skyTest"))
 
 func newFigment(bp: String):
-	figment = Figment.new(bp, startLevel)
+	figment = Figment.new(load("res://Resources/Figment Blueprints/%s.tres" % bp), startLevel)
 	updateLevels()
 	updateFigment()
 

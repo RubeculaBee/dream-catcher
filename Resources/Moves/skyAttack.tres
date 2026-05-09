@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://c2u73inw5ent5"]
+
+[ext_resource type="Script" uid="uid://36q70j53266t" path="res://Resources/Moves/Effects/eff-basicDamage.gd" id="1_1co7s"]
+[ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="1_343sa"]
+
+[resource]
+script = ExtResource("1_343sa")
+title = "Sky Attack"
+accuracy = 0.75
+power = 5
+type = 3
+effectScript = ExtResource("1_1co7s")
+metadata/_custom_type_script = "uid://bhwqpk7334ipn"
