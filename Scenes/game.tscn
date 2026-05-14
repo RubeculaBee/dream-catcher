@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://dfu7jqgvdmna" path="res://Scripts/game_manager.gd" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://28vqp5eny63q" path="res://Scenes/Rooms/Menus/main_menu.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bic4bxho2w3jl" path="res://Scenes/Rooms/Autumn Forest Zone/center_field.tscn" id="2_wrm1d"]
-[ext_resource type="Texture2D" uid="uid://0ljaecgwgb5r" path="res://Resources/Images/Inventory-Images/muse_dream_pose_.png" id="4_3dryh"]
+[ext_resource type="PackedScene" path="res://Scenes/Rooms/Menus/pause.tscn" id="4_3dryh"]
+[ext_resource type="Texture2D" uid="uid://0ljaecgwgb5r" path="res://Resources/Images/Inventory-Images/muse_dream_pose_.png" id="5_1l0tm"]
 [ext_resource type="Script" uid="uid://d1up0pixprywi" path="res://Scenes/InventorySystem/InventoryScripts/inventoryInterface.gd" id="5_i6g32"]
 [ext_resource type="PackedScene" uid="uid://cdjdtg2a0vdau" path="res://Scenes/InventorySystem/InventoryScenes/inventory.tscn" id="5_wowpa"]
 
@@ -26,7 +27,7 @@ offset_bottom = -1.0
 
 [node name="pauseLayer" type="CanvasLayer" parent="." unique_id=390653873]
 
-[node name="Pause" parent="pauseLayer" unique_id=697995316]
+[node name="Pause" parent="pauseLayer" unique_id=697995316 instance=ExtResource("4_3dryh")]
 visible = false
 offset_left = 366.0
 offset_top = 145.0
@@ -48,7 +49,7 @@ offset_right = -651.5
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_3dryh")
+texture = ExtResource("5_1l0tm")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
