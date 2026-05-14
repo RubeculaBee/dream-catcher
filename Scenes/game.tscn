@@ -17,6 +17,21 @@ start_room = ExtResource("2_wrm1d")
 
 [node name="MenuContainer" type="Node" parent="." unique_id=1043847931]
 
+[node name="MainMenu" parent="MenuContainer" unique_id=153532735 instance=ExtResource("2_3dryh")]
+visibility_layer = 3
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0
+
+[node name="pauseLayer" type="CanvasLayer" parent="." unique_id=390653873]
+
+[node name="Pause" parent="pauseLayer" unique_id=697995316 instance=ExtResource("4_3dryh")]
+visible = false
+offset_left = 366.0
+offset_top = 145.0
+offset_right = -197.0
+offset_bottom = -245.0
 [node name="MainMenu" parent="MenuContainer" unique_id=1152008903 instance=ExtResource("2_3dryh")]
 
 [node name="BattleContainer2" type="Node" parent="." unique_id=1354930388]

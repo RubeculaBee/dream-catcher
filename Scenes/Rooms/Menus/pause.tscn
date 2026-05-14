@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://w0wpf8uxwkdg"]
+
+[ext_resource type="Script" uid="uid://cseq3upvsajj2" path="res://Scripts/Menus/pause.gd" id="1_m2hxm"]
+[ext_resource type="Shader" uid="uid://dnwekuuqsryyo" path="res://Scenes/Rooms/Menus/pause.gdshader" id="2_g8558"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6k8fp"]
+shader = ExtResource("2_g8558")
+shader_parameter/amount = 2.000000095
+
+[node name="Pause" type="Control" unique_id=697995316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m2hxm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=606068710]
+material = SubResource("ShaderMaterial_6k8fp")
+layout_mode = 0
+offset_left = -640.0
+offset_top = -458.0
+offset_right = 892.0
+offset_bottom = 717.0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=771142752]
+layout_mode = 0
+offset_left = -34.0
+offset_right = 134.0
+offset_bottom = 152.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=623939769]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1021264183]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.47843137, 0.84705883, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "*PAUSED*"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1268214149]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_constants/h_separation = 4
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1267473563]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_constants/h_separation = 4
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2056781208]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_constants/h_separation = 4
+text = "Exit"
+
+[node name="Label" type="Label" parent="." unique_id=1416589086]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -401.0
+offset_top = -103.0
+offset_right = 256.0
+offset_bottom = 15.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7989496, 0.47872555, 0.8466857, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 58
+text = "DREAM CATCHER"
+horizontal_alignment = 1
+vertical_alignment = 3
+autowrap_mode = 3
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

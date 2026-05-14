@@ -1,7 +1,7 @@
 extends Node
 
 var figment: Figment
-var dummy: Figment
+var dummy: Figment #test
 
 func _ready():
 	$land_button.pressed.connect(_on_landButton_pressed)
