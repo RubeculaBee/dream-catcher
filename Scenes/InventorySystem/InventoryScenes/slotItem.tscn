@@ -1,24 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm4m1221v4njq"]
+[gd_scene format=3 uid="uid://cm4m1221v4njq"]
 
 [ext_resource type="Script" uid="uid://chjl4no6so5s0" path="res://Scenes/InventorySystem/InventoryScripts/slotItem.gd" id="1_xjjcs"]
 
-[node name="SlotItem" type="PanelContainer"]
-custom_minimum_size = Vector2(64, 64)
+[node name="SlotItem" type="PanelContainer" unique_id=1389964902]
+custom_minimum_size = Vector2(57, 57)
 mouse_filter = 1
 script = ExtResource("1_xjjcs")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1122718499]
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="ItemImage" type="TextureRect" parent="MarginContainer"]
+[node name="ItemImage" type="TextureRect" parent="MarginContainer" unique_id=861404275]
 layout_mode = 2
 expand_mode = 1
 
-[node name="QuantityLabel" type="Label" parent="."]
+[node name="QuantityLabel" type="Label" parent="." unique_id=1359475582]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 8

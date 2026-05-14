@@ -49,7 +49,7 @@ func load_overworld():
 	if spawnpoint != null:
 		spawn_player(spawnpoint.position)
 		attach_camera()
-		inventoryInterface.setPlayerInventory(player.playerInventory) #loads in player inv
+		inventoryInterface.setPlayerInventory(player.playerInventory) #loads in player inv when spawning in
 
 	update_references()
 

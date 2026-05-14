@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dinbb7dsmxxe"]
+[gd_scene format=3 uid="uid://dinbb7dsmxxe"]
 
 [ext_resource type="Script" uid="uid://dfu7jqgvdmna" path="res://Scripts/game_manager.gd" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://28vqp5eny63q" path="res://Scenes/Rooms/Menus/main_menu.tscn" id="2_3dryh"]
@@ -7,35 +7,40 @@
 [ext_resource type="Script" uid="uid://d1up0pixprywi" path="res://Scenes/InventorySystem/InventoryScripts/inventoryInterface.gd" id="5_i6g32"]
 [ext_resource type="PackedScene" uid="uid://cdjdtg2a0vdau" path="res://Scenes/InventorySystem/InventoryScenes/inventory.tscn" id="5_wowpa"]
 
-[node name="Game" type="Node" unique_id=994674660]
+[node name="Game" type="Node" unique_id=2146714864]
 script = ExtResource("1_qxrlw")
 start_room = ExtResource("2_wrm1d")
 
-[node name="Rooms" type="Node" parent="."]
+[node name="Rooms" type="Node" parent="." unique_id=292664974]
 
-[node name="BattleContainer" type="Node" parent="."]
+[node name="BattleContainer" type="Node" parent="." unique_id=976797772]
 
-[node name="MenuContainer" type="Node" parent="."]
+[node name="MenuContainer" type="Node" parent="." unique_id=1043847931]
 
-[node name="BattleContainer" type="Node" parent="." unique_id=833031359]
+[node name="MainMenu" parent="MenuContainer" unique_id=1152008903 instance=ExtResource("2_3dryh")]
 
-[node name="InventoryLayer" type="CanvasLayer" parent="."]
+[node name="BattleContainer2" type="Node" parent="." unique_id=1354930388]
 
-[node name="MuseImage" type="TextureRect" parent="InventoryLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 124.0
-offset_top = 515.0
-offset_right = -885.0
-offset_bottom = 1.0
+[node name="InventoryLayer" type="CanvasLayer" parent="." unique_id=1811506362]
+
+[node name="MuseImage" type="TextureRect" parent="InventoryLayer" unique_id=38291398]
+visible = false
+anchors_preset = -1
+anchor_left = -0.01
+anchor_top = -0.008333334
+anchor_right = 1.008125
+anchor_bottom = 1.0066667
+offset_left = 62.0
+offset_top = 509.0
+offset_right = -651.5
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_3dryh")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="InventoryInterface" type="Control" parent="InventoryLayer"]
+[node name="InventoryInterface" type="Control" parent="InventoryLayer" unique_id=628568147]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,15 +51,14 @@ mouse_filter = 2
 script = ExtResource("5_i6g32")
 metadata/_edit_use_anchors_ = true
 
-[node name="PlayerInventory" parent="InventoryLayer/InventoryInterface" instance=ExtResource("5_wowpa")]
+[node name="PlayerInventory" parent="InventoryLayer/InventoryInterface" unique_id=74132495 instance=ExtResource("5_wowpa")]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 211.0
-offset_top = 170.0
-offset_right = 548.0
-offset_bottom = 332.0
-metadata/_edit_use_anchors_ = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 83.0
+offset_top = 85.0
+offset_right = -555.0
+offset_bottom = -351.0
 
-[node name="MenuContainer" type="Node" parent="." unique_id=777485002]
-
-[node name="MainMenu" parent="MenuContainer" unique_id=153532735 instance=ExtResource("2_3dryh")]
+[node name="MenuContainer2" type="Node" parent="." unique_id=1811474891]

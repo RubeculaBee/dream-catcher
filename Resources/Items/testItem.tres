@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="itemData" load_steps=3 format=3 uid="uid://cuc3fgmdntja0"]
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://cuc3fgmdntja0"]
 
 [ext_resource type="Script" uid="uid://dcafr71cqsmme" path="res://Scenes/InventorySystem/InventoryScripts/itemData.gd" id="1_edeli"]
 

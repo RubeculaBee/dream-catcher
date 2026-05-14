@@ -399,8 +399,7 @@ size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
 
-[node name="TextBox" type="Label" parent="."]
-visible = false
+[node name="TextBox" type="Label" parent="." unique_id=33980196]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bdioln3jvyyua"]
+[gd_resource type="TileSet" format=3 uid="uid://bdioln3jvyyua"]
 
 [ext_resource type="Texture2D" uid="uid://b3wxbixkjt670" path="res://Resources/Images/Tileset Atlases/hitbox.png" id="1_vs7h0"]
 

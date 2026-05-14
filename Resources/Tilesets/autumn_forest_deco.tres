@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bya5ymvp6aias"]
+[gd_resource type="TileSet" format=3 uid="uid://bya5ymvp6aias"]
 
 [ext_resource type="Texture2D" uid="uid://dygo4kt8m77pe" path="res://Resources/Images/Tileset Atlases/Autumn Forest Zone/autumn_forest_deco.png" id="1_me3nn"]
 [ext_resource type="Texture2D" uid="uid://xevuecenefue" path="res://Resources/Images/Tileset Atlases/Autumn Forest Zone/autumn_forest_leaflitter.png" id="2_kgasi"]

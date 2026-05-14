@@ -1,6 +1,6 @@
 extends Control
 
-@onready var player_inventory: PanelContainer = $PlayerInventory
+@onready var playerInventory: PanelContainer = $PlayerInventory
 
 func setPlayerInventory(playerInv : inventoryData) -> void:
-	player_inventory.setInventoryData(playerInv)
+	playerInventory.setWholeInventoryData(playerInv)

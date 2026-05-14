@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://b8y42p2qetbg"]
+
+[ext_resource type="Script" uid="uid://dlpjvbephmr77" path="res://Scenes/InventorySystem/InventoryScripts/slotFigment.gd" id="1_yhhf7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu1tm"]
+bg_color = Color(0.90021604, 0.1631974, 0.24828446, 1)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpfn6"]
+bg_color = Color(0.5286902, 0.6612116, 0.038974356, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awl5c"]
+bg_color = Color(0.014398723, 0.16098437, 0.30212122, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lm3k"]
+bg_color = Color(0.17062664, 0.6815915, 0.6712992, 1)
+border_width_left = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="SlotFigment" type="PanelContainer" unique_id=1873032816]
+custom_minimum_size = Vector2(160, 80)
+mouse_filter = 1
+script = ExtResource("1_yhhf7")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1949405759]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TypeBackgorund" type="TextureRect" parent="MarginContainer" unique_id=1504352965]
+layout_mode = 2
+
+[node name="MainFigmentSection" type="HBoxContainer" parent="MarginContainer" unique_id=1341788127]
+layout_mode = 2
+
+[node name="FigmentImage" type="TextureRect" parent="MarginContainer/MainFigmentSection" unique_id=2084985360]
+layout_mode = 2
+expand_mode = 3
+
+[node name="InfoBlock" type="VBoxContainer" parent="MarginContainer/MainFigmentSection" unique_id=86528683]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/MainFigmentSection/InfoBlock" unique_id=960679555]
+custom_minimum_size = Vector2(80, 15)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bu1tm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mpfn6")
+value = 56.0
+show_percentage = false
+
+[node name="XPBar" type="ProgressBar" parent="MarginContainer/MainFigmentSection/InfoBlock" unique_id=750564892]
+custom_minimum_size = Vector2(0, 7)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_awl5c")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0lm3k")
+value = 34.0
+show_percentage = false
+
+[node name="InfoLine" type="HBoxContainer" parent="MarginContainer/MainFigmentSection/InfoBlock" unique_id=1426064678]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/InfoLine" unique_id=1344282551]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Lv 12 "
+
+[node name="NameLabel" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/InfoLine" unique_id=560863075]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Test"
+
+[node name="StatBox" type="HBoxContainer" parent="MarginContainer/MainFigmentSection/InfoBlock" unique_id=406871459]
+layout_mode = 2
+
+[node name="Will" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/StatBox" unique_id=1706244510]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "W: 1"
+
+[node name="Coherence" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/StatBox" unique_id=335166482]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Co: 2"
+
+[node name="Lucidity" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/StatBox" unique_id=267424473]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "L: 3"
+
+[node name="Acuity" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/StatBox" unique_id=883950566]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "A: 4"
+
+[node name="Creativity" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/StatBox" unique_id=63637342]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Cr: 5"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
