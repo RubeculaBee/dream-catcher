@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="FigmentBlueprint" format=3 uid="uid://cvkvqwdo5qpn6"]
+
+[ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="1_6efet"]
+[ext_resource type="Resource" uid="uid://c035cy7fto5ha" path="res://Resources/Moves/landAttack.tres" id="2_f2rx8"]
+[ext_resource type="Texture2D" uid="uid://b00hli82nylkm" path="res://Resources/Images/Enemies/enemy_tongue.png" id="4_6efet"]
+[ext_resource type="Script" uid="uid://csm2jp1h77xtp" path="res://Resources/Figment Blueprints/fig_bp.gd" id="4_ix32y"]
+[ext_resource type="Texture2D" uid="uid://bxjh4viilxk7k" path="res://Resources/Images/Figment Sprites/TYPELAND.png" id="5_817b5"]
+[ext_resource type="Script" uid="uid://s6uxxwxoy1j1" path="res://Scripts/Figments/stat.gd" id="6_6efet"]
+
+[sub_resource type="Resource" id="Resource_6efet"]
+script = ExtResource("6_6efet")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_817b5"]
+script = ExtResource("6_6efet")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_cxmt0"]
+script = ExtResource("6_6efet")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_ix32y"]
+script = ExtResource("6_6efet")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_xx186"]
+script = ExtResource("6_6efet")
+minInit = 5
+maxInit = 10
+minGrowth = 5
+maxGrowth = 10
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[resource]
+script = ExtResource("4_ix32y")
+speciesName = "TYPE_SKY"
+sprite = ExtResource("5_817b5")
+shape = ExtResource("4_6efet")
+type1 = 1
+moves = Array[ExtResource("1_6efet")]([ExtResource("2_f2rx8")])
+will = SubResource("Resource_xx186")
+coherence = SubResource("Resource_817b5")
+lucidity = SubResource("Resource_ix32y")
+acuity = SubResource("Resource_6efet")
+creativity = SubResource("Resource_cxmt0")
+metadata/_custom_type_script = "uid://csm2jp1h77xtp"

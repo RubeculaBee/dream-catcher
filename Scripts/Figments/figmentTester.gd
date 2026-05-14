@@ -11,33 +11,33 @@ func _ready():
 	$sea_button2.pressed.connect(_on_seaButton2_pressed)
 	$sky_button2.pressed.connect(_on_skyButton2_pressed)
 
-	figment = Figment.new("seaTest")
-	dummy = Figment.new("landTest")
+	figment = Figment.new(load("res://Resources/Figment Blueprints/landTest.tres"), 0)
+	dummy = Figment.new(load("res://Resources/Figment Blueprints/seaTest.tres"), 0)
 	updateFigment()
 	updateDummy()
 
 func _on_landButton_pressed():
-	figment = Figment.new("landTest")
+	figment = Figment.new(load("res://Resources/Figment Blueprints/landTest.tres"), 0)
 	updateFigment()
 
 func _on_seaButton_pressed():
-	figment = Figment.new("seaTest")
+	figment = Figment.new(load("res://Resources/Figment Blueprints/seaTest.tres"), 0)
 	updateFigment()
 
 func _on_skyButton_pressed():
-	figment = Figment.new("skyTest")
+	figment = Figment.new(load("res://Resources/Figment Blueprints/skyTest.tres"), 0)
 	updateFigment()
 
 func _on_landButton2_pressed():
-	dummy = Figment.new("landTest")
+	dummy = Figment.new(load("res://Resources/Figment Blueprints/landTest.tres"), 0)
 	updateDummy()
 
 func _on_seaButton2_pressed():
-	dummy = Figment.new("seaTest")
+	dummy = Figment.new(load("res://Resources/Figment Blueprints/seaTest.tres"), 0)
 	updateDummy()
 
 func _on_skyButton2_pressed():
-	dummy = Figment.new("skyTest")
+	dummy = Figment.new(load("res://Resources/Figment Blueprints/skyTest.tres"), 0)
 	updateDummy()
 
 func updateFigment():
@@ -51,11 +51,11 @@ func updateFigment():
 	Acuity: %s
 	Creativity: %s" % [
 		figment.hp,
-		figment.stats.will.value,
-		figment.stats.coherence.value,
-		figment.stats.lucidity.value,
-		figment.stats.acuity.value,
-		figment.stats.creativity.value,
+		figment.stats.Will.value,
+		figment.stats.Coherence.value,
+		figment.stats.Lucidity.value,
+		figment.stats.Acuity.value,
+		figment.stats.Creativity.value,
 	]
 	for i in range(4):
 		var button: Button = $Sprite2D/Moves.get_child(i)
@@ -80,15 +80,15 @@ func updateDummy():
 	Acuity: %s
 	Creativity: %s" % [
 		dummy.hp,
-		dummy.stats.will.value,
-		dummy.stats.coherence.value,
-		dummy.stats.lucidity.value,
-		dummy.stats.acuity.value,
-		dummy.stats.creativity.value,
+		dummy.stats.Will.value,
+		dummy.stats.Coherence.value,
+		dummy.stats.Lucidity.value,
+		dummy.stats.Acuity.value,
+		dummy.stats.Creativity.value,
 	]
 
 func move(i: int):
 	if i < figment.moves.size():
-		figment.moves[i].doEffect.call(figment, dummy)
+		figment.moves[i].doEffect.call(figment, dummy, figment.moves[i])
 		updateFigment()
 		updateDummy()

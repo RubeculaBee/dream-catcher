@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://cqkuva8bxndit"]
+
+[ext_resource type="Script" uid="uid://boh8jgb1hdc0b" path="res://Resources/Moves/Effects/eff-dragonRage.gd" id="1_j5o1r"]
+[ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="2_0l3ja"]
+
+[resource]
+script = ExtResource("2_0l3ja")
+title = "Dragon Rage"
+accuracy = 0.6
+power = 40
+type = 7
+effectScript = ExtResource("1_j5o1r")
+metadata/_custom_type_script = "uid://bhwqpk7334ipn"

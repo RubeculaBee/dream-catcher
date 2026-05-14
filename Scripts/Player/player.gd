@@ -8,6 +8,7 @@ var input_direction: Vector2i	# The direction the user is inputting
 var move_direction: Vector2i	# The direction the player character is actively moving
 var look_direction: String		# The direction the player character is facing
 
+
 # Constants
 const TILE_SIZE: int = 32 			# width/height of a tile in pixels
 @export var MOVE_SPEED: float = 4 	## How many tiles to move each second
@@ -18,6 +19,8 @@ signal stopped_move					## Emitted when the player finishes taking a step
 
 # Nodes
 @onready var sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
+
+@export var playerInventory: inventoryData #Players inventory
 
 func _process(_delta: float) -> void:
 	input_direction = get_input()

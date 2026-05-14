@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="inventoryData" format=3 uid="uid://cetln4xnxb4ba"]
+
+[ext_resource type="Script" uid="uid://bm4vjv7wn4gvr" path="res://Scenes/InventorySystem/InventoryScripts/slotItemData.gd" id="1_8jdf6"]
+[ext_resource type="Script" uid="uid://dqgpt60kofple" path="res://Scenes/InventorySystem/InventoryScripts/slotFigmentData.gd" id="1_c384p"]
+[ext_resource type="Resource" uid="uid://btisfjpk4sy63" path="res://Resources/Figment Blueprints/skyTest.tres" id="2_882uo"]
+[ext_resource type="Resource" uid="uid://cuc3fgmdntja0" path="res://Resources/Items/testItem.tres" id="2_c384p"]
+[ext_resource type="Script" uid="uid://bb7qonktqgxw4" path="res://Scenes/InventorySystem/InventoryScripts/inventoryData.gd" id="2_sat8k"]
+[ext_resource type="Resource" uid="uid://xapjbnd5g5wl" path="res://Resources/Figment Blueprints/seaTest.tres" id="3_3vrqv"]
+[ext_resource type="Resource" uid="uid://cvkvqwdo5qpn6" path="res://Resources/Figment Blueprints/landTest.tres" id="4_t8rlp"]
+
+[sub_resource type="Resource" id="Resource_6x7w4"]
+script = ExtResource("1_c384p")
+figmentInfo = ExtResource("2_882uo")
+metadata/_custom_type_script = "uid://dqgpt60kofple"
+
+[sub_resource type="Resource" id="Resource_18gqf"]
+script = ExtResource("1_c384p")
+figmentInfo = ExtResource("3_3vrqv")
+metadata/_custom_type_script = "uid://dqgpt60kofple"
+
+[sub_resource type="Resource" id="Resource_keeoc"]
+script = ExtResource("1_c384p")
+figmentInfo = ExtResource("4_t8rlp")
+metadata/_custom_type_script = "uid://dqgpt60kofple"
+
+[sub_resource type="Resource" id="Resource_qqtuh"]
+script = ExtResource("1_8jdf6")
+itemInfo = ExtResource("2_c384p")
+quantity = 50
+metadata/_custom_type_script = "uid://bm4vjv7wn4gvr"
+
+[sub_resource type="Resource" id="Resource_founq"]
+script = ExtResource("1_8jdf6")
+itemInfo = ExtResource("2_c384p")
+quantity = 3
+metadata/_custom_type_script = "uid://bm4vjv7wn4gvr"
+
+[sub_resource type="Resource" id="Resource_sat8k"]
+script = ExtResource("1_8jdf6")
+itemInfo = ExtResource("2_c384p")
+metadata/_custom_type_script = "uid://bm4vjv7wn4gvr"
+
+[sub_resource type="Resource" id="Resource_c384p"]
+script = ExtResource("1_8jdf6")
+itemInfo = ExtResource("2_c384p")
+quantity = 5
+metadata/_custom_type_script = "uid://bm4vjv7wn4gvr"
+
+[resource]
+script = ExtResource("2_sat8k")
+inventorySlots = Array[ExtResource("1_8jdf6")]([SubResource("Resource_qqtuh"), SubResource("Resource_founq"), SubResource("Resource_sat8k"), SubResource("Resource_c384p"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+figmentPartySlots = Array[ExtResource("1_c384p")]([SubResource("Resource_6x7w4"), SubResource("Resource_18gqf"), SubResource("Resource_keeoc"), null])
+metadata/_custom_type_script = "uid://bb7qonktqgxw4"
