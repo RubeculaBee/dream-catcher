@@ -1,35 +1,50 @@
 [gd_scene format=3 uid="uid://28vqp5eny63q"]
 
 [ext_resource type="Script" uid="uid://4o6pcx7rb6js" path="res://Scripts/Menus/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://dsopcne24hgr6" path="res://Resources/Images/Main Menu/background.PNG" id="2_v6acm"]
+[ext_resource type="Texture2D" uid="uid://ipo6rboinw2f" path="res://Resources/Images/Main Menu/title.PNG" id="3_is2bo"]
+[ext_resource type="Texture2D" uid="uid://rr8rpf4qvfe" path="res://Resources/Images/Main Menu/start game.PNG" id="3_lnnba"]
+[ext_resource type="Texture2D" uid="uid://dhhblqeydsfcj" path="res://Resources/Images/Main Menu/cute extras.PNG" id="4_h5b0d"]
+[ext_resource type="Texture2D" uid="uid://kmgkdilivpu4" path="res://Resources/Images/Main Menu/start game selected.PNG" id="4_lnnba"]
+[ext_resource type="Texture2D" uid="uid://ceh04kcdmuq6f" path="res://Resources/Images/Main Menu/exit selected.PNG" id="4_u78x7"]
+[ext_resource type="Texture2D" uid="uid://dmfme4bod6mnp" path="res://Resources/Images/Main Menu/options.PNG" id="5_j0r54"]
+[ext_resource type="Texture2D" uid="uid://gg3fn5fwe4js" path="res://Resources/Images/Main Menu/button shadow.PNG" id="6_7pd5w"]
+[ext_resource type="Texture2D" uid="uid://o1w2icqb8id4" path="res://Resources/Images/Main Menu/options selected.PNG" id="6_eaxme"]
+[ext_resource type="Texture2D" uid="uid://ju8jj05fgm3v" path="res://Resources/Images/Main Menu/exit.PNG" id="7_m4qp8"]
+[ext_resource type="Texture2D" uid="uid://fq7avw3iaajb" path="res://Resources/Images/Main Menu/muse.PNG" id="7_vm4ym"]
+[ext_resource type="Texture2D" uid="uid://cp7m4t7wjcm0w" path="res://Resources/Images/Main Menu/start game placement.PNG" id="12_3yvhg"]
+[ext_resource type="Texture2D" uid="uid://dac3u03vum03l" path="res://Resources/Images/Main Menu/options placment.PNG" id="13_7pd5w"]
+[ext_resource type="Texture2D" uid="uid://cfpw6jv015r4a" path="res://Resources/Images/Main Menu/exit placement.PNG" id="14_bt676"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
-bg_color = Color(0.58400303, 0.55947256, 0.8451648, 1)
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
-shadow_size = 4
-shadow_offset = Vector2(0, 2)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lnnba"]
+texture = ExtResource("2_v6acm")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
-bg_color = Color(0.19436643, 0.16659859, 0.3633779, 1)
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
-shadow_size = 4
-shadow_offset = Vector2(0, 2)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qivb4"]
+texture = ExtResource("3_lnnba")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
-bg_color = Color(0.32522053, 0.28091994, 0.57091224, 1)
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
-shadow_size = 4
-shadow_offset = Vector2(0, 2)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16cgv"]
+texture = ExtResource("4_lnnba")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0r54"]
+texture = ExtResource("4_lnnba")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3yvhg"]
+texture = ExtResource("5_j0r54")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0crp3"]
+texture = ExtResource("6_eaxme")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7pd5w"]
+texture = ExtResource("6_eaxme")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bt676"]
+texture = ExtResource("7_m4qp8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3v7wb"]
+texture = ExtResource("4_u78x7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7gxy7"]
+texture = ExtResource("4_u78x7")
 
 [node name="MainMenu" type="Control" unique_id=840243793]
 layout_mode = 3
@@ -49,19 +64,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lnnba")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=320833196]
+position = Vector2(400, 300)
+scale = Vector2(0.4085802, 0.4)
+texture = ExtResource("3_is2bo")
+
+[node name="CuteExtras" type="Sprite2D" parent="." unique_id=1756545127]
+position = Vector2(400.00003, 300)
+scale = Vector2(0.40858018, 0.39999998)
+texture = ExtResource("4_h5b0d")
+
+[node name="Muse" type="Sprite2D" parent="." unique_id=1462301689]
+position = Vector2(399.99997, 300)
+scale = Vector2(0.40858018, 0.4)
+texture = ExtResource("7_vm4ym")
+
+[node name="ButtonShadow" type="Sprite2D" parent="." unique_id=577754786]
+position = Vector2(400, 300.00003)
+scale = Vector2(0.40858015, 0.39999998)
+texture = ExtResource("6_7pd5w")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=218145344]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.28
-anchor_top = 0.39166668
-anchor_right = 0.715
-anchor_bottom = 0.845
-offset_top = -1.5258789e-05
-offset_bottom = -3.0517578e-05
+anchor_right = 0.71500003
+anchor_bottom = 0.93500006
+offset_left = 25.0
+offset_top = 217.0
+offset_right = -84.0
+offset_bottom = 21.999939
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = -22
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=436883764]
 layout_mode = 2
@@ -73,12 +109,9 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
-text = "Start Game
-"
+theme_override_styles/normal = SubResource("StyleBoxTexture_qivb4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16cgv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j0r54")
 
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=1035577283]
 layout_mode = 2
@@ -91,12 +124,9 @@ theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_constants/h_separation = 4
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
-text = "Options
-"
+theme_override_styles/normal = SubResource("StyleBoxTexture_3yvhg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0crp3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7pd5w")
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=1451062207]
 layout_mode = 2
@@ -108,31 +138,27 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
-text = "Exit"
+theme_override_styles/normal = SubResource("StyleBoxTexture_bt676")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3v7wb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7gxy7")
 
-[node name="Label" type="Label" parent="." unique_id=453367091]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -307.0
-offset_top = 73.0
-offset_right = 350.0
-offset_bottom = 191.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.7989496, 0.47872555, 0.8466857, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 6
-theme_override_constants/shadow_offset_y = 5
-theme_override_font_sizes/font_size = 80
-text = "DREAM CATCHER"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 3
+[node name="Button Placement" type="Node2D" parent="." unique_id=1439241339]
+visible = false
+
+[node name="StartGamePlacement" type="Sprite2D" parent="Button Placement" unique_id=26991860]
+position = Vector2(400, 299.99997)
+scale = Vector2(0.40858015, 0.4)
+texture = ExtResource("12_3yvhg")
+
+[node name="OptionsPlacment" type="Sprite2D" parent="Button Placement" unique_id=304567685]
+position = Vector2(400, 300)
+scale = Vector2(0.4085802, 0.4)
+texture = ExtResource("13_7pd5w")
+
+[node name="ExitPlacement" type="Sprite2D" parent="Button Placement" unique_id=1534074978]
+position = Vector2(400, 300)
+scale = Vector2(0.4085802, 0.40000004)
+texture = ExtResource("14_bt676")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
