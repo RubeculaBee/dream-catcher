@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dinbb7dsmxxe"]
 
 [ext_resource type="Script" uid="uid://dfu7jqgvdmna" path="res://Scripts/game_manager.gd" id="1_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://28vqp5eny63q" path="res://Scenes/Rooms/main_menu.tscn" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://28vqp5eny63q" path="res://Scenes/Rooms/Menus/main_menu.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bic4bxho2w3jl" path="res://Scenes/Rooms/Autumn Forest Zone/center_field.tscn" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://w0wpf8uxwkdg" path="res://Scenes/Rooms/Menus/pause.tscn" id="4_3dryh"]
 
 [node name="Game" type="Node" unique_id=994674660]
 script = ExtResource("1_qxrlw")
@@ -15,3 +16,17 @@ start_room = ExtResource("2_wrm1d")
 [node name="MenuContainer" type="Node" parent="." unique_id=777485002]
 
 [node name="MainMenu" parent="MenuContainer" unique_id=153532735 instance=ExtResource("2_3dryh")]
+visibility_layer = 3
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0
+
+[node name="pauseLayer" type="CanvasLayer" parent="." unique_id=390653873]
+
+[node name="Pause" parent="pauseLayer" unique_id=697995316 instance=ExtResource("4_3dryh")]
+visible = false
+offset_left = 366.0
+offset_top = 145.0
+offset_right = -197.0
+offset_bottom = -245.0

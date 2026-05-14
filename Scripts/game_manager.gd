@@ -29,8 +29,21 @@ const battle_path: String = "res://Scenes/BattleScene/battle.tscn" # The locatio
 const background_path: String = "res://Scenes/Gameobjects/background.tscn"
 
 # Pause Menu
+@onready var pause_menu: Control = $pauseLayer/Pause
+var paused = false
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+		
 func pauseMenu():
-	pass
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+	
+	paused = !paused
 	
 func _ready() -> void:
 	main_menu = get_node("MenuContainer").get_child(0)
