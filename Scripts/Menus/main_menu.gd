@@ -2,7 +2,7 @@ extends Control
 class_name MainMenu
 
 #Signals
-signal start_pressed ## emit whe nstart button pressed
+signal start_pressed ## emit when start button pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

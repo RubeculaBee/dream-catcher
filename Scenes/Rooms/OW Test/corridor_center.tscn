@@ -1,0 +1,45 @@
+[gd_scene format=4 uid="uid://1itclcus4tqb"]
+
+[ext_resource type="TileSet" uid="uid://cryql3wbplkqj" path="res://Resources/Tilesets/test-tileset.tres" id="1_k24ce"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/player_spawn.tscn" id="2_u47vg"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/screen_transition.tscn" id="2_yu45y"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/Enemies.tscn" id="3_u8ic6"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_nwcu0"]
+
+[node name="Test Corridor Center" type="Node" unique_id=1405176746]
+
+[node name="Terrain Tile Map" type="TileMapLayer" parent="." unique_id=1561162512]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD/////AQABAAEAAAD//wAAAQABAAEAAAAAAAAAAQABAAEAAAAAAP//AQABAAEAAAD+//7/AQAAAAAAAAD+////AQABAAEAAAD+/wAAAQABAAEAAAD+/wEAAQABAAEAAAD//wEAAQABAAEAAAAAAAEAAQABAAEAAAABAAEAAQABAAEAAAABAAAAAQABAAEAAAABAP//AQABAAEAAAABAP7/AQABAAEAAAAAAP7/AQABAAEAAAD///7/AQABAAEAAAD+/wIAAQAAAAIAAAD//wIAAQABAAEAAAAAAAIAAQABAAEAAAABAAIAAQABAAEAAAACAAEAAQABAAEAAAACAAAAAQABAAEAAAACAP//AQABAAEAAAACAP7/AQACAAAAAAACAAIAAQACAAIAAAD//wMAAQAAAAEAAAAAAAMAAQABAAEAAAABAAMAAQACAAEAAAD//wQAAQAAAAEAAAAAAAQAAQABAAEAAAABAAQAAQACAAEAAAD9/wEAAQABAAIAAAD9/wAAAQABAAEAAAD9////AQABAAAAAAD8////AQABAAAAAAD8/wAAAQABAAEAAAD8/wEAAQABAAIAAAD///3/AQAAAAEAAAD///z/AQAAAAEAAAAAAPz/AQABAAEAAAABAPz/AQACAAEAAAABAP3/AQACAAEAAAAAAP3/AQABAAEAAAADAP//AQABAAAAAAADAAAAAQABAAEAAAADAAEAAQABAAIAAAAEAAEAAQABAAIAAAAEAAAAAQABAAEAAAAEAP//AQABAAAAAAD//wUAAQAAAAIAAAAAAAUAAQABAAIAAAABAAUAAQACAAIAAAD7/wEAAQAAAAIAAAD7/wAAAQAAAAEAAAD7////AQAAAAAAAAD///v/AQAAAAAAAAAAAPv/AQABAAAAAAABAPv/AQACAAAAAAAFAP//AQACAAAAAAAFAAAAAQACAAEAAAAFAAEAAQACAAIAAAA=")
+tile_set = ExtResource("1_k24ce")
+
+[node name="Screen Transitions" type="Node" parent="." unique_id=903994763]
+
+[node name="transition" parent="Screen Transitions" unique_id=843021769 instance=ExtResource("2_yu45y")]
+position = Vector2(-32, -160)
+scale = Vector2(3.0046518, 1)
+next_screen_name = "OW Test/corridor_up"
+
+[node name="transition2" parent="Screen Transitions" unique_id=452050118 instance=ExtResource("2_yu45y")]
+position = Vector2(-160, -32)
+scale = Vector2(1, 2.9999995)
+next_screen_name = "OW Test/corridor_left"
+id = 1
+
+[node name="transition3" parent="Screen Transitions" unique_id=466726712 instance=ExtResource("2_yu45y")]
+position = Vector2(160, -32)
+scale = Vector2(1, 3.0000005)
+next_screen_name = "OW Test/corridor_right"
+id = 2
+
+[node name="transition4" parent="Screen Transitions" unique_id=1197011364 instance=ExtResource("2_yu45y")]
+position = Vector2(-32, 160)
+scale = Vector2(3.0000007, 1)
+next_screen_name = "OW Test/corridor_down"
+id = 3
+
+[node name="Enemies" parent="." unique_id=626965146 instance=ExtResource("3_u8ic6")]
+position = Vector2(-64, 0)
+enemy_scene = ExtResource("4_nwcu0")
+
+[node name="Player Spawn" parent="." unique_id=1790909613 instance=ExtResource("2_u47vg")]

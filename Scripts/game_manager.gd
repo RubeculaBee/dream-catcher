@@ -7,7 +7,7 @@ signal enemy_move_response(response: bool) ## A signal designed to tell the enem
 const TILE_SIZE: int = 32 			# width/height of a tile in pixels
 
 # Nodes
-var main_menu: MainMenu			# The main menu that loads whe nteh game starts
+var main_menu: MainMenu			# The main menu that loads when the game starts
 var current_room: Node			# The current room the player is in
 var last_room: Node				# The last room that the player was in before a battle
 var hitboxMap: TileMapLayer		# The hitbox tilemap in the current room
@@ -15,6 +15,10 @@ var player: Player				# The player object
 var camera: PlayerCamera		# The camera that will follow the player
 var enemies: Enemies
 var screen_transitions: Array	# An array of all the screen transitions in the current room
+	# Inventory Nodes
+@onready var museInventoryPic : TextureRect = $InventoryLayer/MuseImage
+@onready var inventoryInterface = $InventoryLayer/InventoryInterface
+@onready var playerInventory = $InventoryLayer/InventoryInterface/PlayerInventory
 
 # Other
 @export var start_room: PackedScene ## the room that should be loaded when the game starts
@@ -45,6 +49,7 @@ func load_overworld():
 	if spawnpoint != null:
 		spawn_player(spawnpoint.position)
 		attach_camera()
+		inventoryInterface.setPlayerInventory(player.playerInventory) #loads in player inv when spawning in
 
 	update_references()
 
@@ -151,3 +156,16 @@ func _on_transition(transition: ScreenTransition, offset: Vector2):
 	# Don't spawn the player off of the next rooms entrance
 	offset = offset.clamp(Vector2.ZERO, (entrance.scale - Vector2(1,1)) * 32)
 	player.position = entrance.position + offset
+
+# start of Garrett's work on inventory--------
+# TODO gotta add bool check for when you can and can't open the inventory
+func _input(_event) -> void:
+	if(Input.is_action_just_pressed("inventory")):
+		if (museInventoryPic.visible == true ):
+			museInventoryPic.hide()
+			playerInventory.hide()
+		else :
+			museInventoryPic.show()
+			playerInventory.show()
+		
+# end of Garrett's work on inventory ------------

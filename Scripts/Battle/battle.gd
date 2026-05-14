@@ -1,5 +1,9 @@
 extends Control
 class_name BattleScene
+# todo
+# change all the calls for Text box and Action Panel code
+# they should instead be variables that hold the address, its quicker that way
+# that way It doesn't have to trace the address, every single time 
 
 # Variables
 var menuSelector = 0 # determines which menu is displayed in the battle
@@ -29,6 +33,9 @@ func _input(_event) -> void:
 	if(Input.is_action_just_released("make_battle_text_box_disapear") ): # idk how to add check yet to make sure textbox is visible
 		$TextBox.hide()
 		$ActionPanel.show()
+	# test code for pressing 1-4 instead of manually pressing buttons with mouse
+	elif (Input.is_action_just_pressed("test")):
+		_on_top_left_move_pressed()
 			
 # this function controls what text will appear on the buttons depending on what number was fed into it
 func menuSwitchFunction(menuNum):
@@ -65,8 +72,8 @@ func _on_top_left_move_pressed() -> void:
 		menuSwitchFunction(menuSelector)
 		$ActionPanel/Actions/BottomActions/BottomMiddleAction.show()
 	elif (menuSelector == STARTING_FIGMENT):
-			menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
-			menuSwitchFunction(menuSelector)
+		menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
+		menuSwitchFunction(menuSelector)
 
 func _on_top_right_move_pressed() -> void:
 	displayTextBox($ActionPanel/Actions/TopActions/TopRightAction.text + " selected")  ## fill in with moves pulled from figment object
@@ -75,18 +82,18 @@ func _on_top_right_move_pressed() -> void:
 		menuSwitchFunction(menuSelector)
 		$ActionPanel/Actions/BottomActions/BottomMiddleAction.show()
 	elif (menuSelector == STARTING_FIGMENT):
-			menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
-			menuSwitchFunction(menuSelector)
+		menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
+		menuSwitchFunction(menuSelector)
 		
 func _on_bottom_left_move_pressed() -> void:
 	displayTextBox($ActionPanel/Actions/BottomActions/BottomLeftAction.text + " selected")  ## fill in with moves pulled from figment object
 	if (menuSelector == BASE_MENU):
-		menuSelector = INVENTORY_MENU # sets the active menu to the 
+		menuSelector = INVENTORY_MENU # sets the active menu to the inventory menu
 		menuSwitchFunction(menuSelector)
 		$ActionPanel/Actions/BottomActions/BottomMiddleAction.show()
 	elif (menuSelector == STARTING_FIGMENT):
-			menuSelector = BASE_MENU #sets the menu to the battle menu after figments have been selected
-			menuSwitchFunction(menuSelector)
+		menuSelector = BASE_MENU #sets the menu to the battle menu after figments have been selected
+		menuSwitchFunction(menuSelector)
 	elif (menuSelector == FLEE_MENU):
 		fleeConfirmed.emit();
 		
@@ -97,9 +104,9 @@ func _on_bottom_right_move_pressed() -> void:
 		menuSwitchFunction(menuSelector)
 		$ActionPanel/Actions/TopActions.hide() 
 	elif (menuSelector == STARTING_FIGMENT):
-			menuSelector = BASE_MENU #sets the menu to the battle menu after figments have been selected
-			menuSwitchFunction(menuSelector)
-	elif (menuSelector == FLEE_MENU): #This brings back up the base menu if they are not elif's code does not work properly
+		menuSelector = BASE_MENU #sets the menu to the battle menu after figments have been selected
+		menuSwitchFunction(menuSelector)
+	elif (menuSelector == FLEE_MENU): #This brings back up the base menu. if they are not elif's code does not work properly
 		menuSelector = BASE_MENU
 		$ActionPanel/Actions/BottomActions/BottomMiddleAction.hide() 
 		$ActionPanel/Actions/TopActions.show()

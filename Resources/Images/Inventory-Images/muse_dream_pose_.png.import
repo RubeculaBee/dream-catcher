@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l65pqmyp13j8"
-path="res://.godot/imported/icon.svg-c176bdb6e639045e1f34206ca861c860.ctex"
+uid="uid://0ljaecgwgb5r"
+path="res://.godot/imported/muse_dream_pose_.png-23c1930a8a3c69e44f1f1997a8fee625.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/characters/muse-placeholder/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-c176bdb6e639045e1f34206ca861c860.ctex"]
+source_file="res://Resources/Images/Inventory-Images/muse_dream_pose_.png"
+dest_files=["res://.godot/imported/muse_dream_pose_.png-23c1930a8a3c69e44f1f1997a8fee625.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

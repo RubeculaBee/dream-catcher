@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://behugl71ip1l6"]
+[gd_scene load_steps=2 format=3 uid="uid://behugl71ip1l6"]
 
 [ext_resource type="Script" uid="uid://cmknkrytbpbq3" path="res://Scripts/Player/player_camera.gd" id="1_v1bqp"]
 
@@ -11,4 +11,5 @@ offset_left = -432.0
 offset_top = -332.0
 offset_right = 432.0
 offset_bottom = 332.0
+mouse_filter = 1
 color = Color(0, 0, 0, 1)
