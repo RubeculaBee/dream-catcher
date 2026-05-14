@@ -26,15 +26,12 @@ offset_bottom = -1.0
 
 [node name="pauseLayer" type="CanvasLayer" parent="." unique_id=390653873]
 
-[node name="Pause" parent="pauseLayer" unique_id=697995316 instance=ExtResource("4_3dryh")]
+[node name="Pause" parent="pauseLayer" unique_id=697995316]
 visible = false
 offset_left = 366.0
 offset_top = 145.0
 offset_right = -197.0
 offset_bottom = -245.0
-[node name="MainMenu" parent="MenuContainer" unique_id=1152008903 instance=ExtResource("2_3dryh")]
-
-[node name="BattleContainer2" type="Node" parent="." unique_id=1354930388]
 
 [node name="InventoryLayer" type="CanvasLayer" parent="." unique_id=1811506362]
 
@@ -76,5 +73,3 @@ offset_left = 83.0
 offset_top = 85.0
 offset_right = -555.0
 offset_bottom = -351.0
-
-[node name="MenuContainer2" type="Node" parent="." unique_id=1811474891]
