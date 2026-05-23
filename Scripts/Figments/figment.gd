@@ -1,33 +1,35 @@
+extends FigmentBlueprint
+
 class_name Figment
 
 var rng = RandomNumberGenerator.new()
 
-var speciesName: String
-var sprite: Texture2D
-var type1: FigmentBlueprint.Type
-var type2: FigmentBlueprint.Type
-var shape: Texture2D
-var stats: Dictionary[String, Stat]
-var moves: Array[Move]
+@export var stats: Dictionary[String, Stat]
+@export var knownMoves: Array[Move]
 
-var hp: int
-var level: int
+@export var hp: int
+@export var level: int
 
-var bp: FigmentBlueprint
-var startLvl: int
+@export var bp: FigmentBlueprint
+@export var startLvl: int
 
-func _init(blueprint: FigmentBlueprint, lvl: int) -> void:
+# dont want to use init here, because if you create a Figment any way other then .new() it won't run _init
+# this was causing the inventory to only have null for the data
+#func _init(blueprint: FigmentBlueprint, lvl: int) -> void:
+
+func populateFigData(blueprint: FigmentBlueprint, lvl: int)-> void:
 	bp = blueprint
-
-	speciesName = blueprint.speciesName
-	sprite = blueprint.sprite
-	type1 = blueprint.type1
-	type2 = blueprint.type2
-	shape = blueprint.shape
+	
+	self.speciesName = bp.speciesName
+	self.sprite = bp.sprite
+	self.shape = bp.shape 
+	self.type1 = bp.type1
+	self.type2 = bp.type2
 	startLvl = lvl
-	moves = blueprint.moves
+	# TODO have array of known moves not be an array of all the moves it can ever know, and rather just 4 of them
+	knownMoves = blueprint.allKnowableMoves
 
-	for move: Move in moves:
+	for move: Move in knownMoves:
 		move.doEffect = move.effectScript.main
 
 	stats = {

@@ -6,7 +6,7 @@ class_name FigmentBlueprint
 @export var shape: Texture2D
 @export var type1: Type
 @export var type2: Type
-@export var moves: Array[Move]
+@export var allKnowableMoves: Array[Move]
 
 @export var will: Stat
 @export var coherence: Stat

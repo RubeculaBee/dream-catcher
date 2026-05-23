@@ -1,7 +1,6 @@
 [gd_resource type="Resource" script_class="FigmentBlueprint" format=3 uid="uid://cvkvqwdo5qpn6"]
 
 [ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="1_6efet"]
-[ext_resource type="Resource" uid="uid://c035cy7fto5ha" path="res://Resources/Moves/landAttack.tres" id="2_f2rx8"]
 [ext_resource type="Texture2D" uid="uid://b00hli82nylkm" path="res://Resources/Images/Enemies/enemy_tongue.png" id="4_6efet"]
 [ext_resource type="Script" uid="uid://csm2jp1h77xtp" path="res://Resources/Figment Blueprints/fig_bp.gd" id="4_ix32y"]
 [ext_resource type="Texture2D" uid="uid://bxjh4viilxk7k" path="res://Resources/Images/Figment Sprites/TYPELAND.png" id="5_817b5"]
@@ -53,7 +52,6 @@ speciesName = "TYPE_SKY"
 sprite = ExtResource("5_817b5")
 shape = ExtResource("4_6efet")
 type1 = 1
-moves = Array[ExtResource("1_6efet")]([ExtResource("2_f2rx8")])
 will = SubResource("Resource_xx186")
 coherence = SubResource("Resource_817b5")
 lucidity = SubResource("Resource_ix32y")

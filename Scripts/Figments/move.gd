@@ -6,6 +6,7 @@ class_name Move
 @export var power: int
 @export var type: FigmentBlueprint.Type
 @export var effectScript: Script
+@export var levelReq: int
 var doEffect: Callable
 
 static var typeChart: = [

@@ -29,7 +29,8 @@ func spawn_enemy() -> Node2D:
 	var spawn = randi_range(0,spawnpointsNow.size()-1)
 	var enemy = enemy_scene.instantiate()
 
-	enemy.figment = Figment.new(figment_list[randi_range(0,figment_list.size()-1)], randi_range(figment_lvl.from,figment_lvl.to))
+	enemy.figment = Figment.new()
+	enemy.figment.populateFigData(figment_list[randi_range(0,figment_list.size()-1)], randi_range(figment_lvl.from,figment_lvl.to))
 	enemy.get_node("Sprite2D").texture = enemy.figment.shape
 	enemy.get_node("Sprite2D").self_modulate = FigmentBlueprint.typeColours[enemy.figment.type1]
 	
