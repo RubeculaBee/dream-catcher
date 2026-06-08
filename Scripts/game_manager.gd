@@ -176,6 +176,7 @@ func _on_transition(transition: ScreenTransition, offset: Vector2):
 
 # start of Garrett's work on inventory--------
 # TODO gotta add bool check for when you can and can't open the inventory
+# ^ maybe just check if state is overworld/battle
 func _input(_event) -> void:
 	if(Input.is_action_just_pressed("inventory")):
 		if (museInventoryPic.visible == true ):

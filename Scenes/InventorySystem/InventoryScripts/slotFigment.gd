@@ -7,6 +7,8 @@ signal slotFigClicked(index: int, button :int )
 @onready var mainFigmentSection: HBoxContainer = $MarginContainer/MainFigmentSection
 
 func setFigSlotData(incomingFigData:slotFigmentData) ->void:
+	if (mainFigmentSection.visible != true):
+		mainFigmentSection.show()
 	var figInSlotData = incomingFigData.figmentInfo
 	nameLabel.text = figInSlotData.speciesName
 	figmentImage.texture = figInSlotData.sprite

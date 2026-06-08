@@ -27,7 +27,7 @@ func populateFigData(blueprint: FigmentBlueprint, lvl: int)-> void:
 	self.type2 = bp.type2
 	startLvl = lvl
 	# TODO have array of known moves not be an array of all the moves it can ever know, and rather just 4 of them
-	knownMoves = blueprint.allKnowableMoves
+	knownMoves = bp.allKnowableMoves
 
 	for move: Move in knownMoves:
 		move.doEffect = move.effectScript.main
