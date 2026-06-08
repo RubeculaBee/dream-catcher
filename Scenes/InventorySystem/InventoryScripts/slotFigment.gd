@@ -5,13 +5,26 @@ signal slotFigClicked(index: int, button :int )
 @onready var figmentImage: TextureRect = $MarginContainer/MainFigmentSection/FigmentImage
 @onready var nameLabel: Label = $MarginContainer/MainFigmentSection/InfoBlock/InfoLine/NameLabel
 @onready var mainFigmentSection: HBoxContainer = $MarginContainer/MainFigmentSection
+@onready var healthBar: ProgressBar = $MarginContainer/MainFigmentSection/InfoBlock/HealthBar
+@onready var will: Label = $MarginContainer/MainFigmentSection/InfoBlock/StatBox/Will
+@onready var lucidity: Label = $MarginContainer/MainFigmentSection/InfoBlock/StatBox/Lucidity
+@onready var acuity: Label = $MarginContainer/MainFigmentSection/InfoBlock/StatBox/Acuity
+@onready var creativity: Label = $MarginContainer/MainFigmentSection/InfoBlock/StatBox/Creativity
 
 func setFigSlotData(incomingFigData:slotFigmentData) ->void:
-	if (mainFigmentSection.visible != true):
+	if (mainFigmentSection.visible == false):
 		mainFigmentSection.show()
 	var figInSlotData = incomingFigData.figmentInfo
+	figInSlotData.populateFigData(incomingFigData.figmentInfo.bp,5)
+	
 	nameLabel.text = figInSlotData.speciesName
 	figmentImage.texture = figInSlotData.sprite
+	healthBar.max_value = figInSlotData.maxhp
+	if (figInSlotData.hp > figInSlotData.maxhp):
+		figInSlotData.hp = figInSlotData.maxhp
+	healthBar.value =  figInSlotData.hp
+	will.text = "W: " + str(figInSlotData.stats["Will"].value)
+	# TODO xp bar and code for how xp is calculated
 	
 func emptyFigSlot(incomingFigData:slotFigmentData) -> void:
 	mainFigmentSection.hide()

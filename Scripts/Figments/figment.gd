@@ -7,7 +7,9 @@ var rng = RandomNumberGenerator.new()
 @export var stats: Dictionary[String, Stat]
 @export var knownMoves: Array[Move]
 
+@export var maxhp: int
 @export var hp: int
+@export var xp: int
 @export var level: int
 
 @export var bp: FigmentBlueprint
@@ -44,7 +46,7 @@ func populateFigData(blueprint: FigmentBlueprint, lvl: int)-> void:
 		stat.value = rng.randi_range(stat.minInit, stat.maxInit)
 		stat.growth = rng.randi_range(stat.minGrowth, stat.maxGrowth)
 	
-	hp = stats.Coherence.value as int * 10
+	maxhp = stats.Coherence.value as int * 10
 	level = 0
 
 	for i in range(min(startLvl*5 + randi_range(0,4), 100)):

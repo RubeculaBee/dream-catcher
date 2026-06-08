@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="inventoryData" format=3 uid="uid://bdy7i8qqki85x"]
+
+[ext_resource type="Script" uid="uid://dqgpt60kofple" path="res://Scenes/InventorySystem/InventoryScripts/slotFigmentData.gd" id="1_yofp7"]
+[ext_resource type="Script" uid="uid://bm4vjv7wn4gvr" path="res://Scenes/InventorySystem/InventoryScripts/slotItemData.gd" id="2_5t0pc"]
+[ext_resource type="Resource" uid="uid://bh6sn775weoxn" path="res://Resources/zzzTestFigments/TestSkyFig.tres" id="2_8kpdq"]
+[ext_resource type="Resource" uid="uid://cuc3fgmdntja0" path="res://Resources/Items/testItem.tres" id="3_8kpdq"]
+[ext_resource type="Script" uid="uid://bb7qonktqgxw4" path="res://Scenes/InventorySystem/InventoryScripts/inventoryData.gd" id="4_c78sr"]
+
+[sub_resource type="Resource" id="Resource_c78sr"]
+script = ExtResource("1_yofp7")
+figmentInfo = ExtResource("2_8kpdq")
+metadata/_custom_type_script = "uid://dqgpt60kofple"
+
+[sub_resource type="Resource" id="Resource_aynv7"]
+script = ExtResource("1_yofp7")
+figmentInfo = ExtResource("2_8kpdq")
+metadata/_custom_type_script = "uid://dqgpt60kofple"
+
+[sub_resource type="Resource" id="Resource_cmrr0"]
+script = ExtResource("1_yofp7")
+figmentInfo = ExtResource("2_8kpdq")
+metadata/_custom_type_script = "uid://dqgpt60kofple"
+
+[sub_resource type="Resource" id="Resource_ergj2"]
+script = ExtResource("2_5t0pc")
+itemInfo = ExtResource("3_8kpdq")
+quantity = 2
+metadata/_custom_type_script = "uid://bm4vjv7wn4gvr"
+
+[sub_resource type="Resource" id="Resource_6yxgf"]
+script = ExtResource("2_5t0pc")
+itemInfo = ExtResource("3_8kpdq")
+metadata/_custom_type_script = "uid://bm4vjv7wn4gvr"
+
+[resource]
+script = ExtResource("4_c78sr")
+inventorySlots = Array[ExtResource("2_5t0pc")]([SubResource("Resource_ergj2"), SubResource("Resource_6yxgf"), null, null, null, null, null, null, null, null, null, null, null, null, null])
+figmentPartySlots = Array[ExtResource("1_yofp7")]([SubResource("Resource_c78sr"), SubResource("Resource_aynv7"), SubResource("Resource_cmrr0"), null])
+metadata/_custom_type_script = "uid://bb7qonktqgxw4"
