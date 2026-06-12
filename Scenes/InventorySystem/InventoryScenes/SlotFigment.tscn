@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8y42p2qetbg"]
 
 [ext_resource type="Script" uid="uid://dlpjvbephmr77" path="res://Scenes/InventorySystem/InventoryScripts/slotFigment.gd" id="1_yhhf7"]
+[ext_resource type="Texture2D" uid="uid://b3wxbixkjt670" path="res://Resources/Images/Tileset Atlases/hitbox.png" id="2_bu1tm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu1tm"]
 bg_color = Color(0.90021604, 0.1631974, 0.24828446, 1)
@@ -47,6 +48,7 @@ layout_mode = 2
 
 [node name="FigmentImage" type="TextureRect" parent="MarginContainer/MainFigmentSection" unique_id=2084985360]
 layout_mode = 2
+texture = ExtResource("2_bu1tm")
 expand_mode = 3
 
 [node name="InfoBlock" type="VBoxContainer" parent="MarginContainer/MainFigmentSection" unique_id=86528683]
@@ -81,34 +83,34 @@ text = "Lv 12 "
 [node name="NameLabel" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/InfoLine" unique_id=560863075]
 layout_mode = 2
 theme_override_font_sizes/font_size = 21
-text = "Test"
+text = "Test_Name"
 
 [node name="StatBox" type="HBoxContainer" parent="MarginContainer/MainFigmentSection/InfoBlock" unique_id=406871459]
 layout_mode = 2
 
 [node name="Will" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/StatBox" unique_id=1706244510]
 layout_mode = 2
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 12
 text = "W: 1"
 
 [node name="Coherence" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/StatBox" unique_id=335166482]
 layout_mode = 2
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 12
 text = "Co: 2"
 
 [node name="Lucidity" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/StatBox" unique_id=267424473]
 layout_mode = 2
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 12
 text = "L: 3"
 
 [node name="Acuity" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/StatBox" unique_id=883950566]
 layout_mode = 2
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 12
 text = "A: 4"
 
 [node name="Creativity" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/StatBox" unique_id=63637342]
 layout_mode = 2
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 12
 text = "Cr: 5"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

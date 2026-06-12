@@ -6,16 +6,21 @@ signal slotFigClicked(index: int, button :int )
 @onready var nameLabel: Label = $MarginContainer/MainFigmentSection/InfoBlock/InfoLine/NameLabel
 @onready var mainFigmentSection: HBoxContainer = $MarginContainer/MainFigmentSection
 @onready var healthBar: ProgressBar = $MarginContainer/MainFigmentSection/InfoBlock/HealthBar
+
 @onready var will: Label = $MarginContainer/MainFigmentSection/InfoBlock/StatBox/Will
+@onready var coherence: Label = $MarginContainer/MainFigmentSection/InfoBlock/StatBox/Coherence
 @onready var lucidity: Label = $MarginContainer/MainFigmentSection/InfoBlock/StatBox/Lucidity
 @onready var acuity: Label = $MarginContainer/MainFigmentSection/InfoBlock/StatBox/Acuity
 @onready var creativity: Label = $MarginContainer/MainFigmentSection/InfoBlock/StatBox/Creativity
+
 
 func setFigSlotData(incomingFigData:slotFigmentData) ->void:
 	if (mainFigmentSection.visible == false):
 		mainFigmentSection.show()
 	var figInSlotData = incomingFigData.figmentInfo
-	figInSlotData.populateFigData(incomingFigData.figmentInfo.bp,5)
+	figInSlotData.populateFigData(incomingFigData.figmentInfo.bp,5) 
+	# TODO the 5 is just because i did not know what else to put ^
+	
 	
 	nameLabel.text = figInSlotData.speciesName
 	figmentImage.texture = figInSlotData.sprite
@@ -24,6 +29,11 @@ func setFigSlotData(incomingFigData:slotFigmentData) ->void:
 		figInSlotData.hp = figInSlotData.maxhp
 	healthBar.value =  figInSlotData.hp
 	will.text = "W: " + str(figInSlotData.stats["Will"].value)
+	coherence.text = "Co: " + str(figInSlotData.stats["Coherence"].value)
+	lucidity.text = "L: " + str(figInSlotData.stats["Lucidity"].value)
+	acuity.text = "A: " + str(figInSlotData.stats["Acuity"].value)
+	creativity.text = "Cr: " + str(figInSlotData.stats["Creativity"].value)
+	
 	# TODO xp bar and code for how xp is calculated
 	
 func emptyFigSlot(incomingFigData:slotFigmentData) -> void:
