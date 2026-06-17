@@ -63,6 +63,20 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_mpfn6")
 value = 56.0
 show_percentage = false
 
+[node name="HealthNumbers" type="Label" parent="MarginContainer/MainFigmentSection/InfoBlock/HealthBar" unique_id=540757892]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -5.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="XPBar" type="ProgressBar" parent="MarginContainer/MainFigmentSection/InfoBlock" unique_id=750564892]
 custom_minimum_size = Vector2(0, 7)
 layout_mode = 2

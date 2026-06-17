@@ -46,4 +46,4 @@ func populateFigmentPartyGrid(figData: inventoryData)-> void:
 			#print("Debugging slot data: " , currentSlotData.itemInfo.itemName)
 			slotInstance.setFigSlotData(currentSlotData)
 		else:
-			slotInstance.emptyFigSlot(currentSlotData)
+			slotInstance.emptyFigSlot()

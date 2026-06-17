@@ -47,6 +47,7 @@ func populateFigData(blueprint: FigmentBlueprint, lvl: int)-> void:
 		stat.growth = rng.randi_range(stat.minGrowth, stat.maxGrowth)
 	
 	maxhp = stats.Coherence.value as int * 10
+	hp = maxhp # when figment is created it gives it full health
 	level = 0
 
 	for i in range(min(startLvl*5 + randi_range(0,4), 100)):

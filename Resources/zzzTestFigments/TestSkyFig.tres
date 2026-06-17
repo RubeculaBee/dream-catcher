@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("3_h1kk8")
 maxhp = 50
-hp = 55
+hp = 10
 level = 5
 bp = ExtResource("2_jtqtq")
 startLvl = 1

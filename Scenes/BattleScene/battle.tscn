@@ -52,6 +52,14 @@ border_width_left = 2
 border_width_top = 2
 border_width_bottom = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qq3g"]
+bg_color = Color(0.654902, 0.8352941, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33fou"]
 bg_color = Color(0.4052269, 0.8165884, 0.98231155, 1)
 border_width_left = 2
@@ -86,6 +94,14 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7m0st"]
 bg_color = Color(0.3529412, 0.3529412, 0.3529412, 0.99215686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6wuy"]
+bg_color = Color(0.5352087, 0.570329, 0.2538635, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -210,12 +226,17 @@ layout_mode = 2
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_33fou")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4qq3g")
 text = "Sky"
 horizontal_alignment = 1
 
-[node name="EnemyFigmentType2" type="Label" parent="EnemyInfoBox/EnemyFigmentTypesBox" unique_id=135630682]
+[node name="EnemyFigmentType2" type="Label" parent="EnemyInfoBox/EnemyFigmentTypesBox" unique_id=474707176]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_33fou")
+text = "Sky"
+horizontal_alignment = 1
 
 [node name="PlayerInfoBox" type="VBoxContainer" parent="." unique_id=167858225]
 layout_mode = 0
@@ -267,19 +288,24 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
 value = 83.0
 show_percentage = false
 
-[node name="EnemyFigmentTypesBox" type="HBoxContainer" parent="PlayerInfoBox" unique_id=642177816]
+[node name="PlayerFigmentTypesBox" type="HBoxContainer" parent="PlayerInfoBox" unique_id=642177816]
 layout_mode = 2
 
-[node name="EnemyFigmentType1" type="Label" parent="PlayerInfoBox/EnemyFigmentTypesBox" unique_id=2033582993]
+[node name="PlayerFigmentType1" type="Label" parent="PlayerInfoBox/PlayerFigmentTypesBox" unique_id=1974758961]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6wuy")
+text = "Land"
+horizontal_alignment = 1
+
+[node name="PlayerFigmentType2" type="Label" parent="PlayerInfoBox/PlayerFigmentTypesBox" unique_id=1676506685]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pd44g")
 text = "Land"
 horizontal_alignment = 1
-
-[node name="EnemyFigmentType2" type="Label" parent="PlayerInfoBox/EnemyFigmentTypesBox" unique_id=624735512]
-layout_mode = 2
 
 [node name="PlayerCharacter" type="TextureRect" parent="." unique_id=740448935]
 layout_mode = 1
@@ -325,7 +351,6 @@ offset_bottom = -3.0517578e-05
 size_flags_horizontal = 4
 texture = ExtResource("3_m1w6r")
 stretch_mode = 4
-metadata/_edit_use_anchors_ = true
 
 [node name="ActionPanel" type="Panel" parent="." unique_id=1625176312]
 layout_mode = 1

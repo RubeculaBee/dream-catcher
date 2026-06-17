@@ -18,7 +18,7 @@ var screen_transitions: Array	# An array of all the screen transitions in the cu
 	# Inventory Nodes
 @onready var museInventoryPic : TextureRect = $InventoryLayer/MuseImage
 @onready var inventoryInterface = $InventoryLayer/InventoryInterface
-@onready var playerInventory = $InventoryLayer/InventoryInterface/PlayerInventory
+@onready var playerInventoryUI = $InventoryLayer/InventoryInterface/PlayerInventory
 
 # Other
 @export var start_room: PackedScene ## the room that should be loaded when the game starts
@@ -121,8 +121,10 @@ func doGarrett(enemy: Enemy):
 	camera.position = Vector2.ZERO
 
 	var battleScene: BattleScene = load(battle_path).instantiate(TYPE_OBJECT)
+	
 	battleScene.fleeConfirmed.connect(_on_battleScene_flee_confirmed)
 	get_node("BattleContainer").add_child(battleScene)
+	battleScene.applyEnemyFigmentInfo(enemy.figment)
 
 func _on_battleScene_flee_confirmed():
 	state = OVERWORLD
@@ -181,9 +183,9 @@ func _input(_event) -> void:
 	if(Input.is_action_just_pressed("inventory")):
 		if (museInventoryPic.visible == true ):
 			museInventoryPic.hide()
-			playerInventory.hide()
+			playerInventoryUI.hide()
 		else :
 			museInventoryPic.show()
-			playerInventory.show()
+			playerInventoryUI.show()
 		
 # end of Garrett's work on inventory ------------
