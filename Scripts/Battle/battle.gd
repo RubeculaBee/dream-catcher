@@ -117,7 +117,7 @@ func applyEnemyFigmentInfo(incomingFig: Figment):
 	if (enemyFigmentType2.visible == true):
 		if(incomingFig.type2 == incomingFig.Type.NONE):
 			enemyFigmentType2.hide()
-	#incase it was hidden previously but it does have a second type
+	# incase it was hidden previously but it does have a second type
 	elif (enemyFigmentType2.visible != true):
 		if(incomingFig.type2 != incomingFig.Type.NONE):
 			enemyFigmentType2.show()
@@ -150,11 +150,10 @@ func applyPlayerFigmentInfo(incomingFig: Figment):
 	if (playerFigmentType2.visible == true):
 		if(incomingFig.type2 == incomingFig.Type.NONE):
 			playerFigmentType2.hide()
-	#incase it was hidden previously but it does have a second type
+	# incase it was hidden previously but it does have a second type
 	elif (playerFigmentType2.visible != true):
 		if(incomingFig.type2 != incomingFig.Type.NONE):
 			playerFigmentType2.show()
-			
 	
 	changeTypeColor(incomingFig.typeColours.get(incomingFig.type1), playerFigmentType1)
 	changeTypeColor(incomingFig.typeColours.get(incomingFig.type2), playerFigmentType2)

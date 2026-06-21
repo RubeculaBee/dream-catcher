@@ -1,11 +1,11 @@
 extends Resource
 class_name Stat
 
-var value: float
+@export var value: float
 @export var minInit: int
 @export var maxInit: int
 
-var growth: int
+@export var growth: int
 @export var minGrowth: int
 @export var maxGrowth: int
 
