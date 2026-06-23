@@ -51,6 +51,10 @@ script = ExtResource("1_yofp7")
 figmentInfo = SubResource("Resource_5iqll")
 metadata/_custom_type_script = "uid://dqgpt60kofple"
 
+[sub_resource type="Resource" id="Resource_aynv7"]
+script = ExtResource("1_yofp7")
+metadata/_custom_type_script = "uid://dqgpt60kofple"
+
 [sub_resource type="Resource" id="Resource_ergj2"]
 script = ExtResource("2_5t0pc")
 itemInfo = ExtResource("3_8kpdq")
@@ -65,5 +69,5 @@ metadata/_custom_type_script = "uid://bm4vjv7wn4gvr"
 [resource]
 script = ExtResource("4_c78sr")
 inventorySlots = Array[ExtResource("2_5t0pc")]([SubResource("Resource_ergj2"), SubResource("Resource_6yxgf"), null, null, null, null, null, null, null, null, null, null, null, null, null])
-figmentPartySlots = Array[ExtResource("1_yofp7")]([SubResource("Resource_86vap"), SubResource("Resource_fhtpg"), SubResource("Resource_jcgyt"), null])
+figmentPartySlots = Array[ExtResource("1_yofp7")]([SubResource("Resource_86vap"), SubResource("Resource_fhtpg"), SubResource("Resource_jcgyt"), SubResource("Resource_aynv7")])
 metadata/_custom_type_script = "uid://bb7qonktqgxw4"

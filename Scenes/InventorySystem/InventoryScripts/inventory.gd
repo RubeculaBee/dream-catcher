@@ -42,8 +42,11 @@ func populateFigmentPartyGrid(figData: inventoryData)-> void:
 		
 		slotInstance.slotFigClicked.connect(figData.onFigSlotClicked)
 		
-		if currentSlotData != null:
-			#print("Debugging slot data: " , currentSlotData.itemInfo.itemName)
+		# added and currentSlotData.figmentInfo != null, because I think I will probably have the inventory slots be there
+		#	but empty that way when capturing Fig, I just store the info in the slot, I don't have to make the slot too
+		if currentSlotData != null and currentSlotData.figmentInfo != null:
+			#print("Debugging slot data: " , currentSlotData.figmentInfo)
 			slotInstance.setFigSlotData(currentSlotData)
 		else:
+			#print("empty fig data")
 			slotInstance.emptyFigSlot()

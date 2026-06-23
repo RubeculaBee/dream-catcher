@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bgftn7fsim7ig" path="res://Resources/Images/Battle Scene Images/TYPESKY.png" id="4_0tpb6"]
 [ext_resource type="Texture2D" uid="uid://dvopvamuu6u41" path="res://Resources/Images/Battle Scene Images/muse_placeholder_battle.png" id="5_eevwc"]
 [ext_resource type="Texture2D" uid="uid://cck0gpqbyagkg" path="res://Resources/Images/Battle Scene Images/enemy_trainer_placeholder_battle.png" id="6_3d018"]
+[ext_resource type="Texture2D" uid="uid://b3wxbixkjt670" path="res://Resources/Images/Tileset Atlases/hitbox.png" id="7_4qq3g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mphgp"]
 bg_color = Color(1, 1, 1, 1)
@@ -61,7 +62,7 @@ border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33fou"]
-bg_color = Color(0.4052269, 0.8165884, 0.98231155, 1)
+bg_color = Color(0.654902, 0.8352941, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -101,7 +102,7 @@ border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6wuy"]
-bg_color = Color(0.5352087, 0.570329, 0.2538635, 1)
+bg_color = Color(0.654902, 0.8352941, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -109,7 +110,7 @@ border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pd44g"]
-bg_color = Color(0.5352087, 0.570329, 0.2538635, 1)
+bg_color = Color(0.654902, 0.8352941, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -227,7 +228,7 @@ custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_4qq3g")
-text = "Sky"
+text = "PISS"
 horizontal_alignment = 1
 
 [node name="EnemyFigmentType2" type="Label" parent="EnemyInfoBox/EnemyFigmentTypesBox" unique_id=474707176]
@@ -235,7 +236,7 @@ custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_33fou")
-text = "Sky"
+text = "PISS"
 horizontal_alignment = 1
 
 [node name="PlayerInfoBox" type="VBoxContainer" parent="." unique_id=167858225]
@@ -296,7 +297,7 @@ custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_v6wuy")
-text = "Land"
+text = "PISS"
 horizontal_alignment = 1
 
 [node name="PlayerFigmentType2" type="Label" parent="PlayerInfoBox/PlayerFigmentTypesBox" unique_id=1676506685]
@@ -304,7 +305,7 @@ custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pd44g")
-text = "Land"
+text = "PISS"
 horizontal_alignment = 1
 
 [node name="PlayerCharacter" type="TextureRect" parent="." unique_id=740448935]
@@ -394,11 +395,67 @@ size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
 
+[node name="Button1Fig" type="MarginContainer" parent="ActionPanel/Actions/TopActions/TopLeftAction" unique_id=1135018971]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.96700007
+offset_bottom = -0.020004272
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ActionPanel/Actions/TopActions/TopLeftAction/Button1Fig" unique_id=374462040]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Button1FigImage" type="TextureRect" parent="ActionPanel/Actions/TopActions/TopLeftAction/Button1Fig/HBoxContainer" unique_id=1111626604]
+layout_mode = 2
+texture = ExtResource("7_4qq3g")
+expand_mode = 2
+
+[node name="Button1FigHealth" type="ProgressBar" parent="ActionPanel/Actions/TopActions/TopLeftAction/Button1Fig/HBoxContainer" unique_id=1277375945]
+custom_minimum_size = Vector2(127, 13)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
+value = 50.0
+show_percentage = false
+
 [node name="TopRightAction" type="Button" parent="ActionPanel/Actions/TopActions" unique_id=2089562151]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
+
+[node name="Button2Fig" type="MarginContainer" parent="ActionPanel/Actions/TopActions/TopRightAction" unique_id=225515251]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.96700007
+offset_bottom = -0.020004272
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ActionPanel/Actions/TopActions/TopRightAction/Button2Fig" unique_id=435574928]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Button2FigImage" type="TextureRect" parent="ActionPanel/Actions/TopActions/TopRightAction/Button2Fig/HBoxContainer" unique_id=1374036084]
+layout_mode = 2
+texture = ExtResource("7_4qq3g")
+expand_mode = 2
+
+[node name="Button2FigHealth" type="ProgressBar" parent="ActionPanel/Actions/TopActions/TopRightAction/Button2Fig/HBoxContainer" unique_id=1307771148]
+custom_minimum_size = Vector2(127, 13)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
+value = 50.0
+show_percentage = false
 
 [node name="BottomActions" type="HBoxContainer" parent="ActionPanel/Actions" unique_id=1526292917]
 custom_minimum_size = Vector2(0, 60)
@@ -410,6 +467,34 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
+
+[node name="Button3Fig" type="MarginContainer" parent="ActionPanel/Actions/BottomActions/BottomLeftAction" unique_id=2017411884]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.96700007
+offset_bottom = -0.020004272
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ActionPanel/Actions/BottomActions/BottomLeftAction/Button3Fig" unique_id=1550105477]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Button3FigImage" type="TextureRect" parent="ActionPanel/Actions/BottomActions/BottomLeftAction/Button3Fig/HBoxContainer" unique_id=1213638493]
+layout_mode = 2
+texture = ExtResource("7_4qq3g")
+expand_mode = 2
+
+[node name="Button3FigHealth" type="ProgressBar" parent="ActionPanel/Actions/BottomActions/BottomLeftAction/Button3Fig/HBoxContainer" unique_id=1774985273]
+custom_minimum_size = Vector2(127, 13)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
+value = 50.0
+show_percentage = false
 
 [node name="BottomMiddleAction" type="Button" parent="ActionPanel/Actions/BottomActions" unique_id=266286153]
 clip_contents = true
@@ -424,7 +509,36 @@ size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
 text = "should not see this"
 
+[node name="Button4Fig" type="MarginContainer" parent="ActionPanel/Actions/BottomActions/BottomRightAction" unique_id=1065398232]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.96700007
+offset_bottom = -0.020004272
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ActionPanel/Actions/BottomActions/BottomRightAction/Button4Fig" unique_id=358913821]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Button4FigImage" type="TextureRect" parent="ActionPanel/Actions/BottomActions/BottomRightAction/Button4Fig/HBoxContainer" unique_id=204385761]
+layout_mode = 2
+texture = ExtResource("7_4qq3g")
+expand_mode = 2
+
+[node name="Button4FigHealth" type="ProgressBar" parent="ActionPanel/Actions/BottomActions/BottomRightAction/Button4Fig/HBoxContainer" unique_id=843967328]
+custom_minimum_size = Vector2(127, 13)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
+value = 50.0
+show_percentage = false
+
 [node name="TextBox" type="Label" parent="." unique_id=33980196]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -439,8 +553,22 @@ grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_eevwc")
 text = "Should not see this"
 
+[node name="CaptureButton" type="Button" parent="." unique_id=628126945]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 506.0
+offset_top = 253.0
+offset_right = -197.0
+offset_bottom = -316.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Capture"
+
 [connection signal="pressed" from="ActionPanel/Actions/TopActions/TopLeftAction" to="." method="_on_top_left_move_pressed"]
 [connection signal="pressed" from="ActionPanel/Actions/TopActions/TopRightAction" to="." method="_on_top_right_move_pressed"]
 [connection signal="pressed" from="ActionPanel/Actions/BottomActions/BottomLeftAction" to="." method="_on_bottom_left_move_pressed"]
 [connection signal="pressed" from="ActionPanel/Actions/BottomActions/BottomMiddleAction" to="." method="_on_bottom_middle_action_pressed"]
 [connection signal="pressed" from="ActionPanel/Actions/BottomActions/BottomRightAction" to="." method="_on_bottom_right_move_pressed"]
+[connection signal="pressed" from="CaptureButton" to="." method="_on_capture_button_pressed"]
