@@ -128,34 +128,38 @@ func displayTextBox(text):
 	
 func updateButtonFigInfo():
 	if (PlayerInv.figmentPartySlots[0].figmentInfo != null):
-		if (button1Fig.visible == true):
+		if (button1Fig.visible != true):
 			button1Fig.show()
 		button1FigImage.texture = PlayerInv.figmentPartySlots[0].figmentInfo.sprite
 		button1FigHealth.value = PlayerInv.figmentPartySlots[0].figmentInfo.hp
+		button1FigHealth.max_value = PlayerInv.figmentPartySlots[0].figmentInfo.maxhp
 	else:
 		button1Fig.hide()
 		
 	if (PlayerInv.figmentPartySlots[1].figmentInfo != null):
-		if (button2Fig.visible == true):
+		if (button2Fig.visible != true):
 			button2Fig.show()
 		button2FigImage.texture = PlayerInv.figmentPartySlots[1].figmentInfo.sprite
 		button2FigHealth.value = PlayerInv.figmentPartySlots[1].figmentInfo.hp
+		button2FigHealth.max_value = PlayerInv.figmentPartySlots[1].figmentInfo.maxhp
 	else:
 		button2Fig.hide()
 		
 	if (PlayerInv.figmentPartySlots[2].figmentInfo != null):
-		if (button3Fig.visible == true):
+		if (button3Fig.visible != true):
 			button3Fig.show()
 		button3FigImage.texture = PlayerInv.figmentPartySlots[2].figmentInfo.sprite
 		button3FigHealth.value = PlayerInv.figmentPartySlots[2].figmentInfo.hp
+		button3FigHealth.max_value = PlayerInv.figmentPartySlots[2].figmentInfo.maxhp
 	else:
 		button3Fig.hide()
 		
 	if (PlayerInv.figmentPartySlots[3].figmentInfo != null):
-		if (button4Fig.visible == true):
+		if (button4Fig.visible != true):
 			button4Fig.show()
 		button4FigImage.texture = PlayerInv.figmentPartySlots[3].figmentInfo.sprite
 		button4FigHealth.value = PlayerInv.figmentPartySlots[3].figmentInfo.hp
+		button4FigHealth.max_value = PlayerInv.figmentPartySlots[3].figmentInfo.maxhp
 	else:
 		button4Fig.hide()
 	
@@ -301,4 +305,6 @@ func _on_capture_button_pressed() -> void:
 	#	would be specific to the player rather then the project itself, using res rn for testing purposes
 	#TODO figure out how to actually save the fig data between booting up the gaem
 	PlayerInv.figmentPartySlots[3].figmentInfo = enemyFigData
+	print(PlayerInv.figmentPartySlots[3].figmentInfo.hp)
+	updateButtonFigInfo()
 	#ResourceSaver.save(enemyFigData,PlayerInv.figmentPartySlots[3].figmentInfo	) 
