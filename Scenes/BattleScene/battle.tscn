@@ -390,6 +390,7 @@ size_flags_vertical = 2
 mouse_filter = 2
 
 [node name="TopLeftAction" type="Button" parent="ActionPanel/Actions/TopActions" unique_id=1479924414]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
@@ -416,7 +417,7 @@ texture = ExtResource("7_4qq3g")
 expand_mode = 2
 
 [node name="Button1FigHealth" type="ProgressBar" parent="ActionPanel/Actions/TopActions/TopLeftAction/Button1Fig/HBoxContainer" unique_id=1277375945]
-custom_minimum_size = Vector2(127, 13)
+custom_minimum_size = Vector2(130, 13)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
@@ -424,6 +425,7 @@ value = 50.0
 show_percentage = false
 
 [node name="TopRightAction" type="Button" parent="ActionPanel/Actions/TopActions" unique_id=2089562151]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
@@ -450,7 +452,7 @@ texture = ExtResource("7_4qq3g")
 expand_mode = 2
 
 [node name="Button2FigHealth" type="ProgressBar" parent="ActionPanel/Actions/TopActions/TopRightAction/Button2Fig/HBoxContainer" unique_id=1307771148]
-custom_minimum_size = Vector2(127, 13)
+custom_minimum_size = Vector2(130, 13)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
@@ -463,6 +465,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="BottomLeftAction" type="Button" parent="ActionPanel/Actions/BottomActions" unique_id=191164206]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
@@ -489,7 +492,7 @@ texture = ExtResource("7_4qq3g")
 expand_mode = 2
 
 [node name="Button3FigHealth" type="ProgressBar" parent="ActionPanel/Actions/BottomActions/BottomLeftAction/Button3Fig/HBoxContainer" unique_id=1774985273]
-custom_minimum_size = Vector2(127, 13)
+custom_minimum_size = Vector2(130, 13)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
@@ -504,6 +507,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3d018")
 text = "Test"
 
 [node name="BottomRightAction" type="Button" parent="ActionPanel/Actions/BottomActions" unique_id=1079275199]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tpb6")
@@ -530,7 +534,7 @@ texture = ExtResource("7_4qq3g")
 expand_mode = 2
 
 [node name="Button4FigHealth" type="ProgressBar" parent="ActionPanel/Actions/BottomActions/BottomRightAction/Button4Fig/HBoxContainer" unique_id=843967328]
-custom_minimum_size = Vector2(127, 13)
+custom_minimum_size = Vector2(130, 13)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_tk3fk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_m1w6r")
