@@ -11,7 +11,8 @@ class_name BattleScene
 #		check either that ui and battle player inv are the same inv or not (duplicates)
 # or just set up signal to make UI refresh if that is actually the problem
 
-var PlayerInv = load("res://Resources/zzzTestInv/newTestInv.tres")
+var playerInv = load("res://Resources/zzzTestInv/newTestInv.tres")
+var playerSceneRoute
 
 # user interactable buttons and child nodes
 @onready var topLeftButton: Button = $ActionPanel/Actions/TopActions/TopLeftAction
@@ -71,20 +72,27 @@ enum {STARTING_FIGMENT,BASE_MENU,FIGHT_MENU,SWITCH_MENU,INVENTORY_MENU,FLEE_MENU
 # Signals
 #signal textBoxClosed
 signal fleeConfirmed ## emit when the player presses the flee button in the flee menu
+signal refreshInventory ## emit when there is any change to the inventory (item used, figment losing hp, etc)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	textBox.hide()
 	actionPanel.hide()
-	print(PlayerInv.figmentPartySlots[0].figmentInfo.speciesName)
-	PlayerInv.figmentPartySlots[0].figmentInfo.speciesName = "dickyWicky"
-	PlayerInv.figmentPartySlots[0].figmentInfo.hp = 0
+	print(playerInv.figmentPartySlots[0].figmentInfo.speciesName)
+	playerInv.figmentPartySlots[0].figmentInfo.speciesName = "dickyWicky"
+	playerInv.figmentPartySlots[0].figmentInfo.hp = 0
 	changeActionPanel("Figment 1","Figment 2","Figment 3","Figment 4","Back")
 	displayTextBox("You have encountered a real bad fella!")
 	bottomMiddleButton.hide()
 	print(topLeftButton.get_child(0).name)
 	updateButtonFigInfo()
 	showButtonFigments()
+	
+	# have to do absolute path since battle scene has no siblings or children to refer to other nodes
+	# (when in the scene tree)
+	playerSceneRoute = get_node("/root/Game/InventoryLayer/InventoryInterface/PlayerInventory")
+	print("inside battle ready")
+	
 	return
 
 #this function runs whenever an button is pressed
@@ -134,25 +142,25 @@ func hideAllButtonFigments():
 
 #shows the figments on the buttons, hides the info is there is no figment
 func showButtonFigments():
-	if (PlayerInv.figmentPartySlots[0].figmentInfo != null):
+	if (playerInv.figmentPartySlots[0].figmentInfo != null):
 		if (button1Fig.visible != true):
 			button1Fig.show()
 	else:
 		button1Fig.hide()
 		
-	if (PlayerInv.figmentPartySlots[1].figmentInfo != null):
+	if (playerInv.figmentPartySlots[1].figmentInfo != null):
 		if (button2Fig.visible != true):
 			button2Fig.show()
 	else:
 		button2Fig.hide()
 		
-	if (PlayerInv.figmentPartySlots[2].figmentInfo != null):
+	if (playerInv.figmentPartySlots[2].figmentInfo != null):
 		if (button3Fig.visible != true):
 			button3Fig.show()
 	else:
 		button3Fig.hide()
 		
-	if (PlayerInv.figmentPartySlots[3].figmentInfo != null):
+	if (playerInv.figmentPartySlots[3].figmentInfo != null):
 		if (button4Fig.visible != true):
 			button4Fig.show()
 	else:
@@ -160,25 +168,25 @@ func showButtonFigments():
 			
 # this just updates the figments on the starting menu and the switch menu and displays them
 func updateButtonFigInfo():
-	if (PlayerInv.figmentPartySlots[0].figmentInfo != null):
-		button1FigImage.texture = PlayerInv.figmentPartySlots[0].figmentInfo.sprite
-		button1FigHealth.value = PlayerInv.figmentPartySlots[0].figmentInfo.hp
-		button1FigHealth.max_value = PlayerInv.figmentPartySlots[0].figmentInfo.maxhp
+	if (playerInv.figmentPartySlots[0].figmentInfo != null):
+		button1FigImage.texture = playerInv.figmentPartySlots[0].figmentInfo.sprite
+		button1FigHealth.value = playerInv.figmentPartySlots[0].figmentInfo.hp
+		button1FigHealth.max_value = playerInv.figmentPartySlots[0].figmentInfo.maxhp
 		
-	if (PlayerInv.figmentPartySlots[1].figmentInfo != null):
-		button2FigImage.texture = PlayerInv.figmentPartySlots[1].figmentInfo.sprite
-		button2FigHealth.value = PlayerInv.figmentPartySlots[1].figmentInfo.hp
-		button2FigHealth.max_value = PlayerInv.figmentPartySlots[1].figmentInfo.maxhp
+	if (playerInv.figmentPartySlots[1].figmentInfo != null):
+		button2FigImage.texture = playerInv.figmentPartySlots[1].figmentInfo.sprite
+		button2FigHealth.value = playerInv.figmentPartySlots[1].figmentInfo.hp
+		button2FigHealth.max_value = playerInv.figmentPartySlots[1].figmentInfo.maxhp
 		
-	if (PlayerInv.figmentPartySlots[2].figmentInfo != null):
-		button3FigImage.texture = PlayerInv.figmentPartySlots[2].figmentInfo.sprite
-		button3FigHealth.value = PlayerInv.figmentPartySlots[2].figmentInfo.hp
-		button3FigHealth.max_value = PlayerInv.figmentPartySlots[2].figmentInfo.maxhp
+	if (playerInv.figmentPartySlots[2].figmentInfo != null):
+		button3FigImage.texture = playerInv.figmentPartySlots[2].figmentInfo.sprite
+		button3FigHealth.value = playerInv.figmentPartySlots[2].figmentInfo.hp
+		button3FigHealth.max_value = playerInv.figmentPartySlots[2].figmentInfo.maxhp
 		
-	if (PlayerInv.figmentPartySlots[3].figmentInfo != null):
-		button4FigImage.texture = PlayerInv.figmentPartySlots[3].figmentInfo.sprite
-		button4FigHealth.value = PlayerInv.figmentPartySlots[3].figmentInfo.hp
-		button4FigHealth.max_value = PlayerInv.figmentPartySlots[3].figmentInfo.maxhp
+	if (playerInv.figmentPartySlots[3].figmentInfo != null):
+		button4FigImage.texture = playerInv.figmentPartySlots[3].figmentInfo.sprite
+		button4FigHealth.value = playerInv.figmentPartySlots[3].figmentInfo.hp
+		button4FigHealth.max_value = playerInv.figmentPartySlots[3].figmentInfo.maxhp
 
 func applyEnemyFigmentInfo(incomingFig: Figment):
 	enemyFigData = incomingFig
@@ -246,12 +254,12 @@ func _on_top_left_move_pressed() -> void:
 		menuSwitchFunction(menuSelector)
 		bottomMiddleButton.show()
 	elif (menuSelector == STARTING_FIGMENT):
-		if(PlayerInv.figmentPartySlots[0].figmentInfo == null):
+		if(playerInv.figmentPartySlots[0].figmentInfo == null):
 			displayTextBox("You don't have a figment there")
-		elif(PlayerInv.figmentPartySlots[0].figmentInfo.hp == 0):
+		elif(playerInv.figmentPartySlots[0].figmentInfo.hp == 0):
 			displayTextBox("That Figment is fucking dead dude")
 		else:
-			applyPlayerFigmentInfo(PlayerInv.figmentPartySlots[0].figmentInfo)
+			applyPlayerFigmentInfo(playerInv.figmentPartySlots[0].figmentInfo)
 			menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
 			menuSwitchFunction(menuSelector)
 			hideAllButtonFigments()
@@ -264,12 +272,12 @@ func _on_top_right_move_pressed() -> void:
 		bottomMiddleButton.show()
 		showButtonFigments()
 	elif (menuSelector == STARTING_FIGMENT):
-		if(PlayerInv.figmentPartySlots[1].figmentInfo == null):
+		if(playerInv.figmentPartySlots[1].figmentInfo == null):
 			displayTextBox("you don't have a figment there")
-		elif(PlayerInv.figmentPartySlots[1].figmentInfo.hp == 0):
+		elif(playerInv.figmentPartySlots[1].figmentInfo.hp == 0):
 			displayTextBox("that Figment is fucking dead dude")
 		else:
-			applyPlayerFigmentInfo(PlayerInv.figmentPartySlots[1].figmentInfo)
+			applyPlayerFigmentInfo(playerInv.figmentPartySlots[1].figmentInfo)
 			menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
 			menuSwitchFunction(menuSelector)
 			hideAllButtonFigments()
@@ -281,12 +289,12 @@ func _on_bottom_left_move_pressed() -> void:
 		menuSwitchFunction(menuSelector)
 		bottomMiddleButton.show()
 	elif (menuSelector == STARTING_FIGMENT):
-		if(PlayerInv.figmentPartySlots[2].figmentInfo == null):
+		if(playerInv.figmentPartySlots[2].figmentInfo == null):
 			displayTextBox("you don't have a figment there")
-		elif(PlayerInv.figmentPartySlots[2].figmentInfo.hp == 0):
+		elif(playerInv.figmentPartySlots[2].figmentInfo.hp == 0):
 			displayTextBox("that Figment is fucking dead dude")
 		else:
-			applyPlayerFigmentInfo(PlayerInv.figmentPartySlots[2].figmentInfo)
+			applyPlayerFigmentInfo(playerInv.figmentPartySlots[2].figmentInfo)
 			menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
 			menuSwitchFunction(menuSelector)
 			hideAllButtonFigments()
@@ -300,12 +308,12 @@ func _on_bottom_right_move_pressed() -> void:
 		menuSwitchFunction(menuSelector)
 		topActions.hide() 
 	elif (menuSelector == STARTING_FIGMENT):
-		if(PlayerInv.figmentPartySlots[3].figmentInfo ==  null):
+		if(playerInv.figmentPartySlots[3].figmentInfo ==  null):
 			displayTextBox("you don't have a figment there")
-		elif(PlayerInv.figmentPartySlots[3].figmentInfo.hp == 0):
+		elif(playerInv.figmentPartySlots[3].figmentInfo.hp == 0):
 			displayTextBox("that Figment is fucking dead dude")
 		else:
-			applyPlayerFigmentInfo(PlayerInv.figmentPartySlots[3].figmentInfo)
+			applyPlayerFigmentInfo(playerInv.figmentPartySlots[3].figmentInfo)
 			menuSelector = BASE_MENU #sets the active menu to the battle menu after figments have been selected
 			menuSwitchFunction(menuSelector)
 			hideAllButtonFigments()
@@ -321,13 +329,13 @@ func _on_bottom_middle_action_pressed() -> void:
 	menuSwitchFunction(menuSelector) 
 	hideAllButtonFigments()
 
-
 func _on_capture_button_pressed() -> void:
 	# TODO read that for the path you wanna save to user:// player data not res:// since it
 	#	would be specific to the player rather then the project itself, using res rn for testing purposes
 	#TODO figure out how to actually save the fig data between booting up the gaem
-	PlayerInv.figmentPartySlots[3].figmentInfo = enemyFigData
-	print(PlayerInv.figmentPartySlots[3].figmentInfo.hp)
+	playerInv.figmentPartySlots[3].figmentInfo = enemyFigData
+	print(playerInv.figmentPartySlots[3].figmentInfo.hp)
 	updateButtonFigInfo()
 	showButtonFigments()
+	refreshInventory.emit(playerInv)
 	#ResourceSaver.save(enemyFigData,PlayerInv.figmentPartySlots[3].figmentInfo	) 

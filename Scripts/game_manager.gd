@@ -124,7 +124,11 @@ func doGarrett(enemy: Enemy):
 	
 	battleScene.fleeConfirmed.connect(_on_battleScene_flee_confirmed)
 	get_node("BattleContainer").add_child(battleScene)
+	#await get_node("BattleContainer/Battle").ready
+	print("after get node call")
 	battleScene.applyEnemyFigmentInfo(enemy.figment)
+	playerInventoryUI.connectToBattleScene()
+	
 
 func _on_battleScene_flee_confirmed():
 	state = OVERWORLD

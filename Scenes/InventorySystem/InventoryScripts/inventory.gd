@@ -13,9 +13,16 @@ const slotFigRef = preload("res://Scenes/InventorySystem/InventoryScenes/SlotFig
 	#populateItemGrid(startingInv.inventorySlots)
 	
 func setWholeInventoryData(invData: inventoryData) -> void:
+	
 		populateItemGrid(invData)
 		populateFigmentPartyGrid(invData)
-
+		
+func connectToBattleScene():
+	#print(get_node("/root/Game/BattleContainer/Battle"))
+	var battleScene = get_node("/root/Game/BattleContainer/Battle")
+	
+	battleScene.refreshInventory.connect(setWholeInventoryData)
+	
 func populateItemGrid(invData: inventoryData) -> void:
 	for child in itemGrid.get_children():
 		child.queue_free()
