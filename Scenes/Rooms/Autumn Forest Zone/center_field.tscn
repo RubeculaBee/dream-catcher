@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://bdioln3jvyyua" path="res://Resources/Tilesets/hitbox.tres" id="3_2pdqd"]
 [ext_resource type="PackedScene" uid="uid://bksduw2518ken" path="res://Scenes/Gameobjects/Enemies.tscn" id="3_oe3ab"]
 [ext_resource type="PackedScene" uid="uid://dcsr3ht84onef" path="res://Scenes/Gameobjects/Enemy.tscn" id="4_244xt"]
-[ext_resource type="PackedScene" path="res://Scenes/Gameobjects/screen_transition.tscn" id="4_hem1d"]
+[ext_resource type="PackedScene" uid="uid://bymouotca3psm" path="res://Scenes/Gameobjects/screen_transition.tscn" id="4_hem1d"]
 [ext_resource type="Script" uid="uid://csm2jp1h77xtp" path="res://Resources/Figment Blueprints/fig_bp.gd" id="8_cks2y"]
 [ext_resource type="Resource" uid="uid://cvkvqwdo5qpn6" path="res://Resources/Figment Blueprints/landTest.tres" id="9_5lxbx"]
 [ext_resource type="Resource" uid="uid://xapjbnd5g5wl" path="res://Resources/Figment Blueprints/seaTest.tres" id="10_5lf3e"]

@@ -2,8 +2,8 @@ extends Resource
 class_name FigmentBlueprint
 
 @export var speciesName: String
-@export var sprite: Texture2D
-@export var shape: Texture2D
+@export var sprite: Texture2D # battle sprite
+@export var shape: Texture2D  # overworld sprite
 @export var type1: Type
 @export var type2: Type
 @export var allKnowableMoves: Array[Move]
@@ -13,6 +13,10 @@ class_name FigmentBlueprint
 @export var lucidity: Stat
 @export var acuity: Stat
 @export var creativity: Stat
+
+#@export var stats: Dictionary[String, Stat] = {
+#		"will": Stat.new(),
+#	}
 
 enum Type {NONE, LAND, SEA, SKY, MIND, BODY, LIGHT, DARK, SYNTH, FEAR}
 static var typeColours = {

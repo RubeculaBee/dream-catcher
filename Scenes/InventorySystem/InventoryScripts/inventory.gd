@@ -47,6 +47,8 @@ func populateFigmentPartyGrid(figData: inventoryData)-> void:
 		var slotInstance = slotFigRef.instantiate()
 		figmentPartyGrid.add_child(slotInstance)
 		
+		#print(currentSlotData.figmentInfo,"test") #was testing when data gets loaded, delete if not Garrett, means I forgot to come back and delete this
+		
 		slotInstance.slotFigClicked.connect(figData.onFigSlotClicked)
 		
 		# added and currentSlotData.figmentInfo != null, because I think I will probably have the inventory slots be there

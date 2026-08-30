@@ -79,6 +79,8 @@ func _ready() -> void:
 	textBox.hide()
 	actionPanel.hide()
 	print(playerInv.figmentPartySlots[0].figmentInfo.speciesName)
+	print("the type value is:",playerInv.figmentPartySlots[0].figmentInfo.type2)
+	
 	playerInv.figmentPartySlots[0].figmentInfo.speciesName = "dickyWicky"
 	playerInv.figmentPartySlots[0].figmentInfo.hp = 0
 	changeActionPanel("Figment 1","Figment 2","Figment 3","Figment 4","Back")
@@ -91,7 +93,7 @@ func _ready() -> void:
 	# have to do absolute path since battle scene has no siblings or children to refer to other nodes
 	# (when in the scene tree)
 	playerSceneRoute = get_node("/root/Game/InventoryLayer/InventoryInterface/PlayerInventory")
-	print("inside battle ready")
+	#print("Acess granted",playerSceneRoute.figmentPartyGrid)
 	
 	return
 
@@ -334,8 +336,12 @@ func _on_capture_button_pressed() -> void:
 	#	would be specific to the player rather then the project itself, using res rn for testing purposes
 	#TODO figure out how to actually save the fig data between booting up the gaem
 	playerInv.figmentPartySlots[3].figmentInfo = enemyFigData
-	print(playerInv.figmentPartySlots[3].figmentInfo.hp)
+	# print(playerInv.figmentPartySlots[3].figmentInfo.hp)
 	updateButtonFigInfo()
-	showButtonFigments()
+	showButtonFigments()	
 	refreshInventory.emit(playerInv)
+	
+	print("new guy", playerInv.figmentPartySlots[3].figmentInfo.hp)
+	print("new guy", playerInv.figmentPartySlots[3].figmentInfo.stats)
+	print("new guy stat value ", playerInv.figmentPartySlots[3].figmentInfo.stats["Will"].value)
 	#ResourceSaver.save(enemyFigData,PlayerInv.figmentPartySlots[3].figmentInfo	) 

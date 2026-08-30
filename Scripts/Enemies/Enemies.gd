@@ -11,6 +11,12 @@ var TILE_SIZE: int = 32
 var spawnpointsNow : Array[Vector2i]
 
 @export var figment_list: Array[FigmentBlueprint]
+
+#helped me track down where figment_list was getting data
+#@export var figment_list: Array[FigmentBlueprint]
+#set(value):
+#		figment_list = value
+#		print("FIGMENT LIST WAS SET BY: ", get_stack())
 @export var figment_lvl = {
 	"from": 0,
 	"to": 0

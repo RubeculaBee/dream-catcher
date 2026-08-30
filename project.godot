@@ -18,6 +18,10 @@ config/name="Dream Catcher"
 run/main_scene="uid://dinbb7dsmxxe"
 config/features=PackedStringArray("4.6", "Mobile")
 
+[autoload]
+
+SaveAndLoad="*uid://dw1ykp4cprmdk"
+
 [display]
 
 window/size/viewport_width=800

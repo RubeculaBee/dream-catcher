@@ -2,34 +2,100 @@
 
 [ext_resource type="Script" uid="uid://dqgpt60kofple" path="res://Scenes/InventorySystem/InventoryScripts/slotFigmentData.gd" id="1_yofp7"]
 [ext_resource type="Script" uid="uid://bm4vjv7wn4gvr" path="res://Scenes/InventorySystem/InventoryScripts/slotItemData.gd" id="2_5t0pc"]
+[ext_resource type="Resource" uid="uid://bmhahchcevmd2" path="res://Resources/zzzTestStats/TESTStat.tres" id="2_cmrr0"]
 [ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="2_ergj2"]
-[ext_resource type="Resource" uid="uid://btisfjpk4sy63" path="res://Resources/Figment Blueprints/skyTest.tres" id="3_6yxgf"]
 [ext_resource type="Resource" uid="uid://cuc3fgmdntja0" path="res://Resources/Items/testItem.tres" id="3_8kpdq"]
 [ext_resource type="Script" uid="uid://cph0o7ejrbrbl" path="res://Scripts/Figments/figment.gd" id="4_aynv7"]
 [ext_resource type="Script" uid="uid://bb7qonktqgxw4" path="res://Scenes/InventorySystem/InventoryScripts/inventoryData.gd" id="4_c78sr"]
 [ext_resource type="Script" uid="uid://s6uxxwxoy1j1" path="res://Scripts/Figments/stat.gd" id="5_cmrr0"]
+[ext_resource type="Texture2D" uid="uid://b00hli82nylkm" path="res://Resources/Images/Enemies/enemy_tongue.png" id="7_86vap"]
+[ext_resource type="Texture2D" uid="uid://bxjh4viilxk7k" path="res://Resources/Images/Figment Sprites/TYPELAND.png" id="8_7he0v"]
+
+[sub_resource type="Resource" id="Resource_aynv7"]
+script = ExtResource("5_cmrr0")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_cmrr0"]
+script = ExtResource("5_cmrr0")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
 
 [sub_resource type="Resource" id="Resource_npqv2"]
-script = ExtResource("4_aynv7")
-maxhp = 50
-hp = 10
-level = 5
-bp = ExtResource("3_6yxgf")
-startLvl = 1
-metadata/_custom_type_script = "uid://cph0o7ejrbrbl"
+script = ExtResource("5_cmrr0")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
 
 [sub_resource type="Resource" id="Resource_86vap"]
-script = ExtResource("1_yofp7")
-figmentInfo = SubResource("Resource_npqv2")
-metadata/_custom_type_script = "uid://dqgpt60kofple"
+script = ExtResource("5_cmrr0")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7he0v"]
+load_path = "res://.godot/imported/enemy_bat.png-b05e04fcba76fced0c77f12310427434.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fhtpg"]
+load_path = "res://.godot/imported/TYPESEA.png-6b00cea877dc3d24ce0b1b63a1b1cbeb.ctex"
+
+[sub_resource type="Resource" id="Resource_014kw"]
+script = ExtResource("5_cmrr0")
+value = 2.0
+minInit = 2
+maxInit = 2
+growth = 2
+minGrowth = 2
+maxGrowth = 2
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_8o024"]
+script = ExtResource("5_cmrr0")
+value = 2.0
+minInit = 2
+maxInit = 2
+growth = 2
+minGrowth = 2
+maxGrowth = 2
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
 
 [sub_resource type="Resource" id="Resource_7he0v"]
+resource_local_to_scene = true
 script = ExtResource("4_aynv7")
-maxhp = 50
-hp = 10
+stats = Dictionary[String, ExtResource("5_cmrr0")]({
+"Will": SubResource("Resource_014kw")
+})
+maxhp = 60
+hp = 45
 level = 5
-bp = ExtResource("3_6yxgf")
 startLvl = 1
+speciesName = "TEST_SEA"
+sprite = SubResource("CompressedTexture2D_fhtpg")
+shape = SubResource("CompressedTexture2D_7he0v")
+type1 = 2
+will = SubResource("Resource_8o024")
+coherence = SubResource("Resource_cmrr0")
+lucidity = SubResource("Resource_86vap")
+acuity = SubResource("Resource_aynv7")
+creativity = SubResource("Resource_npqv2")
 metadata/_custom_type_script = "uid://cph0o7ejrbrbl"
 
 [sub_resource type="Resource" id="Resource_fhtpg"]
@@ -37,13 +103,27 @@ script = ExtResource("1_yofp7")
 figmentInfo = SubResource("Resource_7he0v")
 metadata/_custom_type_script = "uid://dqgpt60kofple"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kwhc1"]
+load_path = "res://.godot/imported/enemy_crab.png-3906ff1988e2545b7ce053c77ea604c2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0pnhm"]
+load_path = "res://.godot/imported/TYPESKY.png-a6cdf115dc17558b0fcdd63ac84223f1.ctex"
+
 [sub_resource type="Resource" id="Resource_5iqll"]
 script = ExtResource("4_aynv7")
 maxhp = 50
 hp = 10
 level = 5
-bp = ExtResource("3_6yxgf")
 startLvl = 1
+speciesName = "TEST_SKY"
+sprite = SubResource("CompressedTexture2D_0pnhm")
+shape = SubResource("CompressedTexture2D_kwhc1")
+type1 = 3
+will = ExtResource("2_cmrr0")
+coherence = ExtResource("2_cmrr0")
+lucidity = ExtResource("2_cmrr0")
+acuity = ExtResource("2_cmrr0")
+creativity = ExtResource("2_cmrr0")
 metadata/_custom_type_script = "uid://cph0o7ejrbrbl"
 
 [sub_resource type="Resource" id="Resource_jcgyt"]
@@ -51,7 +131,29 @@ script = ExtResource("1_yofp7")
 figmentInfo = SubResource("Resource_5iqll")
 metadata/_custom_type_script = "uid://dqgpt60kofple"
 
-[sub_resource type="Resource" id="Resource_aynv7"]
+[sub_resource type="Resource" id="Resource_t3vt8"]
+script = ExtResource("4_aynv7")
+maxhp = 100
+hp = 60
+level = 4
+startLvl = 1
+speciesName = "TEST_LAND"
+sprite = ExtResource("8_7he0v")
+shape = ExtResource("7_86vap")
+type1 = 1
+will = ExtResource("2_cmrr0")
+coherence = ExtResource("2_cmrr0")
+lucidity = ExtResource("2_cmrr0")
+acuity = ExtResource("2_cmrr0")
+creativity = ExtResource("2_cmrr0")
+metadata/_custom_type_script = "uid://cph0o7ejrbrbl"
+
+[sub_resource type="Resource" id="Resource_sqibh"]
+script = ExtResource("1_yofp7")
+figmentInfo = SubResource("Resource_t3vt8")
+metadata/_custom_type_script = "uid://dqgpt60kofple"
+
+[sub_resource type="Resource" id="Resource_t8kce"]
 script = ExtResource("1_yofp7")
 metadata/_custom_type_script = "uid://dqgpt60kofple"
 
@@ -69,5 +171,5 @@ metadata/_custom_type_script = "uid://bm4vjv7wn4gvr"
 [resource]
 script = ExtResource("4_c78sr")
 inventorySlots = Array[ExtResource("2_5t0pc")]([SubResource("Resource_ergj2"), SubResource("Resource_6yxgf"), null, null, null, null, null, null, null, null, null, null, null, null, null])
-figmentPartySlots = Array[ExtResource("1_yofp7")]([SubResource("Resource_86vap"), SubResource("Resource_fhtpg"), SubResource("Resource_jcgyt"), SubResource("Resource_aynv7")])
+figmentPartySlots = Array[ExtResource("1_yofp7")]([SubResource("Resource_fhtpg"), SubResource("Resource_jcgyt"), SubResource("Resource_sqibh"), SubResource("Resource_t8kce")])
 metadata/_custom_type_script = "uid://bb7qonktqgxw4"

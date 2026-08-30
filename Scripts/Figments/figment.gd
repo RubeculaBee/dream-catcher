@@ -10,36 +10,41 @@ var rng = RandomNumberGenerator.new()
 @export var maxhp: int
 @export var hp: int
 @export var xp: int
-@export var level: int
+@export var level: int 
 
-@export var bp: FigmentBlueprint
+#@export var bp: FigmentBlueprint # commented out to remove duplicate blueprints
 @export var startLvl: int
 
 # dont want to use init here, because if you create a Figment any way other then .new() it won't run _init
 # this was causing the inventory to only have null for the data
 #func _init(blueprint: FigmentBlueprint, lvl: int) -> void:
 
+#this is to run when creating a new figment 
 func populateFigData(blueprint: FigmentBlueprint, lvl: int)-> void:
-	bp = blueprint
+	#bp = blueprint
 	
-	self.speciesName = bp.speciesName
-	self.sprite = bp.sprite
-	self.shape = bp.shape 
-	self.type1 = bp.type1
-	self.type2 = bp.type2
-	startLvl = lvl
+	self.speciesName = blueprint.speciesName
+	self.sprite = blueprint.sprite
+	self.shape = blueprint.shape 
+	self.type1 = blueprint.type1
+	self.type2 = blueprint.type2
 	# TODO have array of known moves not be an array of all the moves it can ever know, and rather just 4 of them
-	knownMoves = bp.allKnowableMoves
+	knownMoves = blueprint.allKnowableMoves
+	
+	#TODO not sure the dif between startlvl and level, and why there is 2
+	startLvl = lvl
+	level = 1
+	xp = 0
 
 	for move: Move in knownMoves:
 		move.doEffect = move.effectScript.main
 
 	stats = {
-		"Will": bp.will.duplicate(),
-		"Coherence": bp.coherence.duplicate(),
-		"Lucidity": bp.lucidity.duplicate(),
-		"Acuity": bp.acuity.duplicate(),
-		"Creativity": bp.creativity.duplicate(),
+		"Will": blueprint.will.duplicate(),
+		"Coherence": blueprint.coherence.duplicate(),
+		"Lucidity": blueprint.lucidity.duplicate(),
+		"Acuity": blueprint.acuity.duplicate(),
+		"Creativity": blueprint.creativity.duplicate(),
 	}
 
 	for stat: Stat in self.stats.values():
@@ -48,7 +53,6 @@ func populateFigData(blueprint: FigmentBlueprint, lvl: int)-> void:
 	
 	maxhp = stats.Coherence.value as int * 10
 	hp = maxhp # when figment is created it gives it full health
-	level = 0
 
 	for i in range(min(startLvl*5 + randi_range(0,4), 100)):
 		while !self.levelUp(self.stats.keys()[randi_range(0,4)]):

@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="Figment" format=3 uid="uid://bccdx6snwbev4"]
+
+[ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="1_yjetw"]
+[ext_resource type="Script" uid="uid://cph0o7ejrbrbl" path="res://Scripts/Figments/figment.gd" id="2_k84vi"]
+[ext_resource type="Script" uid="uid://s6uxxwxoy1j1" path="res://Scripts/Figments/stat.gd" id="3_qi3sb"]
+[ext_resource type="Texture2D" uid="uid://b00hli82nylkm" path="res://Resources/Images/Enemies/enemy_tongue.png" id="4_06rq0"]
+[ext_resource type="Texture2D" uid="uid://bxjh4viilxk7k" path="res://Resources/Images/Figment Sprites/TYPELAND.png" id="5_ms3my"]
+
+[sub_resource type="Resource" id="Resource_qi3sb"]
+script = ExtResource("3_qi3sb")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_2k3qh"]
+script = ExtResource("3_qi3sb")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_06rq0"]
+script = ExtResource("3_qi3sb")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_ms3my"]
+script = ExtResource("3_qi3sb")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_qf8ts"]
+script = ExtResource("3_qi3sb")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_jxkl4"]
+script = ExtResource("3_qi3sb")
+value = 2.0
+minInit = 2
+maxInit = 2
+growth = 2
+minGrowth = 2
+maxGrowth = 2
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_bkkxg"]
+script = ExtResource("3_qi3sb")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_k84vi")
+stats = Dictionary[String, ExtResource("3_qi3sb")]({
+"coherence": SubResource("Resource_jxkl4"),
+"will": SubResource("Resource_qf8ts")
+})
+maxhp = 100
+hp = 60
+level = 4
+startLvl = 1
+speciesName = "TEST_LAND"
+sprite = ExtResource("5_ms3my")
+shape = ExtResource("4_06rq0")
+type1 = 1
+will = SubResource("Resource_bkkxg")
+coherence = SubResource("Resource_2k3qh")
+lucidity = SubResource("Resource_ms3my")
+acuity = SubResource("Resource_qi3sb")
+creativity = SubResource("Resource_06rq0")
+metadata/_custom_type_script = "uid://cph0o7ejrbrbl"

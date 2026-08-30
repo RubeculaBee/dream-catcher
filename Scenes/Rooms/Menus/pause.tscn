@@ -74,6 +74,10 @@ theme_override_constants/outline_size = 6
 theme_override_constants/h_separation = 4
 text = "Exit"
 
+[node name="Save" type="Button" parent="MarginContainer/VBoxContainer" unique_id=263585117]
+layout_mode = 2
+text = "Save (beta)"
+
 [node name="Label" type="Label" parent="." unique_id=1416589086]
 layout_mode = 1
 anchors_preset = 5
@@ -97,3 +101,4 @@ autowrap_mode = 3
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]

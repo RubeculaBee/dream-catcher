@@ -66,8 +66,14 @@ func load_overworld():
 	if spawnpoint != null:
 		spawn_player(spawnpoint.position)
 		attach_camera()
+		
 		inventoryInterface.setPlayerInventory(player.playerInventory) #loads in player inv when spawning in
-
+		#testing when inventory stuff is saved
+		print("1:",player.playerInventory)
+		print("2:",player.playerInventory.figmentPartySlots[0])
+		print("3:",player.playerInventory.figmentPartySlots[0].figmentInfo)
+		print("4:",player.playerInventory.figmentPartySlots[0].figmentInfo.hp)
+		print("5:",player.playerInventory.figmentPartySlots[0].figmentInfo.stats)
 	update_references()
 
 func attach_camera():
@@ -111,7 +117,6 @@ func doGarrett(enemy: Enemy):
 		return
 	
 	state = BATTLE
-	print(enemy)
 	last_room = get_node("Rooms").get_child(0)
 
 	camera.swipe_transition()
@@ -124,8 +129,6 @@ func doGarrett(enemy: Enemy):
 	
 	battleScene.fleeConfirmed.connect(_on_battleScene_flee_confirmed)
 	get_node("BattleContainer").add_child(battleScene)
-	#await get_node("BattleContainer/Battle").ready
-	print("after get node call")
 	battleScene.applyEnemyFigmentInfo(enemy.figment)
 	playerInventoryUI.connectToBattleScene()
 	

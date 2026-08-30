@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://bmhahchcevmd2"]
+
+[ext_resource type="Script" uid="uid://s6uxxwxoy1j1" path="res://Scripts/Figments/stat.gd" id="1_fi0k5"]
+
+[resource]
+script = ExtResource("1_fi0k5")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"

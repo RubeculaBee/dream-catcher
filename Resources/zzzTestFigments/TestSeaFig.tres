@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="Figment" format=3 uid="uid://dumrjbh80ivan"]
+
+[ext_resource type="Script" uid="uid://bhwqpk7334ipn" path="res://Scripts/Figments/move.gd" id="1_8qnxo"]
+[ext_resource type="Resource" uid="uid://bmhahchcevmd2" path="res://Resources/zzzTestStats/TESTStat.tres" id="1_r43rx"]
+[ext_resource type="Script" uid="uid://cph0o7ejrbrbl" path="res://Scripts/Figments/figment.gd" id="2_4ku8e"]
+[ext_resource type="Script" uid="uid://s6uxxwxoy1j1" path="res://Scripts/Figments/stat.gd" id="3_r43rx"]
+[ext_resource type="Texture2D" uid="uid://r86tegmtvpy5" path="res://Resources/Images/Figment Sprites/TYPESEA.png" id="4_b4uee"]
+[ext_resource type="Texture2D" uid="uid://cbb0u13swyvhh" path="res://Resources/Images/Enemies/enemy_bat.png" id="4_dcky3"]
+
+[sub_resource type="Resource" id="Resource_dcky3"]
+script = ExtResource("3_r43rx")
+value = 1.0
+minInit = 1
+maxInit = 1
+growth = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_b4uee"]
+script = ExtResource("3_r43rx")
+value = 2.0
+minInit = 2
+maxInit = 2
+growth = 2
+minGrowth = 2
+maxGrowth = 2
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_4ku8e")
+stats = Dictionary[String, ExtResource("3_r43rx")]({
+"Will": SubResource("Resource_dcky3")
+})
+maxhp = 60
+hp = 45
+level = 5
+startLvl = 1
+speciesName = "TEST_SEA"
+sprite = ExtResource("4_b4uee")
+shape = ExtResource("4_dcky3")
+type1 = 2
+will = SubResource("Resource_b4uee")
+coherence = ExtResource("1_r43rx")
+lucidity = ExtResource("1_r43rx")
+acuity = ExtResource("1_r43rx")
+creativity = ExtResource("1_r43rx")
+metadata/_custom_type_script = "uid://cph0o7ejrbrbl"

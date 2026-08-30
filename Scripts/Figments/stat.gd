@@ -5,9 +5,9 @@ class_name Stat
 @export var minInit: int
 @export var maxInit: int
 
-@export var growth: int
 @export var minGrowth: int
 @export var maxGrowth: int
+var growth: int
 
 var level: int
 

@@ -21,8 +21,8 @@ func setFigSlotData(incomingFigData:slotFigmentData) ->void:
 		mainFigmentSection.show()
 	var figInSlotData = incomingFigData.figmentInfo
 	# TODO move the line belowline  and figure out why the fig resource has the BP var and a seperate
-	# figment Bluepring Section, and what to do with it
-	figInSlotData.populateFigData(incomingFigData.figmentInfo.bp,5) 
+	# figment Blueprint Section, and what to do with it
+	#figInSlotData.populateFigData(incomingFigData.figmentInfo,5) #-----------------testing
 	# TODO the 5 is just because i did not know what else to put ^
 	
 	nameLabel.text = figInSlotData.speciesName
@@ -33,11 +33,15 @@ func setFigSlotData(incomingFigData:slotFigmentData) ->void:
 	healthBar.value =  figInSlotData.hp
 	levelLabel.text =  "Lv:" + str(figInSlotData.level) + " "
 	healthNumbers.text = str(figInSlotData.hp) + "/" + str(figInSlotData.maxhp)
-	will.text = "W: " + str(figInSlotData.stats["Will"].value)
-	coherence.text = "Co: " + str(figInSlotData.stats["Coherence"].value)
-	lucidity.text = "L: " + str(figInSlotData.stats["Lucidity"].value)
-	acuity.text = "A: " + str(figInSlotData.stats["Acuity"].value)
-	creativity.text = "Cr: " + str(figInSlotData.stats["Creativity"].value)
+	
+	#print(figInSlotData.hp)
+	#print(figInSlotData.stats)
+	
+	#will.text = "W: " + str(figInSlotData.stats["Will"].value)
+	#coherence.text = "Co: " + str(figInSlotData.stats["Coherence"].value)
+	#lucidity.text = "L: " + str(figInSlotData.stats["Lucidity"].value)
+	#acuity.text = "A: " + str(figInSlotData.stats["Acuity"].value)
+	#creativity.text = "Cr: " + str(figInSlotData.stats["Creativity"].value)
 	
 	# TODO xp bar and code for how xp is calculated
 	
