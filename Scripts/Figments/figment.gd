@@ -4,7 +4,13 @@ class_name Figment
 
 var rng = RandomNumberGenerator.new()
 
-@export var stats: Dictionary[String, Stat]
+@export var figmentStats: Dictionary[String, float] = {
+		"Will": 1,
+		"Coherence": 1,
+		"Lucidity": 1,
+		"Acuity": 1,
+		"Creativity": 1,
+	}
 @export var knownMoves: Array[Move]
 
 @export var maxhp: int
@@ -39,33 +45,45 @@ func populateFigData(blueprint: FigmentBlueprint, lvl: int)-> void:
 	for move: Move in knownMoves:
 		move.doEffect = move.effectScript.main
 
-	stats = {
-		"Will": blueprint.will.duplicate(),
-		"Coherence": blueprint.coherence.duplicate(),
-		"Lucidity": blueprint.lucidity.duplicate(),
-		"Acuity": blueprint.acuity.duplicate(),
-		"Creativity": blueprint.creativity.duplicate(),
+	speciesStats = {
+		"Will": blueprint.speciesStats["Will"].duplicate(),
+		"Coherence": blueprint.speciesStats["Coherence"].duplicate(),
+		"Lucidity": blueprint.speciesStats["Lucidity"].duplicate(),
+		"Acuity": blueprint.speciesStats["Acuity"].duplicate(),
+		"Creativity": blueprint.speciesStats["Creativity"].duplicate(),
 	}
-
-	for stat: Stat in self.stats.values():
-		stat.value = rng.randi_range(stat.minInit, stat.maxInit)
-		stat.growth = rng.randi_range(stat.minGrowth, stat.maxGrowth)
 	
-	maxhp = stats.Coherence.value as int * 10
+	
+	
+	#sets all figment specific values, was not able to figure out how to get two dictionaries inside a for loop to share data so did it this way
+	figmentStats["Will"] = rng.randi_range(speciesStats["Will"].minInit, speciesStats["Will"].maxInit)
+	figmentStats["Coherence"] = rng.randi_range(speciesStats["Coherence"].minInit, speciesStats["Coherence"].maxInit)
+	figmentStats["Lucidity"] = rng.randi_range(speciesStats["Lucidity"].minInit, speciesStats["Lucidity"].maxInit)
+	figmentStats["Acuity"] = rng.randi_range(speciesStats["Acuity"].minInit, speciesStats["Acuity"].maxInit)
+	figmentStats["Creativity"] = rng.randi_range(speciesStats["Creativity"].minInit, speciesStats["Creativity"].maxInit)
+	
+	
+	#for stat: Stat in self.speciesStats.values():
+	#	#stat.value = rng.randi_range(stat.minInit, stat.maxInit)
+	#	stat.growth = rng.randi_range(stat.minGrowth, stat.maxGrowth)
+		
+		
+		
+	maxhp = figmentStats["Coherence"] as int * 10
 	hp = maxhp # when figment is created it gives it full health
 
-	for i in range(min(startLvl*5 + randi_range(0,4), 100)):
-		while !self.levelUp(self.stats.keys()[randi_range(0,4)]):
-			pass
+#	for i in range(min(startLvl*5 + randi_range(0,4), 100)):
+#		while !self.levelUp(self.stats.keys()[randi_range(0,4)]):
+#			pass
 
-func levelUp(statName: String) -> bool:
-	if !self.stats[statName].increase():
-		return false
-	
-	var avg: float = 0
-	for stat: Stat in self.stats.values():
-		avg += stat.level
-	avg /= 5
-
-	self.level = floori(avg)
-	return true
+#func levelUp(statName: String) -> bool:
+#	if !self.stats[statName].increase():
+#		return false
+#	
+#	var avg: float = 0
+#	for stat: Stat in self.stats.values():
+#		avg += stat.level
+#	avg /= 5
+#
+#	self.level = floori(avg)
+#	return true

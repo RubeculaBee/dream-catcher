@@ -8,7 +8,21 @@ var SaveData : Dictionary = {
 	"saveFileVer" : 1,
 	"Figment_1": [
 		{
-			
+			"exists" : true,
+			"level": 0.0,
+			"xp": 0.0,
+			"maxhp": 0.0,
+			"hp": 0.0,
+			"knownMoves": false, # TODO
+			"stats": [
+				{
+					"Will": 0.0,
+					"Coherence": 0.0,
+					"Lucidity": 0.0,
+					"Acuity": 0.0,
+					"Creativity": 0.0,
+				}
+			]
 		}
 	]
 }

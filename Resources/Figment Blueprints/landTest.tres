@@ -6,44 +6,44 @@
 [ext_resource type="Texture2D" uid="uid://bxjh4viilxk7k" path="res://Resources/Images/Figment Sprites/TYPELAND.png" id="5_817b5"]
 [ext_resource type="Script" uid="uid://s6uxxwxoy1j1" path="res://Scripts/Figments/stat.gd" id="6_6efet"]
 
-[sub_resource type="Resource" id="Resource_6efet"]
+[sub_resource type="Resource" id="Resource_ga640"]
 script = ExtResource("6_6efet")
-minInit = 5
-maxInit = 10
-minGrowth = 5
-maxGrowth = 10
+minInit = 1
+maxInit = 2
+minGrowth = 3
+maxGrowth = 4
 metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
 
-[sub_resource type="Resource" id="Resource_817b5"]
+[sub_resource type="Resource" id="Resource_qexsx"]
 script = ExtResource("6_6efet")
-minInit = 5
-maxInit = 10
-minGrowth = 5
-maxGrowth = 10
+minInit = 1
+maxInit = 1
+minGrowth = 1
+maxGrowth = 1
 metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
 
-[sub_resource type="Resource" id="Resource_cxmt0"]
+[sub_resource type="Resource" id="Resource_ne2lr"]
 script = ExtResource("6_6efet")
-minInit = 5
-maxInit = 10
-minGrowth = 5
-maxGrowth = 10
+minInit = 2
+maxInit = 2
+minGrowth = 2
+maxGrowth = 2
 metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
 
-[sub_resource type="Resource" id="Resource_ix32y"]
+[sub_resource type="Resource" id="Resource_5ji8a"]
 script = ExtResource("6_6efet")
-minInit = 5
-maxInit = 10
-minGrowth = 5
-maxGrowth = 10
+minInit = 3
+maxInit = 3
+minGrowth = 3
+maxGrowth = 3
 metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
 
-[sub_resource type="Resource" id="Resource_xx186"]
+[sub_resource type="Resource" id="Resource_mff84"]
 script = ExtResource("6_6efet")
-minInit = 5
-maxInit = 10
-minGrowth = 5
-maxGrowth = 10
+minInit = 4
+maxInit = 4
+minGrowth = 4
+maxGrowth = 4
 metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
 
 [resource]
@@ -52,9 +52,11 @@ speciesName = "TYPE_SKY"
 sprite = ExtResource("5_817b5")
 shape = ExtResource("4_6efet")
 type1 = 1
-will = SubResource("Resource_xx186")
-coherence = SubResource("Resource_817b5")
-lucidity = SubResource("Resource_ix32y")
-acuity = SubResource("Resource_6efet")
-creativity = SubResource("Resource_cxmt0")
+speciesStats = Dictionary[String, Object]({
+"Acuity": SubResource("Resource_5ji8a"),
+"Coherence": SubResource("Resource_qexsx"),
+"Creativity": SubResource("Resource_mff84"),
+"Lucidity": SubResource("Resource_ne2lr"),
+"Will": SubResource("Resource_ga640")
+})
 metadata/_custom_type_script = "uid://csm2jp1h77xtp"

@@ -6,44 +6,44 @@
 [ext_resource type="Texture2D" uid="uid://bap1lakmn12h1" path="res://Resources/Images/Enemies/enemy_crab.png" id="5_8x2dm"]
 [ext_resource type="Texture2D" uid="uid://r86tegmtvpy5" path="res://Resources/Images/Figment Sprites/TYPESEA.png" id="6_ohfpr"]
 
+[sub_resource type="Resource" id="Resource_c1jt1"]
+script = ExtResource("1_mrtom")
+minInit = 1
+maxInit = 1
+minGrowth = 1
+maxGrowth = 1
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_prk3l"]
+script = ExtResource("1_mrtom")
+minInit = 2
+maxInit = 2
+minGrowth = 2
+maxGrowth = 2
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
+[sub_resource type="Resource" id="Resource_mrtom"]
+script = ExtResource("1_mrtom")
+minInit = 3
+maxInit = 3
+minGrowth = 3
+maxGrowth = 3
+metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
+
 [sub_resource type="Resource" id="Resource_8x2dm"]
 script = ExtResource("1_mrtom")
-minInit = 5
-maxInit = 10
-minGrowth = 5
-maxGrowth = 10
+minInit = 4
+maxInit = 4
+minGrowth = 4
+maxGrowth = 4
 metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
 
 [sub_resource type="Resource" id="Resource_ohfpr"]
 script = ExtResource("1_mrtom")
 minInit = 5
-maxInit = 10
+maxInit = 5
 minGrowth = 5
-maxGrowth = 10
-metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
-
-[sub_resource type="Resource" id="Resource_4ggds"]
-script = ExtResource("1_mrtom")
-minInit = 5
-maxInit = 10
-minGrowth = 5
-maxGrowth = 10
-metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
-
-[sub_resource type="Resource" id="Resource_7j72q"]
-script = ExtResource("1_mrtom")
-minInit = 5
-maxInit = 10
-minGrowth = 5
-maxGrowth = 10
-metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
-
-[sub_resource type="Resource" id="Resource_ilmog"]
-script = ExtResource("1_mrtom")
-minInit = 5
-maxInit = 10
-minGrowth = 5
-maxGrowth = 10
+maxGrowth = 5
 metadata/_custom_type_script = "uid://s6uxxwxoy1j1"
 
 [resource]
@@ -52,9 +52,11 @@ speciesName = "TYPE_SKY"
 sprite = ExtResource("6_ohfpr")
 shape = ExtResource("5_8x2dm")
 type1 = 2
-will = SubResource("Resource_ilmog")
-coherence = SubResource("Resource_ohfpr")
-lucidity = SubResource("Resource_7j72q")
-acuity = SubResource("Resource_8x2dm")
-creativity = SubResource("Resource_4ggds")
+speciesStats = Dictionary[String, Object]({
+"Acuity": SubResource("Resource_8x2dm"),
+"Coherence": SubResource("Resource_prk3l"),
+"Creativity": SubResource("Resource_ohfpr"),
+"Lucidity": SubResource("Resource_mrtom"),
+"Will": SubResource("Resource_c1jt1")
+})
 metadata/_custom_type_script = "uid://csm2jp1h77xtp"

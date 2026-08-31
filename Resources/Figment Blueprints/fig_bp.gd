@@ -8,15 +8,19 @@ class_name FigmentBlueprint
 @export var type2: Type
 @export var allKnowableMoves: Array[Move]
 
-@export var will: Stat
-@export var coherence: Stat
-@export var lucidity: Stat
-@export var acuity: Stat
-@export var creativity: Stat
+#@export var will: Stat
+#@export var coherence: Stat
+#@export var lucidity: Stat
+#@export var acuity: Stat
+#@export var creativity: Stat
 
-#@export var stats: Dictionary[String, Stat] = {
-#		"will": Stat.new(),
-#	}
+@export var speciesStats: Dictionary[String, Stat] = {
+		"Will": Stat.new(),
+		"Coherence": Stat.new(),
+		"Lucidity": Stat.new(),
+		"Acuity": Stat.new(),
+		"Creativity": Stat.new(),
+}
 
 enum Type {NONE, LAND, SEA, SKY, MIND, BODY, LIGHT, DARK, SYNTH, FEAR}
 static var typeColours = {

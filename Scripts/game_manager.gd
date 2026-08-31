@@ -68,12 +68,6 @@ func load_overworld():
 		attach_camera()
 		
 		inventoryInterface.setPlayerInventory(player.playerInventory) #loads in player inv when spawning in
-		#testing when inventory stuff is saved
-		print("1:",player.playerInventory)
-		print("2:",player.playerInventory.figmentPartySlots[0])
-		print("3:",player.playerInventory.figmentPartySlots[0].figmentInfo)
-		print("4:",player.playerInventory.figmentPartySlots[0].figmentInfo.hp)
-		print("5:",player.playerInventory.figmentPartySlots[0].figmentInfo.stats)
 	update_references()
 
 func attach_camera():
